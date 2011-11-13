@@ -1,0 +1,35 @@
+.edit, .button
+	@include border()
+	@include round
+	font-size: 1.4em
+	
+.edit
+	padding: 20px
+	outline: none
+	width: 710px
+	height: 26px
+
+
+.button
+	@include gradient
+	@include unselectable
+	text-align: center
+	
+	p
+		margin-top: 16px
+		
+	&:active
+		@include linear-gradient(#DDD, #EEE)
+		p
+			margin: 18px 0 0 2px
+			color: #333
+
+
+#Start
+	@include top
+	width: 147px
+	right: 0
+	
+	div
+		margin-top: 4px
+		height: 58px

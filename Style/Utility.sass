@@ -1,0 +1,27 @@
+@mixin center
+	margin-right: auto
+	margin-left: auto
+	
+@mixin top
+	position: absolute
+	top: 0
+
+@mixin border-radius($top: 0, $bottom: 0, $left: 0, $right: 0)
+	-webkit-background-clip: padding-box
+	-webkit-border-radius: $top $bottom $left $right
+	-moz-border-radius: $top $bottom $left $right
+	border-radius: $top $bottom $left $right
+	
+@mixin linear-gradient($start, $end)
+	background-image: -webkit-linear-gradient(bottom, $start 0%, $end 100%)
+	background-image: -moz-linear-gradient(bottom, $start 0%, $end 100%)
+	background-image: -ms-linear-gradient(bottom, $start 0%, $end 100%)
+	background-image: -o-linear-gradient(bottom, $start 0%, $end 100%)
+	background-image: linear-gradient(bottom, $start 0%, $end 100%)
+	background-color: mix($start, $end)
+	
+@mixin unselectable
+	-moz-user-select: none
+	-khtml-user-select: none
+	-webkit-user-select: none
+	user-select: none

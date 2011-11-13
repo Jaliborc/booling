@@ -1,0 +1,68 @@
+@import Utility
+
+
+/* Body */
+	
+body
+	font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif
+	background-color: #EEE
+	
+*
+	border: none
+	padding: 0
+	margin: 0
+
+section
+	@include center
+	position: relative
+	margin-top: 40px
+	width: 930px
+	
+	
+/* Header */
+
+header
+	div
+		@include center
+		padding-bottom: 25px
+		margin-top: 20px
+		height: 100px
+		width: 270px
+
+	*
+		font-family: 'Futura'
+		font-weight: normal
+	h1
+		color: #261F19
+		font-size: 76px
+		float: left
+	h2
+		margin: 30px 0 0 0
+		color: #392C26
+		font-size: 70px
+		float: right
+		
+		
+/* Colors */
+
+@mixin round
+	@include border-radius(7px, 7px, 7px, 7px)
+	
+@mixin gradient
+	@include linear-gradient(#EEE, #FFF)
+
+@mixin border($attr: border)
+	#{$attr}: 1px solid #DDD
+	
+.green
+	color: green
+
+.red
+	color: red
+		
+	
+/* Other Files */
+
+@import Inputs
+@import Tables
+@import Alerts

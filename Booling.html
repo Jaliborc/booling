@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Booling</title>
+
+	<BUNDLE>
+		<link rel="stylesheet" href="Style/Main.css"/>
+		<script src="Brain/Constants.js"></script>
+		<script src="Brain/Utility.js"></script>
+		<script src="Brain/Answers.js"></script>
+		<script src="Brain/Formula.js"></script>
+		<script src="Brain/Main.js"></script>
+	</BUNDLE>
+</head>
+<body>
+	<header>
+		<div>
+			<h1>bool</h1>
+			<h2>ing</h2>
+		</div>
+	</header>
+	
+	<div id="NewVersion" class="alert">
+		<h2>New Version Available</h2>
+		<p>It appears a freaking “new me” is available. Would you like to download it so that I may destroy your hopes and dreams more properly?</p>
+		<div class="button">
+			<p>Download</p>
+		</div>
+	</div>
+	
+	<section>
+		<input id="Formula" class="edit" oninput="autoSyntax(event)" onkeyup="addKey(event)">
+		<div id="Start">
+			<div class="button" onclick="tryAnswer()"><p>Start</p></div>
+		</div>
+	</section>
+	
+	<section class="table">
+		<div class="caption"></div>
+		<ul class="columns">
+			<li>
+				<h2>Operator</h2>
+				<ul id="OperatorList"></ul>
+			</li>
+			<li style="width:100%">
+				<h2>Keyboard Shortcuts</h2>
+				<ul id="KeyList"></ul>
+			</li>
+		</ul>
+	</section>
+	
+	<section class="table">
+		<div class="caption"></div>
+		<ul id="Table" class="columns">
+		</ul>
+	</section>
+	
+	<footer>
+		
+	</footer>
+</body>
+</html>
