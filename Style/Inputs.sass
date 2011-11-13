@@ -1,3 +1,8 @@
+$startMargin: 17px
+$buttonLeft: 10px
+$buttonTop: 6px
+
+
 .edit, .button
 	@include border
 	@include round
@@ -9,20 +14,20 @@
 	width: 710px
 	height: 26px
 
-
 .button
 	@include gradient
 	@include unselectable
 	display: inline-block
+	margin: 18px 0 0 8px
 	text-align: center
 	
 	p
-		margin-top: 16px
+		margin: $buttonTop $buttonLeft $buttonTop $buttonLeft
 		
 	&:active
 		@include linear-gradient(#DDD, #EEE)
 		p
-			margin: 18px 0 0 2px
+			margin: $buttonTop + 1 $buttonLeft - 1 $buttonTop - 1 $buttonLeft + 1
 			color: #333
 
 
@@ -31,8 +36,12 @@
 	font-size: 1.4em
 	width: 147px
 	right: 0
-	
+
 	div
 		display: block
-		margin-top: 4px
-		height: 58px
+		margin: 4px 0 0 0
+	p
+		margin: $startMargin
+		
+	&:active p
+		margin: $startMargin + 2 $startMargin - 2 $startMargin - 2 $startMargin + 2

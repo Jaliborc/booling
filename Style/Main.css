@@ -68,9 +68,10 @@ header h2 {
   -webkit-user-select: none;
   user-select: none;
   display: inline-block;
+  margin: 18px 0 0 8px;
   text-align: center; }
   .button p {
-    margin-top: 16px; }
+    margin: 6px 10px 6px 10px; }
   .button:active {
     background-image: -webkit-linear-gradient(bottom, #dddddd 0%, #eeeeee 100%);
     background-image: -moz-linear-gradient(bottom, #dddddd 0%, #eeeeee 100%);
@@ -79,7 +80,7 @@ header h2 {
     background-image: linear-gradient(bottom, #dddddd 0%, #eeeeee 100%);
     background-color: #e5e5e5; }
     .button:active p {
-      margin: 18px 0 0 2px;
+      margin: 7px 9px 5px 11px;
       color: #333333; }
 
 #Start {
@@ -90,8 +91,11 @@ header h2 {
   right: 0; }
   #Start div {
     display: block;
-    margin-top: 4px;
-    height: 58px; }
+    margin: 4px 0 0 0; }
+  #Start p {
+    margin: 17px; }
+  #Start:active p {
+    margin: 19px 15px 15px 19px; }
 
 .table {
   -webkit-background-clip: padding-box;
@@ -154,18 +158,23 @@ header h2 {
   -webkit-border-radius: 7px 7px 7px 7px;
   -moz-border-radius: 7px 7px 7px 7px;
   border-radius: 7px 7px 7px 7px;
+  margin-top: 120px;
   margin-left: -202px;
   width: 404px;
+  opacity: 0.95;
   background-color: white;
   position: absolute;
   padding: 13px;
   z-index: 100;
-  left: 50%;
-  /*display: none */
-  opacity: 0.95; }
+  left: 50%; }
   .alert h2 {
     font-size: 22px;
     margin-bottom: 10px; }
   .alert p {
     font-size: 16px;
     line-height: 1.2em; }
+  .alert .button {
+    float: right;
+    /*background: #EEE */ }
+    .alert .button:active p {
+      color: black; }
