@@ -51,8 +51,8 @@ header
 @mixin gradient
 	@include linear-gradient(#EEE, #FFF)
 
-@mixin border($attr: border)
-	#{$attr}: 1px solid #DDD
+@mixin border($attr: border, $size: 1px)
+	#{$attr}: $size solid #DDD
 	
 .green
 	color: green

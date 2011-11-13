@@ -1,13 +1,16 @@
 $alertWidth: 404px
+$alertBorder: 2px
 
 .alert
+	@include shadow(0, 0, 7px, #CCC)
 	@include unselectable
-	@include border
+	@include border(border, $alertBorder)
 	@include round
 	
-	margin-top: 120px
-	margin-left: - ($alertWidth / 2)
+	margin-top: 125px
+	margin-left: - ($alertWidth + $alertBorder) / 2
 	width: $alertWidth
+	/*display: none
 	
 	opacity: 0.95
 	background-color: #FFF
@@ -25,7 +28,9 @@ $alertWidth: 404px
 		
 	.button
 		float: right
-		/*background: #EEE
+		background: #EEE
 		
-		&:active p
-			color: #000
+		&:active
+			background: #DDD
+			p
+				color: #000

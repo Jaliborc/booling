@@ -149,18 +149,22 @@ header h2 {
         padding: 12px 10px 0 12px; }
 
 .alert {
+  -webkit-box-shadow: 0 0 7px #cccccc;
+  -moz-box-shadow: 0 0 7px #cccccc;
+  box-shadow: 0 0 7px #cccccc;
   -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
   user-select: none;
-  border: 1px solid #dddddd;
+  border: 2px solid #dddddd;
   -webkit-background-clip: padding-box;
   -webkit-border-radius: 7px 7px 7px 7px;
   -moz-border-radius: 7px 7px 7px 7px;
   border-radius: 7px 7px 7px 7px;
-  margin-top: 120px;
-  margin-left: -202px;
+  margin-top: 125px;
+  margin-left: -203px;
   width: 404px;
+  /*display: none */
   opacity: 0.95;
   background-color: white;
   position: absolute;
@@ -175,6 +179,8 @@ header h2 {
     line-height: 1.2em; }
   .alert .button {
     float: right;
-    /*background: #EEE */ }
-    .alert .button:active p {
-      color: black; }
+    background: #eeeeee; }
+    .alert .button:active {
+      background: #dddddd; }
+      .alert .button:active p {
+        color: black; }

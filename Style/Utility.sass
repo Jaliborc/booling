@@ -16,6 +16,11 @@
 	background-image: linear-gradient(bottom, $start 0%, $end 100%)
 	background-color: mix($start, $end)
 	
+@mixin shadow($x, $y, $size, $color)
+	-webkit-box-shadow: $x $y $size $color
+	-moz-box-shadow: $x $y $size $color
+	box-shadow: $x $y $size $color
+	
 @mixin unselectable
 	-moz-user-select: none
 	-khtml-user-select: none
