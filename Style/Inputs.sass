@@ -1,9 +1,9 @@
 .edit, .button
-	@include border()
+	@include border
 	@include round
-	font-size: 1.4em
 	
 .edit
+	font-size: 1.4em
 	padding: 20px
 	outline: none
 	width: 710px
@@ -13,6 +13,7 @@
 .button
 	@include gradient
 	@include unselectable
+	display: inline-block
 	text-align: center
 	
 	p
@@ -27,9 +28,11 @@
 
 #Start
 	@include top
+	font-size: 1.4em
 	width: 147px
 	right: 0
 	
 	div
+		display: block
 		margin-top: 4px
 		height: 58px

@@ -1,8 +1,25 @@
+$alertWidth: 404px
+
 .alert
 	@include unselectable
-	@include border()
+	@include border
 	@include round
 	
+	margin-left: - ($alertWidth / 2)
+	width: $alertWidth
+	
 	background-color: #FFF
+	position: absolute
+	padding: 13px
+	z-index: 100
+	left: 50%
 	/*display: none
 	opacity: 0.95
+	
+	h2
+		font-size: 22px
+		margin-bottom: 10px
+	
+	p
+		font-size: 16px
+		line-height: 1.2em
