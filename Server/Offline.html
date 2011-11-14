@@ -10,28 +10,26 @@ body {
   background-color: #eeeeee; }
 
 * {
+  font-weight: normal;
   border: none;
   padding: 0;
   margin: 0; }
 
 section {
-  margin-right: auto;
-  margin-left: auto;
+  margin: auto;
   position: relative;
   margin-top: 40px;
   width: 930px; }
 
 /* Header */
 header div {
-  margin-right: auto;
-  margin-left: auto;
+  margin: auto;
   padding-bottom: 25px;
   margin-top: 20px;
   height: 100px;
   width: 270px; }
 header * {
-  font-family: "Futura";
-  font-weight: normal; }
+  font-family: "Futura"; }
 header h1 {
   color: #261f19;
   font-size: 76px;
@@ -55,10 +53,10 @@ header h2 {
   -webkit-background-clip: padding-box;
   -webkit-border-radius: 7px 7px 7px 7px;
   -moz-border-radius: 7px 7px 7px 7px;
-  border-radius: 7px 7px 7px 7px;
-  font-size: 1.4em; }
+  border-radius: 7px 7px 7px 7px; }
 
 .edit {
+  font-size: 1.4em;
   padding: 20px;
   outline: none;
   width: 710px;
@@ -71,9 +69,15 @@ header h2 {
   background-image: -o-linear-gradient(bottom, #eeeeee 0%, white 100%);
   background-image: linear-gradient(bottom, #eeeeee 0%, white 100%);
   background-color: #f6f6f6;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  display: inline-block;
+  margin: 18px 0 0 8px;
   text-align: center; }
   .button p {
-    margin-top: 16px; }
+    margin: 6px 10px 6px 10px; }
   .button:active {
     background-image: -webkit-linear-gradient(bottom, #dddddd 0%, #eeeeee 100%);
     background-image: -moz-linear-gradient(bottom, #dddddd 0%, #eeeeee 100%);
@@ -82,17 +86,22 @@ header h2 {
     background-image: linear-gradient(bottom, #dddddd 0%, #eeeeee 100%);
     background-color: #e5e5e5; }
     .button:active p {
-      margin: 18px 0 0 2px;
+      margin: 7px 9px 5px 11px;
       color: #333333; }
 
 #Start {
   position: absolute;
   top: 0;
+  font-size: 1.4em;
   width: 147px;
   right: 0; }
   #Start div {
-    margin-top: 4px;
-    height: 58px; }
+    display: block;
+    margin: 4px 0 0 0; }
+  #Start p {
+    margin: 17px; }
+  #Start:active p {
+    margin: 19px 15px 15px 19px; }
 
 .table {
   -webkit-background-clip: padding-box;
@@ -100,6 +109,10 @@ header h2 {
   -moz-border-radius: 7px 7px 7px 7px;
   border-radius: 7px 7px 7px 7px;
   border: 1px solid #dddddd;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
   background-color: white; }
 
 .caption {
@@ -122,7 +135,6 @@ header h2 {
   position: relative;
   z-index: 1; }
   .columns h2 {
-    font-weight: normal;
     font-size: 20px;
     margin: 15px;
     height: 19px; }
@@ -141,12 +153,67 @@ header h2 {
       .columns li li:active {
         background-color: #f5f5f5;
         padding: 12px 10px 0 12px; }
-</style><script>var F, Keys, NOT, Placeholders, T;
+
+.alert {
+  -webkit-box-shadow: 0 0 7px #cccccc;
+  -moz-box-shadow: 0 0 7px #cccccc;
+  box-shadow: 0 0 7px #cccccc;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  border: 2px solid #dddddd;
+  -webkit-background-clip: padding-box;
+  -webkit-border-radius: 7px 7px 7px 7px;
+  -moz-border-radius: 7px 7px 7px 7px;
+  border-radius: 7px 7px 7px 7px;
+  margin-top: 125px;
+  margin-left: -203px;
+  width: 404px;
+  opacity: 0;
+  background-color: white;
+  position: absolute;
+  padding: 13px;
+  z-index: 100;
+  left: 50%; }
+  .alert h2 {
+    font-size: 22px;
+    margin-bottom: 10px; }
+  .alert p {
+    font-size: 16px;
+    line-height: 1.2em;
+    color: black; }
+  .alert a {
+    text-decoration: none; }
+  .alert .button {
+    float: right;
+    background: #eeeeee; }
+    .alert .button:active {
+      background: #dddddd; }
+      .alert .button:active p {
+        color: black; }
+
+/* Animations */
+.hide {
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0; }
+
+.display {
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0.95; }
+</style><script>var F, Keys, NOT, Online, Placeholders, T;
+Online = false;
 T = '<a class="green">T</a>';
 F = '<a class="red">F</a>';
 NOT = '¬';
 Keys = [['¬', ['no', '~', '!'], [78]], ['⋀', ['and', '^'], [65, 73]], ['⋁', ['or', 'union'], [79, 85]], ['⇒', ['then', '->'], [84]], ['⇔', ['is', 'equal', 'same', '='], [73, 69]]];
-Placeholders = ['Enter a formula or prepare for humiliation...', "Enter a formula. You don't want to see me bored...", 'Are you going to enter a formula or not? Losing my patience here.', 'Being bullied? "Just act less gay", advise teachers.'];var clearFocus, escape, floor, global, pow, print, random;
+Placeholders = ['Enter a formula or prepare for humiliation...', "Enter a formula. You don't want to see me bored...", 'Are you going to enter a formula or not? Losing my patience here.', 'Being bullied? "Just act less gay", advise teachers.'];var clearFocus, escape, floor, pow, print, random;
 random = function(array) {
   return array[floor(Math.random() * array.length)];
 };
@@ -155,9 +222,6 @@ pow = function(a, b) {
 };
 floor = function(a) {
   return Math.floor(a);
-};
-global = function(id) {
-  return window[id] = document.getElementById(id);
 };
 print = function(text) {
   return console.log(text);
@@ -176,6 +240,70 @@ clearFocus = function() {
       return selection.removeAllRanges();
     }
   }
+};var addKey, addOperator, autoSyntax, fillKeys;
+addKey = function(board) {
+  var code, operator, _i, _len, _results;
+  if (board.altKey) {
+    _results = [];
+    for (_i = 0, _len = Keys.length; _i < _len; _i++) {
+      operator = Keys[_i];
+      _results.push((function() {
+        var _j, _len2, _ref, _results2;
+        _ref = operator[2];
+        _results2 = [];
+        for (_j = 0, _len2 = _ref.length; _j < _len2; _j++) {
+          code = _ref[_j];
+          _results2.push(board.keyCode === code ? Formula.value = Formula.value.slice(0, -1) + operator[0] : void 0);
+        }
+        return _results2;
+      })());
+    }
+    return _results;
+  }
+};
+autoSyntax = function(event) {
+  var match, operator, _i, _len, _results;
+  _results = [];
+  for (_i = 0, _len = Keys.length; _i < _len; _i++) {
+    operator = Keys[_i];
+    _results.push((function() {
+      var _j, _len2, _ref, _results2;
+      _ref = operator[1];
+      _results2 = [];
+      for (_j = 0, _len2 = _ref.length; _j < _len2; _j++) {
+        match = _ref[_j];
+        _results2.push(Formula.value = Formula.value.replace(match, operator[0]));
+      }
+      return _results2;
+    })());
+  }
+  return _results;
+};
+addOperator = function(operator) {
+  clearFocus();
+  return Formula.value += operator.getAttribute('key');
+};
+fillKeys = function() {
+  var alts, data, i, key, li, normals, operator, text, _i, _j, _len, _len2, _ref, _results;
+  _results = [];
+  for (_i = 0, _len = Keys.length; _i < _len; _i++) {
+    data = Keys[_i];
+    operator = data[0], normals = data[1], alts = data[2];
+    li = '<li onclick="addOperator(this)" key="' + operator + '">';
+    text = li;
+    for (i = 0, _ref = normals.length - 1; 0 <= _ref ? i <= _ref : i >= _ref; 0 <= _ref ? i++ : i--) {
+      key = normals[i];
+      text += key + ' , ';
+      normals[i] = new RegExp(escape(key), 'gi');
+    }
+    for (_j = 0, _len2 = alts.length; _j < _len2; _j++) {
+      key = alts[_j];
+      text += 'alt-' + String.fromCharCode(key).toLowerCase() + ' , ';
+    }
+    OperatorList.innerHTML += li + operator + '</li>';
+    _results.push(KeyList.innerHTML += text.slice(0, -3) + '</li>');
+  }
+  return _results;
 };var Operator, buildTable, getText, isLetter, isOperator, showError, toBolean, tryAnswer;
 isOperator = function(char) {
   var operator, _i, _len;
@@ -310,78 +438,16 @@ tryAnswer = function() {
   if (error) {
     return showError(error);
   }
-};var addKey, addOperator, autoSyntax, fillKeys;
-addKey = function(board) {
-  var code, operator, _i, _len, _results;
-  if (board.altKey) {
-    _results = [];
-    for (_i = 0, _len = Keys.length; _i < _len; _i++) {
-      operator = Keys[_i];
-      _results.push((function() {
-        var _j, _len2, _ref, _results2;
-        _ref = operator[2];
-        _results2 = [];
-        for (_j = 0, _len2 = _ref.length; _j < _len2; _j++) {
-          code = _ref[_j];
-          _results2.push(board.keyCode === code ? Formula.value = Formula.value.slice(0, -1) + operator[0] : void 0);
-        }
-        return _results2;
-      })());
-    }
-    return _results;
-  }
-};
-autoSyntax = function(event) {
-  var match, operator, _i, _len, _results;
-  _results = [];
-  for (_i = 0, _len = Keys.length; _i < _len; _i++) {
-    operator = Keys[_i];
-    _results.push((function() {
-      var _j, _len2, _ref, _results2;
-      _ref = operator[1];
-      _results2 = [];
-      for (_j = 0, _len2 = _ref.length; _j < _len2; _j++) {
-        match = _ref[_j];
-        _results2.push(Formula.value = Formula.value.replace(match, operator[0]));
-      }
-      return _results2;
-    })());
-  }
-  return _results;
-};
-addOperator = function(operator) {
-  clearFocus();
-  return Formula.value += operator.getAttribute('key');
-};
-fillKeys = function() {
-  var alts, data, i, key, li, normals, operator, text, _i, _j, _len, _len2, _ref, _results;
-  _results = [];
-  for (_i = 0, _len = Keys.length; _i < _len; _i++) {
-    data = Keys[_i];
-    operator = data[0], normals = data[1], alts = data[2];
-    li = '<li onclick="addOperator(this)" key="' + operator + '">';
-    text = li;
-    for (i = 0, _ref = normals.length - 1; 0 <= _ref ? i <= _ref : i >= _ref; 0 <= _ref ? i++ : i--) {
-      key = normals[i];
-      text += key + ' , ';
-      normals[i] = new RegExp(escape(key), 'gi');
-    }
-    for (_j = 0, _len2 = alts.length; _j < _len2; _j++) {
-      key = alts[_j];
-      text += 'alt-' + String.fromCharCode(key).toLowerCase() + ' , ';
-    }
-    OperatorList.innerHTML += li + operator + '</li>';
-    _results.push(KeyList.innerHTML += text.slice(0, -3) + '</li>');
-  }
-  return _results;
+};var closeVersion;
+closeVersion = function() {
+  return NewVersion.className = 'hide alert';
 };window.onload = function() {
-  global('OperatorList');
-  global('KeyList');
-  global('Formula');
-  global('Table');
   Formula.placeholder = random(Placeholders);
-  return fillKeys();
-};var Online = true;</script>
+  fillKeys();
+  if (!Online) {
+    return NewVersion.className = 'alert display';
+  }
+};</script>
 </head>
 <body>
 	<header>
@@ -390,10 +456,27 @@ fillKeys = function() {
 			<h2>ing</h2>
 		</div>
 	</header>
+	
+	<div id="NewVersion" class="alert">
+		<h2>New Version Available</h2>
+		<p>It appears a freaking “new me” is available. Would you like to download it so that I may destroy your hopes and dreams more properly?</p>
+		<a href="http://www.jaliborc.com/Booling/Downloader.php">
+			<div class="button" onclick="closeVersion()">
+				<p>Download</p>
+			</div>
+		</a>
+		<div class="button" onclick="closeVersion()">
+			<p>Oh god, no!</p>
+		</div>
+	</div>
+	
 	<section>
 		<input id="Formula" class="edit" oninput="autoSyntax(event)" onkeyup="addKey(event)">
-		<div id="Start"><div class="button" onclick="tryAnswer()"><p>Start</p></div></div>
+		<div id="Start">
+			<div class="button" onclick="tryAnswer()"><p>Start</p></div>
+		</div>
 	</section>
+	
 	<section class="table">
 		<div class="caption"></div>
 		<ul class="columns">
@@ -407,11 +490,13 @@ fillKeys = function() {
 			</li>
 		</ul>
 	</section>
+	
 	<section class="table">
 		<div class="caption"></div>
 		<ul id="Table" class="columns">
 		</ul>
 	</section>
+	
 	<footer>
 		
 	</footer>

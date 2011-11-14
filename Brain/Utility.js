@@ -1,4 +1,4 @@
-var clearFocus, escape, floor, global, pow, print, random;
+var clearFocus, escape, floor, pow, print, random;
 random = function(array) {
   return array[floor(Math.random() * array.length)];
 };
@@ -7,9 +7,6 @@ pow = function(a, b) {
 };
 floor = function(a) {
   return Math.floor(a);
-};
-global = function(id) {
-  return window[id] = document.getElementById(id);
 };
 print = function(text) {
   return console.log(text);

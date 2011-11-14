@@ -7,9 +7,6 @@ floor = (a) -> return Math.floor(a)
 
 
 # General
-global = (id) ->
-	window[id] = document.getElementById(id)
-	
 print = (text) ->
 	console.log(text)
 

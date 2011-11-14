@@ -10,6 +10,7 @@
 		<script src="Brain/Utility.js"></script>
 		<script src="Brain/Answers.js"></script>
 		<script src="Brain/Formula.js"></script>
+		<script src="Brain/Alerts.js"></script>
 		<script src="Brain/Main.js"></script>
 	</BUNDLE>
 </head>
@@ -24,10 +25,12 @@
 	<div id="NewVersion" class="alert">
 		<h2>New Version Available</h2>
 		<p>It appears a freaking “new me” is available. Would you like to download it so that I may destroy your hopes and dreams more properly?</p>
-		<div class="button">
-			<p>Download</p>
-		</div>
-		<div class="button">
+		<a href="http://www.jaliborc.com/Booling/Downloader.php">
+			<div class="button" onclick="closeVersion()">
+				<p>Download</p>
+			</div>
+		</a>
+		<div class="button" onclick="closeVersion()">
 			<p>Oh god, no!</p>
 		</div>
 	</div>

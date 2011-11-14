@@ -164,8 +164,7 @@ header h2 {
   margin-top: 125px;
   margin-left: -203px;
   width: 404px;
-  /*display: none */
-  opacity: 0.95;
+  opacity: 0;
   background-color: white;
   position: absolute;
   padding: 13px;
@@ -176,7 +175,10 @@ header h2 {
     margin-bottom: 10px; }
   .alert p {
     font-size: 16px;
-    line-height: 1.2em; }
+    line-height: 1.2em;
+    color: black; }
+  .alert a {
+    text-decoration: none; }
   .alert .button {
     float: right;
     background: #eeeeee; }
@@ -184,3 +186,18 @@ header h2 {
       background: #dddddd; }
       .alert .button:active p {
         color: black; }
+
+/* Animations */
+.hide {
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0; }
+
+.display {
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0.95; }

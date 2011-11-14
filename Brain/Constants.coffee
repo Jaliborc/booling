@@ -1,3 +1,4 @@
+Online = false
 T = '<a class="green">T</a>'
 F = '<a class="red">F</a>'
 NOT = '¬'
