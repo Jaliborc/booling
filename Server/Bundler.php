@@ -1,7 +1,8 @@
 <?php
 
 # Check if new version is available
-$DIR = '../';
+$DIR = 'https://raw.github.com/Jaliborc/Booling/master/';
+#$DIR = '../';
 $version = smallOpen($DIR . 'Version.txt', 2);
 
 function smallOpen($path, $size){
