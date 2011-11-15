@@ -2,7 +2,6 @@
 
 # Check if new version is available
 $DIR = 'https://raw.github.com/Jaliborc/Booling/master/';
-#$DIR = '../';
 $version = smallOpen($DIR . 'Version.txt', 2);
 
 function smallOpen($path, $size){
@@ -28,7 +27,7 @@ foreach($Brain as $file) {
 
 # Inject Code
 $css = '<style media="screen" type="text/css">' . file_get_contents($DIR . 'Style/Main.css') . '</style>';
-$scripts = '<script>' . $scripts . '</script>';
+$scripts = '<script>var Version="' . $version . '";' . $scripts . '</script>';
 	
 $html = file_get_contents($DIR . 'Booling.html');
 $replace = array();

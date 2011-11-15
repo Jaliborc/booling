@@ -1,6 +1,4 @@
 window.onload = ->
 	Formula.placeholder = random(Placeholders)
+	checkVersion()
 	fillKeys()
-	
-	if not Online
-		NewVersion.className = 'alert display'
