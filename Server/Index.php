@@ -1,4 +1,4 @@
 <?php
-include 'Bundler.php';
-readfile('Online.html');
+include 'bundler.php';
+readfile('online.html');
 ?>
