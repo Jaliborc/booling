@@ -2,5 +2,5 @@
 include 'bundler.php';
 header('Content-type: application/html');
 header('Content-Disposition: attachment; filename="Booling.html"');
-readfile('offline.html');
+readfile('Offline.html');
 ?>

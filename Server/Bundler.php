@@ -11,7 +11,7 @@ function smallOpen($path, $size){
 	return $content;
 }
 
-if ($version != '0' and $version == @smallOpen('Version.txt', 2))
+if ($version == @smallOpen('Version.txt', 2))
 	return;
 
 
