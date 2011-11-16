@@ -12,6 +12,9 @@ print = (text) ->
 
 escape = (text) ->
 	return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&')
+	
+global = (id) ->
+	window[id] = document.getElementById(id)
 
 clearFocus = ->
 	selection = if window.getSelection then window.getSelection() else document.selection

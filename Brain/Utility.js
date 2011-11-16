@@ -1,4 +1,4 @@
-var clearFocus, escape, floor, pow, print, random;
+var clearFocus, escape, floor, global, pow, print, random;
 random = function(array) {
   return array[floor(Math.random() * array.length)];
 };
@@ -13,6 +13,9 @@ print = function(text) {
 };
 escape = function(text) {
   return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+};
+global = function(id) {
+  return window[id] = document.getElementById(id);
 };
 clearFocus = function() {
   var selection;

@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>Server/downloader.php</string>
+	<string>Brain/Utility.coffee</string>
 	<key>documents</key>
 	<array>
 		<dict>
 			<key>filename</key>
 			<string>Booling.html</string>
 			<key>lastUsed</key>
-			<date>2011-11-15T15:59:12Z</date>
+			<date>2011-11-16T21:20:15Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
@@ -25,7 +25,7 @@
 					<key>filename</key>
 					<string>Brain/Main.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-11-15T15:54:33Z</date>
+					<date>2011-11-16T21:21:32Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -55,7 +55,9 @@
 					<key>filename</key>
 					<string>Brain/Utility.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-11-15T15:54:37Z</date>
+					<date>2011-11-16T21:21:32Z</date>
+					<key>selected</key>
+					<true/>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -103,8 +105,6 @@
 					<date>2011-11-13T23:40:36Z</date>
 				</dict>
 			</array>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>Style</string>
 		</dict>
@@ -115,25 +115,21 @@
 					<key>filename</key>
 					<string>Server/index.php</string>
 					<key>lastUsed</key>
-					<date>2011-11-15T15:54:27Z</date>
+					<date>2011-11-16T21:20:21Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Server/downloader.php</string>
 					<key>lastUsed</key>
-					<date>2011-11-15T15:59:12Z</date>
-					<key>selected</key>
-					<true/>
+					<date>2011-11-16T21:20:17Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Server/bundler.php</string>
 					<key>lastUsed</key>
-					<date>2011-11-15T15:54:21Z</date>
+					<date>2011-11-16T21:20:18Z</date>
 				</dict>
 			</array>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>Server</string>
 		</dict>
@@ -245,9 +241,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>9</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>8</integer>
+				<integer>18</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -259,23 +255,23 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>50</integer>
+				<integer>12</integer>
 				<key>line</key>
-				<integer>29</integer>
+				<integer>50</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>14</integer>
 		</dict>
 		<key>Server/downloader.php</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>63</integer>
+				<integer>2</integer>
 				<key>line</key>
-				<integer>3</integer>
+				<integer>5</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -287,14 +283,30 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>11</integer>
+				<integer>10</integer>
 				<key>line</key>
 				<integer>2</integer>
 			</dict>
+			<key>columnSelection</key>
+			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>10</integer>
+				<key>line</key>
+				<integer>2</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>16</integer>
+				<key>line</key>
+				<integer>2</integer>
+			</dict>
 		</dict>
 		<key>Style/Alerts.sass</key>
 		<dict>
