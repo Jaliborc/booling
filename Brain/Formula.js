@@ -38,7 +38,6 @@ autoSyntax = function(event) {
   return _results;
 };
 addOperator = function(operator) {
-  clearFocus();
   return Formula.value += operator.getAttribute('key');
 };
 fillKeys = function() {

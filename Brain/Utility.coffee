@@ -15,10 +15,3 @@ escape = (text) ->
 	
 global = (id) ->
 	window[id] = document.getElementById(id)
-
-clearFocus = ->
-	selection = if window.getSelection then window.getSelection() else document.selection
-
-	if selection
-		selection.empty() if selection.empty
-		selection.removeAllRanges() if selection.removeAllRanges

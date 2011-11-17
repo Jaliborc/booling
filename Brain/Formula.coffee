@@ -13,7 +13,6 @@ autoSyntax = (event) ->
 			
 # Keybindings List
 addOperator = (operator) ->
-	clearFocus()
 	Formula.value += operator.getAttribute('key')
 	
 fillKeys = ->

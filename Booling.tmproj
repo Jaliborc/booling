@@ -3,20 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>Brain/Answers.coffee</string>
+	<string>Version.txt</string>
 	<key>documents</key>
 	<array>
 		<dict>
 			<key>filename</key>
 			<string>Booling.html</string>
 			<key>lastUsed</key>
-			<date>2011-11-16T23:26:51Z</date>
+			<date>2011-11-17T16:04:50Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>Version.txt</string>
 			<key>lastUsed</key>
-			<date>2011-11-16T22:45:50Z</date>
+			<date>2011-11-17T16:04:50Z</date>
+			<key>selected</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>children</key>
@@ -37,9 +39,7 @@
 					<key>filename</key>
 					<string>Brain/Answers.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-11-16T23:35:00Z</date>
-					<key>selected</key>
-					<true/>
+					<date>2011-11-17T15:58:05Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -57,7 +57,7 @@
 					<key>filename</key>
 					<string>Brain/Constants.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-11-16T23:26:24Z</date>
+					<date>2011-11-17T15:58:51Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -184,7 +184,7 @@
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>49</integer>
+			<integer>0</integer>
 		</dict>
 		<key>Brain/Compile.txt</key>
 		<dict>
@@ -205,9 +205,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>13</integer>
+				<integer>4</integer>
 				<key>line</key>
-				<integer>0</integer>
+				<integer>8</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -386,11 +386,26 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>Version.txt</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>1</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
 		<string>Brain/Answers.coffee</string>
 		<string>Booling.html</string>
+		<string>Version.txt</string>
 		<string>Brain/Main.coffee</string>
 		<string>Brain/Formula.coffee</string>
 		<string>Brain/Utility.coffee</string>

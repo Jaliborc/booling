@@ -1,4 +1,4 @@
-var clearFocus, escape, floor, global, pow, print, random;
+var escape, floor, global, pow, print, random;
 random = function(array) {
   return array[floor(Math.random() * array.length)];
 };
@@ -16,16 +16,4 @@ escape = function(text) {
 };
 global = function(id) {
   return window[id] = document.getElementById(id);
-};
-clearFocus = function() {
-  var selection;
-  selection = window.getSelection ? window.getSelection() : document.selection;
-  if (selection) {
-    if (selection.empty) {
-      selection.empty();
-    }
-    if (selection.removeAllRanges) {
-      return selection.removeAllRanges();
-    }
-  }
 };
