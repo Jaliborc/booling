@@ -1,22 +1,4 @@
-var Operator, buildTable, getText, isLetter, isOperator, showError, toBolean, tryAnswer;
-isOperator = function(char) {
-  var operator, _i, _len;
-  for (_i = 0, _len = Keys.length; _i < _len; _i++) {
-    operator = Keys[_i];
-    if (char === operator[0]) {
-      return true;
-    }
-  }
-};
-isLetter = function(char) {
-  var _ref;
-  if (char) {
-    return (65 <= (_ref = char.charCodeAt(0)) && _ref <= 122);
-  }
-};
-getText = function(char) {
-  return char.getText && char.getText() || char;
-};
+var Char, Parser, parseSyntax, toBolean;
 toBolean = function(n) {
   if (n === 0) {
     return T;
@@ -24,112 +6,110 @@ toBolean = function(n) {
     return F;
   }
 };
-Operator = (function() {
-  function Operator(text, list, i) {
+Char = (function() {
+  function Char(text) {
     this.text = text;
-    this.list = list;
-    this.i = i;
-  }
-  Operator.prototype.getText = function() {
-    return this.text;
-  };
-  return Operator;
-})();
-buildTable = function() {
-  var body, brackets, char, formula, i, last, letters, list, numLetters, numLines, reg, size, x, y, _ref, _ref2, _ref3;
-  formula = Formula.value;
-  size = formula.length;
-  last = false;
-  brackets = 0;
-  letters = [];
-  list = [];
-  reg = {};
-  for (i = 0, _ref = size - 1; 0 <= _ref ? i <= _ref : i >= _ref; 0 <= _ref ? i++ : i--) {
-    char = formula.charAt(i);
-    if (char === ' ') {
-      continue;
+    if (this.text === ' ') {
+      return this.ignore = true;
+    } else if (this.text === '(') {
+      this.openBrack = true;
+    } else if (this.text === ')') {
+      this.endBrack = true;
+    } else if (this.isVariable()) {
+      this.isVar = true;
+    } else if (this.isOperator()) {
+      this.isNot = this.text === NOT;
+      this.isOper = true;
     }
-    if (isLetter(char)) {
-      if (isLetter(last)) {
-        return ['DOUBLE VAR', i];
+  }
+  Char.prototype.isVariable = function() {
+    var _ref;
+    return (65 <= (_ref = this.text.charCodeAt(0)) && _ref <= 122);
+  };
+  Char.prototype.isOperator = function() {
+    var operator, _i, _len;
+    for (_i = 0, _len = Keys.length; _i < _len; _i++) {
+      operator = Keys[_i];
+      if (this.text === operator[0]) {
+        return true;
       }
-      if (last === ')') {
-        return ['BRACKET VAR', i];
+    }
+  };
+  return Char;
+})();
+Parser = (function() {
+  function Parser(formula) {
+    var i, _ref;
+    this.formula = formula;
+    this.size = this.formula.length;
+    this.brackets = 0;
+    this.last = false;
+    this.list = [];
+    this.vars = {};
+    for (i = 0, _ref = this.size - 1; 0 <= _ref ? i <= _ref : i >= _ref; 0 <= _ref ? i++ : i--) {
+      this.char = new Char(this.formula.charAt(i));
+      if (this.char.ignore) {
+        continue;
       }
-      if (!reg[char]) {
-        letters.push(char);
-        reg[char] = true;
+      this.i = i;
+      this.error = this.parseChar();
+      if (this.error) {
+        return;
       }
-    } else if (isOperator(char)) {
-      if (char !== NOT && isOperator(last)) {
-        return ['DOUBLE OPER', i];
+      this.list.push(char);
+      this.last = char;
+    }
+    if (this.brackets !== 0) {
+      return this.error = 'NUM BRACKETS';
+    }
+  }
+  Parser.prototype.parseChar = function() {
+    if (this.char.isVar) {
+      this.vars[char] = true;
+      if (this.last.isVar) {
+        return 'DOUBLE VAR';
       }
-      if (last === '(') {
-        return ['BRACKET OPER', i];
+      if (this.last.endBrack) {
+        return 'END BRACK -> VAR';
       }
-      char = new Operator(char, list, i);
-    } else if (char === '(') {
-      brackets += 1;
-      if (isLetter(last)) {
-        return ['VAR BRACKET', i];
+    } else if (this.char.isOper) {
+      if (!this.char.isNot && this.last.isOper) {
+        return 'DOUBLE OPER';
       }
-      if (last === ')') {
-        return ['EMPTY BRACKET', i];
+      if (this.last.openBrack) {
+        return 'OPEN BRACK -> OPER';
       }
-    } else if (char === ')') {
-      brackets -= 1;
-      if (isOperator(last)) {
-        return ['OPER BRACKET', i];
+    } else if (this.char.openBrack) {
+      this.brackets += 1;
+      if (this.last.isVar) {
+        return 'VAR -> OPEN BRACK';
       }
-      if (last === '(') {
-        return ['DOUBLE BRACKET', i];
+      if (this.last.endBrack) {
+        return 'EMPTY BRACKET';
       }
-      if (brackets < 0) {
-        return ['BRACKETS', i];
+    } else if (this.char.endBrack) {
+      this.brackets -= 1;
+      if (this.last.isOper) {
+        return 'OPER BRACKET';
+      }
+      if (this.last.openBrack) {
+        return 'DOUBLE BRACKET';
+      }
+      if (this.brackets < 0) {
+        return 'NUM BRACKETS';
       }
     } else {
-      return ['UNKNOWN', i];
+      return 'UNKNOWN';
     }
-    last = getText(char);
-    list.push(char);
-  }
-  size = list.length;
-  if (size < 3) {
-    return ['SIZE'];
-  }
-  if (brackets !== 0) {
-    return ['BRACKETS'];
-  }
-  numLetters = letters.length;
-  numLines = pow(2, numLetters) - 1;
-  body = '';
-  for (x = 0, _ref2 = numLetters - 1; 0 <= _ref2 ? x <= _ref2 : x >= _ref2; 0 <= _ref2 ? x++ : x--) {
-    body += '<li><h2>' + letters[x] + '</h2><ul>';
-    for (y = 0; 0 <= numLines ? y <= numLines : y >= numLines; 0 <= numLines ? y++ : y--) {
-      body += '<li>' + toBolean(floor(y / pow(2, x)) % 2) + '</li>';
-    }
-    body += '</ul></li>';
-  }
-  for (i = 0, _ref3 = size - 1; 0 <= _ref3 ? i <= _ref3 : i >= _ref3; 0 <= _ref3 ? i++ : i--) {
-    body += '<li class="no-border"><h2>' + getText(list[i]) + '</h2><ul>';
-    for (y = 0; 0 <= numLines ? y <= numLines : y >= numLines; 0 <= numLines ? y++ : y--) {
-      body += '<li i="' + i + '" y="' + y + '"><input type="text"></li>';
-    }
-    body += '</ul></li>';
-  }
-  Table.innerHTML = body;
-  return false;
-};
-showError = function(error) {
-  var index, type;
-  type = error[0], index = error[1];
-  return print(type + ' at ' + index);
-};
-tryAnswer = function() {
-  var error;
-  clearFocus();
-  error = buildTable();
-  if (error) {
-    return showError(error);
+  };
+  return Parser;
+})();
+parseSyntax = function() {
+  var parser;
+  parser = new Parser(Formula.value);
+  if (parser.error) {
+    return print(parser.error);
+  } else {
+    return print(parser.result);
   }
 };

@@ -1,5 +1,5 @@
 var F, Keys, NOT, Online, Placeholders, T;
-Online = false;
+Online = true;
 T = '<a class="green">T</a>';
 F = '<a class="red">F</a>';
 NOT = '¬';
