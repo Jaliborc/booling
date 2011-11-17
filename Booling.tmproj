@@ -3,22 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>Version.txt</string>
+	<string>Brain/Answers.coffee</string>
 	<key>documents</key>
 	<array>
 		<dict>
 			<key>filename</key>
 			<string>Booling.html</string>
 			<key>lastUsed</key>
-			<date>2011-11-17T16:04:50Z</date>
+			<date>2011-11-17T17:22:12Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>Version.txt</string>
 			<key>lastUsed</key>
-			<date>2011-11-17T16:04:50Z</date>
-			<key>selected</key>
-			<true/>
+			<date>2011-11-17T17:02:33Z</date>
 		</dict>
 		<dict>
 			<key>children</key>
@@ -27,19 +25,21 @@
 					<key>filename</key>
 					<string>Brain/Main.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-11-16T23:26:51Z</date>
+					<date>2011-11-17T17:22:13Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Alerts.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-11-16T23:26:52Z</date>
+					<date>2011-11-17T17:22:15Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Answers.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-11-17T15:58:05Z</date>
+					<date>2011-11-17T17:28:21Z</date>
+					<key>selected</key>
+					<true/>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -51,19 +51,19 @@
 					<key>filename</key>
 					<string>Brain/Formula.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-11-16T23:26:03Z</date>
+					<date>2011-11-17T17:03:06Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Constants.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-11-17T15:58:51Z</date>
+					<date>2011-11-17T17:28:21Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Utility.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-11-16T23:26:04Z</date>
+					<date>2011-11-17T17:03:50Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -177,9 +177,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>29</integer>
+				<integer>41</integer>
 				<key>line</key>
-				<integer>74</integer>
+				<integer>17</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -219,9 +219,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>6</integer>
+				<integer>27</integer>
 				<key>line</key>
-				<integer>32</integer>
+				<integer>14</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -277,9 +277,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>4</integer>
+				<integer>41</integer>
 				<key>line</key>
-				<integer>15</integer>
+				<integer>16</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -403,7 +403,6 @@
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>Brain/Answers.coffee</string>
 		<string>Booling.html</string>
 		<string>Version.txt</string>
 		<string>Brain/Main.coffee</string>
@@ -411,6 +410,7 @@
 		<string>Brain/Utility.coffee</string>
 		<string>Brain/Constants.coffee</string>
 		<string>Brain/Alerts.coffee</string>
+		<string>Brain/Answers.coffee</string>
 		<string>Brain/Old Answers</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>

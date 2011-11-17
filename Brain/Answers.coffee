@@ -1,48 +1,50 @@
-toBolean = (n) ->
-	return (if n == 0 then T else F)
-	
-	
-# Character Object
+# Character Types
 class Char
 	constructor: (@text) ->
+		@type = @getType()
+		this[@type] = true
+			
+	getType: ->	
 		if @text == ' '
-			return @ignore = true
-			
+			'ignore'
 		else if @text == '('
-			@openBrack = true
-			
+			'open'
 		else if @text == ')'
-			@endBrack = true
-			
-		else if @isVariable()
-			@isVar = true
-			
-		else if @isOperator()
-			@isNot = (@text == NOT)
-			@isOper = true
-			
-	isVariable: ->
-		return 65 <= @text.charCodeAt(0) <= 122
-					
-	isOperator: ->
-		for operator in Keys
-			return true if @text == operator[0]
+			'close'
+		else if 65 <= @text.charCodeAt(0) <= 122
+			'char'
+		else
+			for operator in Keys
+				return 'oper' if @text == operator[0]
 
-
-# Parser Object
+# Parser
 class Parser
+	errors =
+		var:
+			var: 'DOUBLE VAR'
+			close: 'MISSING OPER'
+		oper:
+			oper: 'DOUBLE OPER'
+			open: 'MISSING VAR'
+		open:
+			var: 'MISSING OPER'
+			close: 'EMPTY BRACKET'
+		close:
+			oper: 'MISSING VAR'
+			open: 'MISSING OPER'
+	
 	constructor: (@formula) ->
-		@size = @formula.length
-		@brackets = 0
-		@last = false
+		size = @formula.length
+		last = false
+		brackets = 0
+		
 		@list = []
 		@vars = {}
 		
-		for i in [0 .. @size - 1]
-			@char = new Char(@formula.charAt(i))
-			continue if @char.ignore
+		for i in [0 .. size - 1]
+			char = new Char(@formula.charAt(i))
+			continue if char.ignore
 			
-			@i = i
 			@error = @parseChar()
 			return if @error
 			
@@ -51,34 +53,12 @@ class Parser
 			
 		if @brackets != 0
 			return @error = 'NUM BRACKETS'
-		
-			
-	parseChar: () ->
-		if @char.isVar
-			@vars[char] = true
-			return 'DOUBLE VAR' if @last.isVar
-			return 'END BRACK -> VAR' if @last.endBrack
-			
-		else if @char.isOper
-			return 'DOUBLE OPER' if not @char.isNot and @last.isOper
-			return 'OPEN BRACK -> OPER' if @last.openBrack
-			
-		else if @char.openBrack
-			@brackets += 1
-			return 'VAR -> OPEN BRACK' if @last.isVar
-			return 'EMPTY BRACKET' if @last.endBrack
-			
-		else if @char.endBrack
-			@brackets -= 1
-			return 'OPER BRACKET' if @last.isOper
-			return 'DOUBLE BRACKET' if @last.openBrack
-			return 'NUM BRACKETS' if @brackets < 0
-			
-		else
-			return 'UNKNOWN'
 	
 	
 # Trigger
+toBolean = (n) ->
+	if n == 0 then T else F
+
 parseSyntax = ->
 	parser = new Parser(Formula.value)
 	
