@@ -1,4 +1,4 @@
-var addKey, addOperator, autoSyntax, fillKeys;
+var addKey, addOperator, autoSyntax, fillKeys, setPlaceholder;
 addKey = function(board) {
   var code, operator, _i, _len, _results;
   if (board.altKey) {
@@ -37,18 +37,22 @@ autoSyntax = function(event) {
   }
   return _results;
 };
+setPlaceholder = function() {
+  return Formula.placeholder = random(Placeholders);
+};
 addOperator = function(operator) {
   return Formula.value += operator.getAttribute('key');
 };
 fillKeys = function() {
-  var alts, data, i, key, li, normals, operator, text, _i, _j, _len, _len2, _ref, _results;
+  var alts, data, i, key, li, normals, operator, text, _i, _j, _len, _len2, _results;
   _results = [];
   for (_i = 0, _len = Keys.length; _i < _len; _i++) {
     data = Keys[_i];
     operator = data[0], normals = data[1], alts = data[2];
     li = '<li onclick="addOperator(this)" key="' + operator + '">';
     text = li;
-    for (i = 0, _ref = normals.length - 1; 0 <= _ref ? i <= _ref : i >= _ref; 0 <= _ref ? i++ : i--) {
+    for (i in normals) {
+      key = normals[i];
       key = normals[i];
       text += key + ' , ';
       normals[i] = new RegExp(escape(key), 'gi');

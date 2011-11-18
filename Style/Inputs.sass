@@ -7,8 +7,11 @@ $buttonTop: 6px
 	@include border
 	@include round
 	
-.edit
+.edit, .large
 	font-size: 1.4em
+	margin-top: 40px
+	
+.edit
 	padding: 20px
 	outline: none
 	width: 710px
@@ -30,14 +33,12 @@ $buttonTop: 6px
 			margin: $buttonTop + 1 $buttonLeft - 1 $buttonTop - 1 $buttonLeft + 1
 			color: #333
 
-
-#Start
+.large
 	@include top
-	font-size: 1.4em
 	width: 147px
 	right: 0
 
-	div
+	.button
 		display: block
 		margin: 4px 0 0 0
 	p

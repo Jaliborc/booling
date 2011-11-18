@@ -1,9 +1,6 @@
 window.onload = function() {
-  global('NewVersion');
-  global('OperatorList');
-  global('Formula');
-  global('KeyList');
-  Formula.placeholder = random(Placeholders);
+  globals(['FormulaSection', 'Formula', 'OperatorList', 'KeyList', 'AnswerSection', 'AnswerArea', 'NewVersion']);
+  setPlaceholder();
   checkVersion();
   return fillKeys();
 };

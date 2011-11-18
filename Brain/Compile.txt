@@ -1,6 +1,6 @@
 Constants.js
 Utility.js
 Formula.js
-Answers.js
-Alerts.js
+Answer.js
+Version.js
 Main.js

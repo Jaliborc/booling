@@ -13,5 +13,16 @@ print = (text) ->
 escape = (text) ->
 	return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&')
 	
-global = (id) ->
-	window[id] = document.getElementById(id)
+globals = (list) ->
+	window[id] = document.getElementById(id) for id in list
+	
+
+# Animation
+switchFrames = (hide, show, time, onFinish) ->
+	hide.className = 'fade'
+	
+	setTimeout(->
+		hide.className = 'hide'
+		show.className = 'display'
+		onFinish?()
+	, time)

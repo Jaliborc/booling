@@ -1,14 +1,16 @@
 Online = true
+
+TIME = 400
 T = '<a class="green">T</a>'
 F = '<a class="red">F</a>'
 NOT = '¬'
 
 Keys = [
-	['¬', ['no', '~', '!'], [78]]
+	[NOT, ['no', '~', '!'], [78]]
 	['∧', ['and', '^'], [65, 73]]
 	['∨', ['or', 'union'], [79, 85]]
-	['⇒', ['then', '->'], [84]]
-	['⇔', ['is', 'equal', 'same', '='], [73, 69]]
+	['→', ['then', '->'], [84]]
+	['↔', ['is', 'equal', 'same', '='], [73, 69]]
 ]
 
 Placeholders = [

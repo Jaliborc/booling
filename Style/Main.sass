@@ -14,10 +14,15 @@ body
 	margin: 0
 
 section
-	margin: auto
+	@include fade
 	position: relative
-	margin-top: 40px
 	width: 930px
+	margin: auto
+	
+.cover
+	@include top
+	width: 100%
+	height: 100%
 	
 	
 /* Header */
@@ -68,18 +73,14 @@ header
 @import Alerts
 
 
-/* Animations */
+/* Visibility */
 
 .hide
-	-webkit-transition: opacity .3s ease-in-out
-	-moz-transition: opacity .3s ease-in-out
-	-o-transition: opacity .3s ease-in-out
-	transition: opacity .3s ease-in-out
+	position: absolute
+	z-index: -10
+
+.fade, .hide
 	opacity: 0
 	
 .display
-	-webkit-transition: opacity .3s ease-in-out
-	-moz-transition: opacity .3s ease-in-out
-	-o-transition: opacity .3s ease-in-out
-	transition: opacity .3s ease-in-out
-	opacity: .95
+	opacity: 1

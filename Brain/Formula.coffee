@@ -9,6 +9,9 @@ autoSyntax = (event) ->
 	for operator in Keys
 		for match in operator[1]
 			Formula.value = Formula.value.replace(match, operator[0])
+			
+setPlaceholder = ->
+		Formula.placeholder = random(Placeholders)
 		
 			
 # Keybindings List
@@ -21,7 +24,7 @@ fillKeys = ->
 		li = '<li onclick="addOperator(this)" key="' + operator + '">'
 		text = li
 		
-		for i in [0 .. normals.length - 1]
+		for i, key of normals
 			key = normals[i]
 			text += key + ' , '
 			normals[i] = new RegExp(escape(key), 'gi')

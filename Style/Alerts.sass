@@ -1,24 +1,27 @@
 $alertWidth: 404px
 $alertBorder: 2px
 
-.alert
+aside
 	@include shadow(0, 0, 7px, #CCC)
-	@include unselectable
 	@include border(border, $alertBorder)
+	@include unselectable
 	@include round
+	@include fade
 	
 	margin-top: 125px
 	margin-left: - ($alertWidth + $alertBorder) / 2
 	width: $alertWidth
 	
-	opacity: 0
 	background-color: #FFF
 	position: absolute
 	padding: 13px
-	z-index: 100
+	z-index: 10
 	left: 50%
 	
-	h2
+	&.display
+		opacity: .95
+	
+	h1
 		font-size: 22px
 		margin-bottom: 10px
 	p
