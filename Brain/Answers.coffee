@@ -5,14 +5,14 @@ class Char
 		this[@type] = true
 			
 	getType: ->	
-		if @text == ' '
+		if @text == ' ' or @text == ''
 			'ignore'
 		else if @text == '('
 			'open'
 		else if @text == ')'
 			'close'
 		else if 65 <= @text.charCodeAt(0) <= 122
-			'char'
+			'var'
 		else
 			for operator in Keys
 				return 'oper' if @text == operator[0]
@@ -28,31 +28,69 @@ class Parser
 			open: 'MISSING VAR'
 		open:
 			var: 'MISSING OPER'
-			close: 'EMPTY BRACKET'
+			close: 'MISSING OPER'
 		close:
 			oper: 'MISSING VAR'
-			open: 'MISSING OPER'
+			open: 'EMPTY BRACKET'
 	
 	constructor: (@formula) ->
+		return if @error = @parseFormula()
+		@result = ''
+		@writeVars()
+		@writeFormula()
+		@connectOpers()
+		
+	parseFormula: ->	
 		size = @formula.length
-		last = false
-		brackets = 0
+		if size is 0
+			return 'EMPTY'
+		else if size < 3
+			return 'SHORT'
 		
 		@list = []
 		@vars = {}
+		
+		last = false
+		brackets = 0
 		
 		for i in [0 .. size - 1]
 			char = new Char(@formula.charAt(i))
 			continue if char.ignore
 			
-			@error = @parseChar()
-			return if @error
+			@i = i
+			return error if error = errors[char.type][last?.type]
+			
+			if char.var
+				@vars[char.text] = []
+			else if char.open
+				brackets++
+			else if char.close
+				brackets--
+				return 'NUM BRACKETS' if brackets < 0
 			
 			@list.push(char)
-			@last = char
+			last = char
 			
-		if @brackets != 0
-			return @error = 'NUM BRACKETS'
+		return 'NUM BRACKETS' if brackets != 0
+		
+	writeVars: ->
+		vars = (id for id of @vars)
+		numVars = vars.length
+		@lines = pow(2, numVars) - 1
+		
+		for x in [0 .. numVars - 1]
+			id = vars[x]
+			@result += '<li><h2>' + id + '</h2><ul>'
+
+			for y in [0 .. @lines]
+				v = floor(y / pow(2, x)) % 2
+				@result += '<li>' + toBolean(v) + '</li>'
+				@vars[id][y] = v
+
+			@result += '</ul></li>'
+		
+	writeFormula: -> 't'
+	connectOpers: -> 't'
 	
 	
 # Trigger
@@ -61,8 +99,8 @@ toBolean = (n) ->
 
 parseSyntax = ->
 	parser = new Parser(Formula.value)
-	
+
 	if parser.error
 		print(parser.error)
 	else
-		print(parser.result)
+		AnswerTable.innerHTML = parser.result

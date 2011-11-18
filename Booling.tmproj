@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>Brain/Answers.coffee</string>
+	<string>Version.txt</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -16,7 +16,9 @@
 			<key>filename</key>
 			<string>Version.txt</string>
 			<key>lastUsed</key>
-			<date>2011-11-17T17:02:33Z</date>
+			<date>2011-11-17T20:48:18Z</date>
+			<key>selected</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>children</key>
@@ -37,9 +39,7 @@
 					<key>filename</key>
 					<string>Brain/Answers.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-11-17T17:28:21Z</date>
-					<key>selected</key>
-					<true/>
+					<date>2011-11-17T20:48:18Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -177,14 +177,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>41</integer>
+				<integer>14</integer>
 				<key>line</key>
-				<integer>17</integer>
+				<integer>37</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>21</integer>
 		</dict>
 		<key>Brain/Compile.txt</key>
 		<dict>

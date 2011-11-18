@@ -1,9 +1,6 @@
 window.onload = ->
-	global('NewVersion')
-	global('OperatorList')
-	global('Formula')
-	global('KeyList')
-	
-	Formula.placeholder = random(Placeholders)
+	globals(['Formula', 'OperatorList', 'KeyList', 'NewVersion', 'AnswerTable')
 	checkVersion()
 	fillKeys()
+	
+	Formula.placeholder = random(Placeholders)
