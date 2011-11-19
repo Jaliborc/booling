@@ -1,14 +1,17 @@
 # Input Box
-addKey = (board) ->
+autoSyntax = (board) ->
+	value = Formula.value
+	
 	if board.altKey
 		for operator in Keys
 			for code in operator[2] 
-				Formula.value = Formula.value.slice(0, -1) + operator[0] if board.keyCode == code
-				
-autoSyntax = (event) ->	
+				value = value.slice(0, -1) + operator[0] if board.keyCode == code
+
 	for operator in Keys
 		for match in operator[1]
-			Formula.value = Formula.value.replace(match, operator[0])
+			value = value.replace(match, operator[0])
+			
+	Formula.value = value if value != Formula.value
 			
 setPlaceholder = ->
 		Formula.placeholder = random(Placeholders)

@@ -1,41 +1,30 @@
-var addKey, addOperator, autoSyntax, fillKeys, setPlaceholder;
-addKey = function(board) {
-  var code, operator, _i, _len, _results;
+var addOperator, autoSyntax, fillKeys, setPlaceholder;
+autoSyntax = function(board) {
+  var code, match, operator, value, _i, _j, _k, _l, _len, _len2, _len3, _len4, _ref, _ref2;
+  value = Formula.value;
   if (board.altKey) {
-    _results = [];
     for (_i = 0, _len = Keys.length; _i < _len; _i++) {
       operator = Keys[_i];
-      _results.push((function() {
-        var _j, _len2, _ref, _results2;
-        _ref = operator[2];
-        _results2 = [];
-        for (_j = 0, _len2 = _ref.length; _j < _len2; _j++) {
-          code = _ref[_j];
-          _results2.push(board.keyCode === code ? Formula.value = Formula.value.slice(0, -1) + operator[0] : void 0);
-        }
-        return _results2;
-      })());
-    }
-    return _results;
-  }
-};
-autoSyntax = function(event) {
-  var match, operator, _i, _len, _results;
-  _results = [];
-  for (_i = 0, _len = Keys.length; _i < _len; _i++) {
-    operator = Keys[_i];
-    _results.push((function() {
-      var _j, _len2, _ref, _results2;
-      _ref = operator[1];
-      _results2 = [];
+      _ref = operator[2];
       for (_j = 0, _len2 = _ref.length; _j < _len2; _j++) {
-        match = _ref[_j];
-        _results2.push(Formula.value = Formula.value.replace(match, operator[0]));
+        code = _ref[_j];
+        if (board.keyCode === code) {
+          value = value.slice(0, -1) + operator[0];
+        }
       }
-      return _results2;
-    })());
+    }
   }
-  return _results;
+  for (_k = 0, _len3 = Keys.length; _k < _len3; _k++) {
+    operator = Keys[_k];
+    _ref2 = operator[1];
+    for (_l = 0, _len4 = _ref2.length; _l < _len4; _l++) {
+      match = _ref2[_l];
+      value = value.replace(match, operator[0]);
+    }
+  }
+  if (value !== Formula.value) {
+    return Formula.value = value;
+  }
 };
 setPlaceholder = function() {
   return Formula.placeholder = random(Placeholders);
