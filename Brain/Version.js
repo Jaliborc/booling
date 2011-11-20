@@ -6,7 +6,7 @@ compareVersion = function(event) {
   if (response !== '') {
     response.onreadystatechange = false;
     if (response !== Version) {
-      return NewVersion.className = 'display';
+      return NewVersion.className = 'show';
     }
   }
 };

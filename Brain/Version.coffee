@@ -4,7 +4,7 @@ compareVersion = (event) ->
 	
 	if response != ''
 		response.onreadystatechange = false
-		NewVersion.className = 'display' if response != Version
+		NewVersion.className = 'show' if response != Version
 
 checkVersion = ->
 	return if Online

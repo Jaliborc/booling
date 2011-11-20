@@ -4,9 +4,9 @@ $alertBorder: 2px
 aside
 	@include shadow(0, 0, 7px, #CCC)
 	@include border(border, $alertBorder)
-	@include unselectable
-	@include round
-	@include fade
+	@extend .unselectable
+	@extend .round
+	@extend .fade
 	
 	margin-top: 125px
 	margin-left: - ($alertWidth + $alertBorder) / 2

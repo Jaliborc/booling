@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Booling</title>
-
+	
 	<BUNDLE>
 		<link rel="stylesheet" href="Style/Main.css"/>
 		<script src="Brain/Constants.js"></script>
@@ -14,61 +14,45 @@
 		<script src="Brain/Main.js"></script>
 	</BUNDLE>
 </head>
+
+
 <body>
-	<div class="cover"></div>
-	
-	<header>
-		<div>
-			<h1>bool</h1>
-			<h2>ing</h2>
-		</div>
+	<!-- Header -->
+	<header class="center">
+		<h1>bool</h1>
+		<h2>ing</h2>
 	</header>
 	
-	<aside id="NewVersion" class="fade">
-		<h2>New Version Available</h2>
-		<p>It appears a freaking “new me” is available. Would you like to download it so that I may destroy your hopes and dreams more properly?</p>
-		<a href="http://www.jaliborc.com/Booling/downloader.php">
-			<div class="button" onclick="closeVersion()">
-				<p>Download</p>
+	<!-- Formula -->
+	<section id = "FormulaSection">
+		<input id = "Formula" onkeyup="autoSyntax(event)" oninput="saveFormula()" class="cell">
+		<input value = "Start" onclick="parseSyntax()" type="submit" class="cell">
+		
+		<div class="table">
+			<div class="cell">
+				<h1>Operator</h1>
+				<ul id = "OperatorList"></ul>
 			</div>
-		</a>
-		<div class="button" onclick="closeVersion()">
-			<p>Oh god, no!</p>
+			<div class="wide cell">
+				<h1 >Keyboard Shortcuts</h1>
+				<ul id = "KeyList"></ul>
+			</div>
 		</div>
+	</section>
+	
+	<!-- Answer -->
+	<section id = "AnswerSection">
+		<div id = "AnswerTable" class="table">
+		</div>
+		
+		<input value = "Cancel" onclick="showFormula()" type="submit">
+	</section>
+	
+	<!-- Version -->
+	<aside>
 	</aside>
 	
-	<section id="FormulaSection">
-		<input id="Formula" class="edit" onkeyup="autoSyntax(event)">
-		<div class="large">
-			<div class="button" onclick="parseSyntax()"><p>Start</p></div>
-		</div>
-	
-		<div class="table">
-			<div class="caption"></div>
-			<ul class="columns">
-				<li>
-					<h1>Operator</h1>
-					<ul id="OperatorList"></ul>
-				</li>
-				<li class="wide">
-					<h1>Keyboard Shortcuts</h1>
-					<ul id="KeyList"></ul>
-				</li>
-			</ul>
-		</div>
-	</section>
-	
-	<section id="AnswerSection" class="fade">
-		<div class="table">
-			<div class="caption"></div>
-			<ul class="columns" id="AnswerArea">
-			</ul>
-		</div>
-		<div class="button" onclick="showFormula()"><p>Cancel</p></div>
-	</section>
-	
+	<!-- Footer -->
 	<footer>
-		
 	</footer>
 </body>
-</html>

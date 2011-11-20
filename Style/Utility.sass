@@ -1,34 +1,68 @@
-@mixin top
-	position: absolute
-	top: 0
+/* Cross-Browser */
+@mixin property($property, $value)
+	-webkit-#{$property}: $value
+	-khtml-#{$property}: $value
+	-moz-#{$property}: $value
+	-ms-#{$property}: $value
+	-o-#{$property}: $value
+	#{$property}: $value
+	
+@mixin value($property, $value)
+	#{$property}: -webkit-#{$value}
+	#{$property}: -khtml-#{$value}
+	#{$property}: -moz-#{$value}
+	#{$property}: -ms-#{$value}
+	#{$property}: -o-#{$value}
+	#{$property}: $value
 
+
+/* Appearance */
 @mixin border-radius($top: 0, $bottom: 0, $left: 0, $right: 0)
-	-webkit-background-clip: padding-box
-	-webkit-border-radius: $top $bottom $left $right
-	-moz-border-radius: $top $bottom $left $right
-	border-radius: $top $bottom $left $right
+	@include property(background-clip, padding-box)
+	@include property(border-radius, $top $bottom $left $right)
 	
 @mixin linear-gradient($start, $end)
-	background-image: -webkit-linear-gradient(bottom, $start 0%, $end 100%)
-	background-image: -moz-linear-gradient(bottom, $start 0%, $end 100%)
-	background-image: -ms-linear-gradient(bottom, $start 0%, $end 100%)
-	background-image: -o-linear-gradient(bottom, $start 0%, $end 100%)
-	background-image: linear-gradient(bottom, $start 0%, $end 100%)
+	@include value(background-image, linear-gradient(bottom, $start 0%, $end 100%))
 	background-color: mix($start, $end)
 	
 @mixin shadow($x, $y, $size, $color)
-	-webkit-box-shadow: $x $y $size $color
-	-moz-box-shadow: $x $y $size $color
-	box-shadow: $x $y $size $color
+	@include property(box-shadow, $x $y $size $color)
 	
-@mixin unselectable
-	-moz-user-select: none
-	-khtml-user-select: none
-	-webkit-user-select: none
-	user-select: none
+.unselectable
+	@include property(user-select, none)
+	cursor: default
 	
-@mixin fade
-	-webkit-transition: opacity .3s ease-in-out
-	-moz-transition: opacity .3s ease-in-out
-	-o-transition: opacity .3s ease-in-out
-	transition: opacity .3s ease-in-out
+	
+/* Layout */
+
+.top
+	position: absolute
+	top: 0
+	
+.cell
+	display: table-cell
+	
+.center
+	text-align: center
+	
+	& > *
+		display: inline-block
+	
+.wide
+	width: 100%
+
+	
+/* Fading */
+
+.fade, .show
+	@include property(transition, opacity .3s ease-in-out)
+	
+.hide
+	@extend .top
+	z-index: -100
+
+.fade, .hide
+	opacity: 0
+
+.show
+	opacity: 1

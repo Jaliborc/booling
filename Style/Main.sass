@@ -1,8 +1,8 @@
 @import Utility
+@import Common
+@import Tables
+@import Inputs
 
-
-/* Body */
-	
 body
 	font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif
 	background-color: #EEE
@@ -14,73 +14,42 @@ body
 	margin: 0
 
 section
-	@include fade
-	position: relative
-	width: 930px
 	margin: auto
-	
-.cover
-	@include top
-	width: 100%
-	height: 100%
+	margin-top: 40px
 	
 	
 /* Header */
 
 header
-	div
-		margin: auto
-		padding-bottom: 25px
-		margin-top: 20px
-		height: 100px
-		width: 270px
-
 	*
-		font-family: 'Futura'
+		font-family: "Futura"
+		@extend .unselectable
 	h1
 		color: #261F19
 		font-size: 76px
-		float: left
 	h2
-		margin: 30px 0 0 0
 		color: #392C26
 		font-size: 70px
-		float: right
-		
-		
-/* Colors */
 
-@mixin round
-	@include border-radius(7px, 7px, 7px, 7px)
+
+/* Sections */
+
+#FormulaSection
+	width: 930px
 	
-@mixin gradient
-	@include linear-gradient(#EEE, #FFF)
-
-@mixin border($attr: border, $size: 1px)
-	#{$attr}: $size solid #DDD
+	#Formula
+		margin: 0 20px 40px 0
+		padding: 20px
+		width: 715px
+		height: 26px
+	input
+		font-size: 1.4em
+	input[type="submit"]
+		padding: 17px
+		width: 147px
 	
-.green
-	color: green
-
-.red
-	color: red
-		
+#AnswerSection
+	width: 930px
 	
-/* Other Files */
-
-@import Inputs
-@import Tables
-@import Alerts
-
-
-/* Visibility */
-
-.hide
-	position: absolute
-	z-index: -10
-
-.fade, .hide
-	opacity: 0
-	
-.display
-	opacity: 1
+	li
+		font-size: 14px

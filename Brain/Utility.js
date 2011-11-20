@@ -27,7 +27,7 @@ switchFrames = function(hide, show, time, onFinish) {
   hide.className = 'fade';
   return setTimeout(function() {
     hide.className = 'hide';
-    show.className = 'display';
+    show.className = 'show';
     return typeof onFinish === "function" ? onFinish() : void 0;
   }, time);
 };

@@ -1,48 +1,18 @@
-$startMargin: 17px
-$buttonLeft: 10px
-$buttonTop: 6px
+@mixin press-pading($top, $left, $off)
+	padding: $top $left $top $left
+	
+	&:active
+		padding: $top + $off $left - $off $top - $off $left + $off
 
-
-.edit, .button
+input
 	@include border
-	@include round
-	
-.edit, .large
-	font-size: 1.4em
-	margin-top: 40px
-	
-.edit
-	padding: 20px
+	@extend .round
 	outline: none
-	width: 710px
-	height: 26px
-
-.button
-	@include gradient
-	@include unselectable
-	display: inline-block
-	margin: 18px 0 0 8px
-	text-align: center
 	
-	p
-		margin: $buttonTop $buttonLeft $buttonTop $buttonLeft
+input[type = "submit"]
+	@include press-pading(6px, 10px, 1)
+	@extend .gradient
 		
 	&:active
 		@include linear-gradient(#DDD, #EEE)
-		p
-			margin: $buttonTop + 1 $buttonLeft - 1 $buttonTop - 1 $buttonLeft + 1
-			color: #333
-
-.large
-	@include top
-	width: 147px
-	right: 0
-
-	.button
-		display: block
-		margin: 4px 0 0 0
-	p
-		margin: $startMargin
-		
-	&:active p
-		margin: $startMargin + 2 $startMargin - 2 $startMargin - 2 $startMargin + 2
+		color: #333

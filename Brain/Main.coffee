@@ -1,14 +1,14 @@
-window.onload = ->
+onload = ->
 	globals([
 		'FormulaSection'
 			'Formula'
 			'OperatorList'
 			'KeyList'
 		'AnswerSection'
-			'AnswerArea'
+			'AnswerTable'
 		'NewVersion'
 	])
 	
-	setPlaceholder()
-	checkVersion()
+	#checkVersion()
+	initFormula()
 	fillKeys()

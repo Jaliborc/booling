@@ -1,4 +1,4 @@
-var Char, Parser, parseSyntax, showFormula, toBolean;
+var Char, Parser, parseSyntax, showFormula;
 Char = (function() {
   function Char(text) {
     this.text = text;
@@ -55,8 +55,8 @@ Parser = (function() {
     }
     this.result = '';
     this.writeVars();
-    this.connectChars();
     this.writeFormula();
+    this.connectChars();
   }
   Parser.prototype.parseFormula = function() {
     var brackets, char, error, i, last, size, _base, _name, _ref;
@@ -116,38 +116,50 @@ Parser = (function() {
     _results = [];
     for (x = 0, _ref = numVars - 1; 0 <= _ref ? x <= _ref : x >= _ref; 0 <= _ref ? x++ : x--) {
       id = vars[x];
-      this.result += '<li><h1>' + id + '</h1><ul>';
+      this.startCell(id);
       for (y = 0, _ref2 = this.lines; 0 <= _ref2 ? y <= _ref2 : y >= _ref2; 0 <= _ref2 ? y++ : y--) {
         v = floor(y / pow(2, x)) % 2;
-        this.result += '<li>' + toBolean(v) + '</li>';
+        this.result += '<li>' + this.toBolean(v) + '</li>';
         this.vars[id][y] = v;
       }
-      _results.push(this.result += '</ul></li>');
+      _results.push(this.endCell());
     }
     return _results;
   };
   Parser.prototype.writeFormula = function() {
-    var char, i, _ref, _results;
+    var char, i, y, _ref, _ref2;
+    this.result += '<div class="wide cell">';
     _ref = this.list;
-    _results = [];
     for (i in _ref) {
       char = _ref[i];
-      _results.push(!(char.open || char.close || char.not) ? this.result += '<li><h1>' + char.text + '</h1></li>' : void 0);
+      if (!(char.open || char.close || char.not)) {
+        this.startCell(char.text);
+        for (y = 0, _ref2 = this.lines; 0 <= _ref2 ? y <= _ref2 : y >= _ref2; 0 <= _ref2 ? y++ : y--) {
+          this.result += '<li>' + (char.oper && '<input>' || '') + '</li>';
+        }
+        this.endCell();
+      }
     }
-    return _results;
+    return this.result += '</div>';
   };
   Parser.prototype.connectChars = function() {
     return 't';
   };
+  Parser.prototype.toBolean = function(n) {
+    if (n === 0) {
+      return T;
+    } else {
+      return F;
+    }
+  };
+  Parser.prototype.startCell = function(header) {
+    return this.result += '<div class="cell"><h1>' + header + '</h1><ul>';
+  };
+  Parser.prototype.endCell = function() {
+    return this.result += '</ul></div>';
+  };
   return Parser;
 })();
-toBolean = function(n) {
-  if (n === 0) {
-    return T;
-  } else {
-    return F;
-  }
-};
 parseSyntax = function() {
   var parser;
   parser = new Parser(Formula.value);
@@ -155,7 +167,7 @@ parseSyntax = function() {
     return print(parser.error);
   } else {
     return switchFrames(FormulaSection, AnswerSection, TIME, function() {
-      return AnswerArea.innerHTML = parser.result;
+      return AnswerTable.innerHTML = parser.result;
     });
   }
 };

@@ -1,48 +1,36 @@
 .table
-	@include round
+	@extend .round
 	@include border
-	@include unselectable
+	@extend .unselectable
+	@extend .gradient
 	background-color: #FFF
+	background-size: 100% 49px
+	background-repeat: no-repeat
 	position: relative
-	margin-top: 40px
-
-.caption
-	@include top
-	@include gradient
-	@include border-radius(7px, 7px)
-	height: 49px
-	width: 100%
-
-.columns
-	position: relative
-	z-index: 1
-
-	h1
-		font-size: 20px
-		margin: 15px
-		height: 19px
-
-	li
-		@include border(border-left)
-		display: table-cell
 		
-		&:first-child, &.no-border, li
+	> .cell
+		@include border(border-left)
+		&:first-child
 			border-left: none
-			
+
+		h1
+			font-size: 20px
+			margin: 0 15px 15px 0
+			height: 19px
+		> h1
+			margin: 15px
+		
 		li
 			@include border(border-top)
 			padding: 10px 10px 2px 10px
 			text-align: center
 			list-style: none
-			display: block
 			height: 28px
-			
-			&:active
-				background-color: #F5F5F5
+		
+			&[onclick]:active
+				background-color: lighten(#F5F5F5, 0.8)
 				padding: 12px 10px 0 12px
-		
-	.wide
-		width: 100%
-		
-#AnswerArea
-	font-size: 14px
+				
+		input
+			/*border: none
+			width: 20px

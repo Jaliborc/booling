@@ -13,8 +13,12 @@ autoSyntax = (board) ->
 			
 	Formula.value = value if value != Formula.value
 			
-setPlaceholder = ->
-		Formula.placeholder = random(Placeholders)
+initFormula = ->
+	Formula.value = localStorage?.getItem('formula') or ''
+	Formula.placeholder = random(Placeholders)
+		
+saveFormula = ->
+	localStorage?.setItem('formula', Formula.value)
 		
 			
 # Keybindings List

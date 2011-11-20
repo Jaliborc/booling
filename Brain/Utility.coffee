@@ -23,6 +23,6 @@ switchFrames = (hide, show, time, onFinish) ->
 	
 	setTimeout(->
 		hide.className = 'hide'
-		show.className = 'display'
+		show.className = 'show'
 		onFinish?()
 	, time)

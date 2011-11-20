@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Booling</title>
+
+	<BUNDLE>
+		<link rel="stylesheet" href="Style/Main.css"/>
+		<script src="Brain/Constants.js"></script>
+		<script src="Brain/Utility.js"></script>
+		<script src="Brain/Answer.js"></script>
+		<script src="Brain/Formula.js"></script>
+		<script src="Brain/Version.js"></script>
+		<script src="Brain/Main.js"></script>
+	</BUNDLE>
+</head>
+<body>
+	<div class="cover"></div>
+	<header>
+		<div>
+			<h1>bool</h1>
+			<h2>ing</h2>
+		</div>
+	</header>
+	
+	<section id="FormulaSection">
+		<input id="Formula" style="display: table-cell" onkeyup="autoSyntax(event)" oninput="saveFormula()">
+		<div style="display: table-cell" onclick="parseSyntax()"><p>Start</p></div>
+	
+		<div class="table">
+			<div class="caption"></div>
+			<ul class="columns">
+				<li>
+					<h1>Operator</h1>
+					<ul id="OperatorList"></ul>
+				</li>
+				<li class="wide">
+					<h1>Keyboard Shortcuts</h1>
+					<ul id="KeyList"></ul>
+				</li>
+			</ul>
+		</div>
+	</section>
+	
+	<section id="AnswerSection" class="fade">
+		<div class="table">
+			<div class="caption"></div>
+			<ul class="columns" id="AnswerArea">
+			</ul>
+		</div>
+		<div class="button" onclick="showFormula()"><p>Cancel</p></div>
+	</section>
+	
+	<aside id="NewVersion" class="fade">
+		<h2>New Version Available</h2>
+		<p>It appears a freaking “new me” is available. Would you like to download it so that I may destroy your hopes and dreams more properly?</p>
+		<a href="http://www.jaliborc.com/Booling/downloader.php">
+			<div class="button" onclick="closeVersion()">
+				<p>Download</p>
+			</div>
+		</a>
+		<div class="button" onclick="closeVersion()">
+			<p>Oh god, no!</p>
+		</div>
+	</aside>
+	
+	<footer>
+		
+	</footer>
+</body>
+</html>

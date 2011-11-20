@@ -34,13 +34,13 @@ class Parser
 		close:
 			oper: 'MISSING VAR'
 			open: 'EMPTY BRACKET'
-	
+			
 	constructor: (@formula) ->
 		return if @error = @parseFormula()
 		@result = ''
 		@writeVars()
-		@connectChars()
 		@writeFormula()
+		@connectChars()
 		
 	parseFormula: ->	
 		size = @formula.length
@@ -85,27 +85,44 @@ class Parser
 		
 		for x in [0 .. numVars - 1]
 			id = vars[x]
-			@result += '<li><h1>' + id + '</h1><ul>'
+			@startCell(id)
 
 			for y in [0 .. @lines]
 				v = floor(y / pow(2, x)) % 2
-				@result += '<li>' + toBolean(v) + '</li>'
+				@result += '<li>' + @toBolean(v) + '</li>'
 				@vars[id][y] = v
 
-			@result += '</ul></li>'
+			@endCell()
 		
 	writeFormula: ->
+		@result += '<div class="wide cell">'
+		#<div style="margin:auto;width:200px">
+		
 		for i, char of @list
 			unless char.open or char.close or char.not
-				@result += '<li><h1>' + char.text + '</h1></li>'
+				@startCell(char.text)
+				
+				for y in [0 .. @lines]
+					@result += '<li>' + (char.oper and '<input>' or '') + '</li>'
+					# (char.oper and '<input>' or '') +
+				
+				@endCell()
+				
+		@result += '</div>'
 				
 	connectChars: -> 't'
 	
-	
-# Triggers
-toBolean = (n) ->
-	if n == 0 then T else F
+	toBolean: (n) ->
+		if n == 0 then T else F
+		
+	startCell: (header) ->
+		@result += '<div class="cell"><h1>' + header + '</h1><ul>'
+			
+	endCell: ->
+		@result += '</ul></div>'
+		
 
+# Events
 parseSyntax = ->
 	parser = new Parser(Formula.value)
 
@@ -113,7 +130,7 @@ parseSyntax = ->
 		print(parser.error)
 	else
 		switchFrames(FormulaSection, AnswerSection, TIME, ->
-			AnswerArea.innerHTML = parser.result
+			AnswerTable.innerHTML = parser.result
 		)
 		
 showFormula = ->
