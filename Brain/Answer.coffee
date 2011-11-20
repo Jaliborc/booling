@@ -1,8 +1,12 @@
 # Character Types
 class Char
-	constructor: (@text) ->
+	constructor: (@parser, i) ->
+		@text = @parser.formula.charAt(i)
 		@type = @getType()
 		this[@type] = true
+		
+		@i = @parser.list.length
+		@operate = @oper or @no
 			
 	getType: ->	
 		if @text == ' ' or @text == ''
@@ -12,12 +16,20 @@ class Char
 		else if @text == ')'
 			'close'
 		else if @text == NOT
-			'not'
+			'no'
 		else if 65 <= @text.charCodeAt(0) <= 122
 			'var'
 		else
 			for operator in Keys
 				return 'oper' if @text == operator[0]
+				
+	getIndex: ->
+		print([@i, @parser.numVars])
+		if @data then @data.i else @i + @parser.numVars
+		
+	getValue: (x) ->
+		@data?.values[x]
+
 
 # Parser
 class Parser
@@ -40,7 +52,7 @@ class Parser
 		@result = ''
 		@writeVars()
 		@writeFormula()
-		@connectChars()
+		@connectOpers()
 		
 	parseFormula: ->	
 		size = @formula.length
@@ -56,23 +68,21 @@ class Parser
 		brackets = 0
 		
 		for i in [0 .. size - 1]
-			char = new Char(@formula.charAt(i))
+			char = new Char(this, i)
 			continue if char.ignore
 			
 			@i = i
-			return error if error = errors[char.type][last?.type]
+			return error if error = errors[char.type]?[last?.type]
 			
 			if char.var
-				@vars[char.text] or= []
-				char.values = @vars[char.text]
+				@vars[char.text] or= {values: []}
+				char.data = @vars[char.text]
 			else if char.open
 				brackets++
 			else if char.close
 				brackets--
-				last.text += ')'
 				return 'NUM BRACKETS' if brackets < 0
 				
-			char.text = '(' + char.text if last.open
 			@list.push(char)
 			last = char
 			
@@ -80,43 +90,68 @@ class Parser
 		
 	writeVars: ->
 		vars = (id for id of @vars)
-		numVars = vars.length
-		@lines = pow(2, numVars) - 1
+		@numVars = vars.length
+		@lines = pow(2, @numVars) - 1
 		
-		for x in [0 .. numVars - 1]
+		for x in [0 .. @numVars - 1]
 			id = vars[x]
+			record = @vars[id]
+			record.i = x
 			@startCell(id)
 
 			for y in [0 .. @lines]
 				v = floor(y / pow(2, x)) % 2
-				@result += '<li>' + @toBolean(v) + '</li>'
-				@vars[id][y] = v
+				@result += '<li>' + @createBolean(v) + '</li>'
+				record.values[y] = v
 
 			@endCell()
 		
 	writeFormula: ->
-		@result += '<div class="wide cell">'
-		#<div style="margin:auto;width:200px">
+		@result += '<div class="cell">'
 		
 		for i, char of @list
-			unless char.open or char.close or char.not
 				@startCell(char.text)
 				
 				for y in [0 .. @lines]
-					@result += '<li>' + (char.oper and '<input>' or '') + '</li>'
-					# (char.oper and '<input>' or '') +
+					input =if char.operate then @createInput(i) else ''
+					@result += '<li>' +  input + '</li>'
 				
 				@endCell()
 				
 		@result += '</div>'
 				
-	connectChars: -> 't'
-	
-	toBolean: (n) ->
-		if n == 0 then T else F
+	connectOpers: ->
+		for i in [0 .. @list.length - 1]
+			char = @list[i]
+			continue unless char.operate
+			
+			char.b = @getRelation(i, -1, 'close')
+			char.a = @getRelation(i, 1, 'open')
+			
+	getRelation: (start, order, bracket) ->
+		canVar = true
+		brackets = 0
+
+		for i in [start + order .. 0] by order
+			char = @list[i]
+
+			if char[bracket]
+				canVar = false
+				brackets++
+			else if char.var and canVar
+				return char
+			else if char.oper
+				brackets--
+				return char if brackets == 0
 		
 	startCell: (header) ->
 		@result += '<div class="cell"><h1>' + header + '</h1><ul>'
+			
+	createInput: (i) ->
+		'<input oninput="parseBolean(this)" onfocus="focusRelations(this)" onblur="clearRelations()" i="' + i + '">'
+		
+	createBolean: (n) ->
+		if n == 0 then T else F
 			
 	endCell: ->
 		@result += '</ul></div>'
@@ -131,7 +166,43 @@ parseSyntax = ->
 	else
 		switchFrames(FormulaSection, AnswerSection, TIME, ->
 			AnswerTable.innerHTML = parser.result
+			AnswerTable.parser = parser
 		)
+		
+parseBolean = (input) ->
+	value = input.value.toUpperCase()
+	color = (value == 'T' and 'green') or (value == 'F' and 'red')
+	
+	if color
+		input.className = color
+		input.value = value
+	else
+		input.className = ''
+		input.value = ''
 		
 showFormula = ->
 	switchFrames(AnswerSection, FormulaSection, TIME)
+	
+	
+# Focus Events
+focusRelations = (input) ->
+	i = input.getAttribute('i')
+	oper = AnswerTable.parser.list[i]
+	uls = getColumns()
+
+	clearRelations()
+	focusRelation('a', oper, uls)
+	focusRelation('b', oper, uls)
+	
+focusRelation = (rel, oper, uls) ->
+	i = oper[rel]?.getIndex()
+	uls[i]?.className = 'focus'
+		
+clearRelations = ->
+	uls = getColumns()
+	
+	for ul in uls
+		ul.className = ''
+
+getColumns = ->
+	AnswerTable.getElementsByTagName('ul')

@@ -1,4 +1,4 @@
-onload = ->
+window.onload = ->
 	globals([
 		'FormulaSection'
 			'Formula'
@@ -9,6 +9,6 @@ onload = ->
 		'NewVersion'
 	])
 	
-	#checkVersion()
+	checkVersion()
 	initFormula()
 	fillKeys()
