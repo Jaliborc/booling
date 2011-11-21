@@ -3,26 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>Brain/Compile.txt</string>
+	<string>Brain/Version.coffee</string>
 	<key>documents</key>
 	<array>
 		<dict>
 			<key>filename</key>
-			<string>Booling.html</string>
+			<string>index.html</string>
 			<key>lastUsed</key>
-			<date>2011-11-20T15:49:33Z</date>
+			<date>2011-11-21T23:32:18Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
-			<string>Old Bool.html</string>
+			<string>cache.mf</string>
 			<key>lastUsed</key>
-			<date>2011-11-20T01:15:32Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>Version.txt</string>
-			<key>lastUsed</key>
-			<date>2011-11-20T15:49:09Z</date>
+			<date>2011-11-21T23:32:14Z</date>
 		</dict>
 		<dict>
 			<key>children</key>
@@ -31,7 +25,7 @@
 					<key>filename</key>
 					<string>Brain/Main.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-11-20T15:42:09Z</date>
+					<date>2011-11-21T17:28:10Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -43,13 +37,15 @@
 					<key>filename</key>
 					<string>Brain/Answer.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-11-20T15:36:03Z</date>
+					<date>2011-11-21T23:32:23Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Version.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-11-20T13:53:54Z</date>
+					<date>2011-11-21T23:32:23Z</date>
+					<key>selected</key>
+					<true/>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -67,9 +63,7 @@
 					<key>filename</key>
 					<string>Brain/Compile.txt</string>
 					<key>lastUsed</key>
-					<date>2011-11-20T15:49:33Z</date>
-					<key>selected</key>
-					<true/>
+					<date>2011-11-21T23:19:37Z</date>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -100,12 +94,6 @@
 							<string>Style/Inputs.sass</string>
 							<key>lastUsed</key>
 							<date>2011-11-20T15:37:14Z</date>
-						</dict>
-						<dict>
-							<key>filename</key>
-							<string>Style/OLd Inputs</string>
-							<key>lastUsed</key>
-							<date>2011-11-20T15:31:04Z</date>
 						</dict>
 						<dict>
 							<key>filename</key>
@@ -165,68 +153,49 @@
 			<key>name</key>
 			<string>Server</string>
 		</dict>
+		<dict>
+			<key>children</key>
+			<array>
+				<dict>
+					<key>filename</key>
+					<string>Old Bool.html</string>
+					<key>lastUsed</key>
+					<date>2011-11-21T23:19:46Z</date>
+				</dict>
+				<dict>
+					<key>filename</key>
+					<string>Style/OLd Inputs</string>
+					<key>lastUsed</key>
+					<date>2011-11-21T23:18:47Z</date>
+				</dict>
+				<dict>
+					<key>filename</key>
+					<string>Version.txt</string>
+					<key>lastUsed</key>
+					<date>2011-11-21T23:23:21Z</date>
+				</dict>
+			</array>
+			<key>name</key>
+			<string>Old</string>
+		</dict>
 	</array>
 	<key>fileHierarchyDrawerWidth</key>
 	<integer>200</integer>
 	<key>metaData</key>
 	<dict>
-		<key>Booling.html</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>42</integer>
-				<key>line</key>
-				<integer>43</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>18</integer>
-		</dict>
 		<key>Brain/Answer.coffee</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>16</integer>
-				<key>line</key>
-				<integer>192</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>169</integer>
-		</dict>
-		<key>Brain/Compile.txt</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>4</integer>
-			</dict>
-			<key>columnSelection</key>
-			<false/>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
 				<integer>10</integer>
 				<key>line</key>
-				<integer>4</integer>
+				<integer>144</integer>
 			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>4</integer>
-			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>125</integer>
 		</dict>
 		<key>Brain/Constants.coffee</key>
 		<dict>
@@ -289,44 +258,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>30</integer>
+				<integer>38</integer>
 				<key>line</key>
-				<integer>6</integer>
+				<integer>20</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
-		</dict>
-		<key>Old Bool.html</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>2</integer>
-				<key>line</key>
-				<integer>50</integer>
-			</dict>
-			<key>columnSelection</key>
-			<false/>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>32</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>65</integer>
-				<key>line</key>
-				<integer>50</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>2</integer>
-				<key>line</key>
-				<integer>50</integer>
-			</dict>
 		</dict>
 		<key>Server/bundler.php</key>
 		<dict>
@@ -442,20 +381,6 @@
 			<key>firstVisibleLine</key>
 			<integer>18</integer>
 		</dict>
-		<key>Style/OLd Inputs</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>14</integer>
-				<key>line</key>
-				<integer>0</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
 		<key>Style/Tables.sass</key>
 		<dict>
 			<key>caret</key>
@@ -500,28 +425,60 @@
 				<integer>57</integer>
 			</dict>
 		</dict>
+		<key>Version.txt</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>1</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>cache.mf</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>11</integer>
+				<key>line</key>
+				<integer>1</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>index.html</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>29</integer>
+				<key>line</key>
+				<integer>1</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
+		<string>index.html</string>
 		<string>Brain/Answer.coffee</string>
-		<string>Style/Utility.sass</string>
-		<string>Brain/Utility.coffee</string>
 		<string>Brain/Version.coffee</string>
-		<string>Brain/Constants.coffee</string>
-		<string>Brain/Main.coffee</string>
-		<string>Style/Common.sass</string>
-		<string>Style/Inputs.sass</string>
-		<string>Style/OLd Inputs</string>
-		<string>Style/Tables.sass</string>
-		<string>Style/Main.sass</string>
-		<string>Style/Alerts.sass</string>
-		<string>Brain/Formula.coffee</string>
-		<string>Booling.html</string>
-		<string>Brain/Compile.txt</string>
+		<string>cache.mf</string>
+		<string>Version.txt</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>
 	<key>windowFrame</key>
-	<string>{{22, 4}, {1418, 874}}</string>
+	<string>{{0, 4}, {1440, 874}}</string>
 </dict>
 </plist>

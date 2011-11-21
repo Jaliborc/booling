@@ -9,6 +9,6 @@ window.onload = ->
 		'NewVersion'
 	])
 	
-	checkVersion()
+	#checkVersion()
 	initFormula()
 	fillKeys()

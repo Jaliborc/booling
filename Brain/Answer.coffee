@@ -1,4 +1,4 @@
-# Character Types
+# Character Object
 class Char
 	constructor: (@parser, i) ->
 		@text = @parser.formula.charAt(i)
@@ -6,7 +6,7 @@ class Char
 		this[@type] = true
 		
 		@i = @parser.list.length
-		@operate = @oper or @no
+		@operable = @oper or @no
 			
 	getType: ->	
 		if @text == ' ' or @text == ''
@@ -113,7 +113,7 @@ class Parser
 				@startCell(char.text)
 				
 				for y in [0 .. @lines]
-					input =if char.operate then @createInput(i) else ''
+					input =if char.operable then @createInput(i) else ''
 					@result += '<li>' +  input + '</li>'
 				
 				@endCell()
@@ -123,27 +123,26 @@ class Parser
 	connectOpers: ->
 		for i in [0 .. @list.length - 1]
 			char = @list[i]
-			continue unless char.operate
+			continue unless char.operable
 			
 			char.b = @getRelation(i, -1, 'close')
 			char.a = @getRelation(i, 1, 'open')
 			
 	getRelation: (start, order, bracket) ->
-		canVar = true
 		brackets = 0
 
 		for i in [start + order .. 0] by order
 			char = @list[i]
 
 			if char[bracket]
-				canVar = false
 				brackets++
-			else if char.var and canVar
-				return char
-			else if char.oper
+			else if char.operable
+				return char if brackets == 1 or char.priority > @priority # @priority must come from the operator, not parser
 				brackets--
-				return char if brackets == 0
-		
+				
+		return @list[i + order]
+	
+	# Utility	
 	startCell: (header) ->
 		@result += '<div class="cell"><h1>' + header + '</h1><ul>'
 			

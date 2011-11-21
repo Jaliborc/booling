@@ -15,3 +15,7 @@ checkVersion = ->
 
 closeVersion = ->
 	NewVersion.className = 'fade'
+		
+		
+#window.location = 'www.jalibor.com/Booling/'
+# window.addEventListener('online', ->
