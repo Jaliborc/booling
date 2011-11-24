@@ -5,11 +5,15 @@ Char = (function() {
     this.text = this.parser.formula.charAt(i);
     this.type = this.getType();
     this[this.type] = true;
-    this.i = this.parser.list.length;
-    this.operate = this.oper || this.no;
+    this.operable = this.oper || this.no;
+    if (this.operable) {
+      this.priority = Keys[this.text].priority;
+    }
+    this.list = this.parser.list;
+    this.i = this.list.length;
   }
   Char.prototype.getType = function() {
-    var operator, _i, _len, _ref;
+    var _ref;
     if (this.text === ' ' || this.text === '') {
       return 'ignore';
     } else if (this.text === '(') {
@@ -18,23 +22,19 @@ Char = (function() {
       return 'close';
     } else if (this.text === NOT) {
       return 'no';
+    } else if (Keys[this.text]) {
+      return 'oper';
     } else if ((65 <= (_ref = this.text.charCodeAt(0)) && _ref <= 122)) {
       return 'var';
     } else {
-      for (_i = 0, _len = Keys.length; _i < _len; _i++) {
-        operator = Keys[_i];
-        if (this.text === operator[0]) {
-          return 'oper';
-        }
-      }
+      return 'unkown';
     }
   };
   Char.prototype.getIndex = function() {
-    print([this.i, this.parser.numVars]);
     if (this.data) {
       return this.data.i;
     } else {
-      return this.i + this.parser.numVars;
+      return this.i + this.parser.numVars + 1;
     }
   };
   Char.prototype.getValue = function(x) {
@@ -70,6 +70,7 @@ Parser = (function() {
     }
     this.result = '';
     this.writeVars();
+    this.calculateSize();
     this.writeFormula();
     this.connectOpers();
   }
@@ -81,6 +82,7 @@ Parser = (function() {
     } else if (size < 3) {
       return 'SHORT';
     }
+    this.numOpers = 0;
     this.list = [];
     this.vars = {};
     last = false;
@@ -99,6 +101,8 @@ Parser = (function() {
           values: []
         });
         char.data = this.vars[char.text];
+      } else if (char.operable) {
+        this.numOpers++;
       } else if (char.open) {
         brackets++;
       } else if (char.close) {
@@ -141,54 +145,35 @@ Parser = (function() {
     }
     return _results;
   };
+  Parser.prototype.calculateSize = function() {
+    this.size = this.list.length;
+    this.formulaWidth = this.numOpers * 17 + this.size * 13;
+    this.varsWidth = this.numVars * 43;
+    this.width = Math.max(930, this.varsWidth + this.formulaWidth);
+    this.spacer = (this.width - this.varsWidth) / 2 + 'px';
+    return this.width += 'px';
+  };
   Parser.prototype.writeFormula = function() {
     var char, i, input, y, _ref, _ref2;
     this.result += '<div class="cell">';
+    this.createSpacer();
     _ref = this.list;
     for (i in _ref) {
       char = _ref[i];
       this.startCell(char.text);
       for (y = 0, _ref2 = this.lines; 0 <= _ref2 ? y <= _ref2 : y >= _ref2; 0 <= _ref2 ? y++ : y--) {
-        input = char.operate ? this.createInput(i) : '';
+        input = char.operable ? this.createInput(i) : '';
         this.result += '<li>' + input + '</li>';
       }
       this.endCell();
     }
+    this.createSpacer();
     return this.result += '</div>';
   };
-  Parser.prototype.connectOpers = function() {
-    var char, i, _ref, _results;
-    _results = [];
-    for (i = 0, _ref = this.list.length - 1; 0 <= _ref ? i <= _ref : i >= _ref; 0 <= _ref ? i++ : i--) {
-      char = this.list[i];
-      if (!char.operate) {
-        continue;
-      }
-      char.b = this.getRelation(i, -1, 'close');
-      _results.push(char.a = this.getRelation(i, 1, 'open'));
-    }
-    return _results;
-  };
-  Parser.prototype.getRelation = function(start, order, bracket) {
-    var brackets, canVar, char, i, _ref, _results;
-    canVar = true;
-    brackets = 0;
-    _results = [];
-    for (i = _ref = start + order; _ref <= 0 ? i <= 0 : i >= 0; i += order) {
-      char = this.list[i];
-      if (char[bracket]) {
-        canVar = false;
-        brackets++;
-      } else if (char["var"] && canVar) {
-        return char;
-      } else if (char.oper) {
-        brackets--;
-        if (brackets === 0) {
-          return char;
-        }
-      }
-    }
-    return _results;
+  Parser.prototype.createSpacer = function() {
+    this.result += '<div class="cell spacer" style="width:' + this.spacer + '"><h1>.</h1><ul>';
+    this.result += '<li>.</li>'.times(this.lines + 1);
+    return this.endCell();
   };
   Parser.prototype.startCell = function(header) {
     return this.result += '<div class="cell"><h1>' + header + '</h1><ul>';
@@ -206,6 +191,40 @@ Parser = (function() {
   Parser.prototype.endCell = function() {
     return this.result += '</ul></div>';
   };
+  Parser.prototype.connectOpers = function() {
+    var char, i, _ref, _results;
+    _results = [];
+    for (i = 0, _ref = this.size - 1; 0 <= _ref ? i <= _ref : i >= _ref; 0 <= _ref ? i++ : i--) {
+      char = this.list[i];
+      if (!char.operable) {
+        continue;
+      }
+      char.a = this.getConnection(char, i, 1, 'open');
+      _results.push(char.b = this.getConnection(char, i, -1, 'close'));
+    }
+    return _results;
+  };
+  Parser.prototype.getConnection = function(char, start, order, bracket) {
+    var brackets, i, prio, target;
+    start += order;
+    prio = char.priority + order;
+    target = this.list[start];
+    brackets = 0;
+    i = start;
+    while (target) {
+      if (target[bracket]) {
+        brackets++;
+      } else if (target.operable) {
+        if (brackets === 1 || target.priority > prio) {
+          return target;
+        }
+        brackets--;
+      }
+      i += order;
+      target = this.list[i];
+    }
+    return this.list[start];
+  };
   return Parser;
 })();
 parseSyntax = function() {
@@ -215,6 +234,7 @@ parseSyntax = function() {
     return print(parser.error);
   } else {
     return switchFrames(FormulaSection, AnswerSection, TIME, function() {
+      AnswerSection.style.width = parser.width;
       AnswerTable.innerHTML = parser.result;
       return AnswerTable.parser = parser;
     });
@@ -233,7 +253,10 @@ parseBolean = function(input) {
   }
 };
 showFormula = function() {
-  return switchFrames(AnswerSection, FormulaSection, TIME);
+  return switchFrames(AnswerSection, FormulaSection, TIME, function() {
+    AnswerSection.style.width = '1px';
+    return AnswerTable.innerHTML = '';
+  });
 };
 focusRelations = function(input) {
   var i, oper, uls;

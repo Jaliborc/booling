@@ -2,5 +2,4 @@ Constants.js
 Utility.js
 Formula.js
 Answer.js
-Version.js
 Main.js

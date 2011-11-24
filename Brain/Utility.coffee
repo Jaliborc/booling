@@ -6,15 +6,12 @@ pow = (a,b) -> return Math.pow(a,b)
 floor = (a) -> return Math.floor(a)
 
 
-# General
-print = (text) ->
-	console.log(text)
+# Strings
+String.prototype.times = (n) ->
+	Array.prototype.join.call({length:n+1}, this)
 
-escape = (text) ->
-	return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&')
-	
-globals = (list) ->
-	window[id] = document.getElementById(id) for id in list
+String.prototype.escape = ->
+	this.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&')
 	
 
 # Animation
@@ -26,3 +23,11 @@ switchFrames = (hide, show, time, onFinish) ->
 		show.className = 'show'
 		onFinish?()
 	, time)
+	
+	
+# General	
+globals = (list) ->
+	window[id] = document.getElementById(id) for id in list
+
+print = (text) ->
+	console.log(text)

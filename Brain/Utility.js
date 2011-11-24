@@ -1,4 +1,4 @@
-var escape, floor, globals, pow, print, random, switchFrames;
+var floor, globals, pow, print, random, switchFrames;
 random = function(array) {
   return array[floor(Math.random() * array.length)];
 };
@@ -8,11 +8,21 @@ pow = function(a, b) {
 floor = function(a) {
   return Math.floor(a);
 };
-print = function(text) {
-  return console.log(text);
+String.prototype.times = function(n) {
+  return Array.prototype.join.call({
+    length: n + 1
+  }, this);
 };
-escape = function(text) {
-  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+String.prototype.escape = function() {
+  return this.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+};
+switchFrames = function(hide, show, time, onFinish) {
+  hide.className = 'fade';
+  return setTimeout(function() {
+    hide.className = 'hide';
+    show.className = 'show';
+    return typeof onFinish === "function" ? onFinish() : void 0;
+  }, time);
 };
 globals = function(list) {
   var id, _i, _len, _results;
@@ -23,11 +33,6 @@ globals = function(list) {
   }
   return _results;
 };
-switchFrames = function(hide, show, time, onFinish) {
-  hide.className = 'fade';
-  return setTimeout(function() {
-    hide.className = 'hide';
-    show.className = 'show';
-    return typeof onFinish === "function" ? onFinish() : void 0;
-  }, time);
+print = function(text) {
+  return console.log(text);
 };

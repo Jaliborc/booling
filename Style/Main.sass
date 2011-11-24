@@ -3,8 +3,11 @@
 @import Tables
 @import Inputs
 
+
+/* Body */
+
 body
-	font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif
 	background-color: #EEE
 	
 *
@@ -12,24 +15,30 @@ body
 	border: none
 	padding: 0
 	margin: 0
-
-section
+	
+section, header, footer
 	margin: auto
 	margin-top: 40px
 	
-	
-/* Header */
-
 header
-	*
-		font-family: "Futura"
-		@extend .unselectable
-	h1
-		color: #261F19
-		font-size: 76px
-	h2
+	background-image: url(logo.png)
+	height: 120px
+	width: 277px
+	
+footer
+	position: absolute
+	text-align: center
+	font-size: 14px
+	bottom: 15px
+	width: 100%
+	
+	a
+		text-decoration: none
+		font-weight: bold
 		color: #392C26
-		font-size: 70px
+		
+		&:hover
+			color: lighten(#392C26, 10%)
 
 
 /* Sections */
@@ -47,10 +56,9 @@ header
 	input[type="submit"]
 		padding: 17px
 		width: 147px
+		margin: 0
 	
 #AnswerSection
-	width: 930px
-	
 	li
 		font-size: 14px
 	input[type="submit"]

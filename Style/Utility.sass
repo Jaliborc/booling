@@ -28,6 +28,10 @@
 @mixin shadow($x, $y, $size, $color)
 	@include property(box-shadow, $x $y $size $color)
 	
+@mixin rgba($property, $r, $g, $b, $a)
+	#{$property}: rgb($r, $g, $b)
+	#{$property}: rgba($r, $g, $b, $a)
+	
 .unselectable
 	@include property(user-select, none)
 	cursor: default
@@ -41,12 +45,6 @@
 	
 .cell
 	display: table-cell
-	
-.center
-	text-align: center
-	
-	& > *
-		display: inline-block
 	
 .wide
 	width: 100%

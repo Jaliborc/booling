@@ -3,15 +3,17 @@ autoSyntax = (board) ->
 	value = Formula.value
 	
 	if board.altKey
-		for operator in Keys
-			for code in operator[2] 
-				value = value.slice(0, -1) + operator[0] if board.keyCode == code
+		for operator, data of Keys
+			for code in data.altKeys 
+				value = value.slice(0, -1) + operator if board.keyCode == code
 
-	for operator in Keys
-		for match in operator[1]
-			value = value.replace(match, operator[0])
+	for operator, data of Keys
+		for match in data.keys
+			value = value.replace(match, operator)
 			
-	Formula.value = value if value != Formula.value
+	if value != Formula.value
+		Formula.value = value 
+		saveFormula()
 			
 initFormula = ->
 	Formula.value = localStorage?.getItem('formula') or ''
@@ -26,18 +28,17 @@ addOperator = (operator) ->
 	Formula.value += operator.getAttribute('key')
 	
 fillKeys = ->
-	for data in Keys
-		[operator, normals, alts] = data
+	for operator, data of Keys
 		li = '<li onclick="addOperator(this)" key="' + operator + '">'
+		keys = data.keys
 		text = li
 		
-		for i, key of normals
-			key = normals[i]
+		for i, key of keys
+			keys[i] = new RegExp(key.escape(), 'gi')
 			text += key + ' , '
-			normals[i] = new RegExp(escape(key), 'gi')
 			
-		for key in alts
-			text += 'alt-' + String.fromCharCode(key).toLowerCase() + ' , '
+		for code in data.altKeys 
+			text += 'alt-' + String.fromCharCode(code).toLowerCase() + ' , '
 		
 		OperatorList.innerHTML += li + operator + '</li>'
 		KeyList.innerHTML += text.slice(0, -3) + '</li>'
