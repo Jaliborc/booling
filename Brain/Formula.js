@@ -3,8 +3,8 @@ autoSyntax = function(board) {
   var code, data, match, operator, value, _i, _j, _len, _len2, _ref, _ref2;
   value = Formula.value;
   if (board.altKey) {
-    for (operator in Keys) {
-      data = Keys[operator];
+    for (operator in Operators) {
+      data = Operators[operator];
       _ref = data.altKeys;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         code = _ref[_i];
@@ -14,8 +14,8 @@ autoSyntax = function(board) {
       }
     }
   }
-  for (operator in Keys) {
-    data = Keys[operator];
+  for (operator in Operators) {
+    data = Operators[operator];
     _ref2 = data.keys;
     for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
       match = _ref2[_j];
@@ -40,8 +40,8 @@ addOperator = function(operator) {
 fillKeys = function() {
   var code, data, i, key, keys, li, operator, text, _i, _len, _ref, _results;
   _results = [];
-  for (operator in Keys) {
-    data = Keys[operator];
+  for (operator in Operators) {
+    data = Operators[operator];
     li = '<li onclick="addOperator(this)" key="' + operator + '">';
     keys = data.keys;
     text = li;

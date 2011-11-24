@@ -6,7 +6,7 @@ class Char
 		this[@type] = true
 		
 		@operable = @oper or @no
-		@priority = Keys[@text].priority if @operable
+		@priority = Operators[@text].priority if @operable
 		@list = @parser.list
 		@i = @list.length
 			
@@ -19,18 +19,21 @@ class Char
 			'close'
 		else if @text == NOT
 			'no'
-		else if Keys[@text]
+		else if Operators[@text]
 			'oper'
 		else if 65 <= @text.charCodeAt(0) <= 122
 			'var'
 		else
 			'unkown'
-				
-	getIndex: ->
-		if @data then @data.i else @i + @parser.numVars + 1
 		
 	getValue: (x) ->
-		@data?.values[x]
+		if @value(x) then 'T' else 'F'
+		
+	value: (x) ->
+		if @data then @data.values[x] else Operators[@text].value(@a.value(x), @b.value(x))
+		
+	index: ->
+		if @data then @data.i else @i + @parser.numVars + 1
 
 
 # Parser
@@ -108,7 +111,7 @@ class Parser
 			@startCell(id)
 
 			for y in [0 .. @lines]
-				v = floor(y / pow(2, x)) % 2
+				v = 1 - floor(y / pow(2, x)) % 2
 				@result += '<li>' + @createBolean(v) + '</li>'
 				record.values[y] = v
 
@@ -151,7 +154,7 @@ class Parser
 		'<input oninput="parseBolean(this)" onfocus="focusRelations(this)" onblur="clearRelations()" i="' + i + '">'
 
 	createBolean: (n) ->
-		if n == 0 then T else F
+		if n == 1 then T else F
 
 	endCell: ->
 		@result += '</ul></div>'
@@ -186,14 +189,14 @@ class Parser
 		return @list[start]
 		
 
-# Events
+# Parse Events
 parseSyntax = ->
 	parser = new Parser(Formula.value)
 
 	if parser.error
 		print(parser.error)
 	else
-		switchFrames(FormulaSection, AnswerSection, TIME, ->
+		switchFrames(FormulaSection, AnswerSection, ->
 			AnswerSection.style.width = parser.width
 			AnswerTable.innerHTML = parser.result
 			AnswerTable.parser = parser
@@ -209,18 +212,36 @@ parseBolean = (input) ->
 	else
 		input.className = ''
 		input.value = ''
+
+
+# Button Events
+verifyAnswer = ->
+	inputs = AnswerTable.getElementsByTagName('input')
+	numLines = AnswerTable.parser.lines + 1
+	
+	for i in [0 .. inputs.length - 1]
+		input = inputs[i]
+		text = input.value
+		
+		if not text
+			print('Value missing')
+		else
+			x = i % numLines
+			value = getOper(input).getValue(x)
+		
+			if value != text
+				print('Incorrect value')
 		
 showFormula = ->
-	switchFrames(AnswerSection, FormulaSection, TIME, ->
+	switchFrames(AnswerSection, FormulaSection, ->
 		AnswerSection.style.width = '1px'
 		AnswerTable.innerHTML = ''
 	)
-	
+
 	
 # Focus Events
 focusRelations = (input) ->
-	i = input.getAttribute('i')
-	oper = AnswerTable.parser.list[i]
+	oper = getOper(input)
 	uls = getColumns()
 
 	clearRelations()
@@ -228,7 +249,7 @@ focusRelations = (input) ->
 	focusRelation('b', oper, uls)
 	
 focusRelation = (rel, oper, uls) ->
-	i = oper[rel]?.getIndex()
+	i = oper[rel]?.index()
 	uls[i]?.className = 'focus'
 		
 clearRelations = ->
@@ -237,5 +258,11 @@ clearRelations = ->
 	for ul in uls
 		ul.className = ''
 
+
+# Events API
 getColumns = ->
 	AnswerTable.getElementsByTagName('ul')
+	
+getOper = (input) ->
+	i = input.getAttribute('i')
+	AnswerTable.parser.list[i]

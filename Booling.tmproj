@@ -3,20 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>Brain/Formula.coffee</string>
+	<string>index.html</string>
 	<key>documents</key>
 	<array>
 		<dict>
 			<key>filename</key>
 			<string>index.html</string>
 			<key>lastUsed</key>
-			<date>2011-11-23T23:56:16Z</date>
+			<date>2011-11-24T17:41:07Z</date>
+			<key>selected</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>filename</key>
-			<string>cache.mf</string>
+			<string>manifest.mf</string>
 			<key>lastUsed</key>
-			<date>2011-11-23T09:24:41Z</date>
+			<date>2011-11-24T13:14:01Z</date>
 		</dict>
 		<dict>
 			<key>children</key>
@@ -25,49 +27,45 @@
 					<key>filename</key>
 					<string>Brain/Main.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-11-24T10:10:31Z</date>
+					<date>2011-11-24T17:38:27Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Formula.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-11-24T10:29:55Z</date>
-					<key>selected</key>
-					<true/>
+					<date>2011-11-24T16:49:37Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Answer.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-11-24T10:29:55Z</date>
+					<date>2011-11-24T17:41:07Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Version.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-11-22T19:54:43Z</date>
+					<date>2011-11-24T17:38:42Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Constants.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-11-24T10:19:19Z</date>
+					<date>2011-11-24T17:37:56Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Utility.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-11-24T10:22:32Z</date>
+					<date>2011-11-24T17:38:24Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Manifest.mf</string>
 					<key>lastUsed</key>
-					<date>2011-11-24T10:10:36Z</date>
+					<date>2011-11-24T13:13:41Z</date>
 				</dict>
 			</array>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>Brain</string>
 		</dict>
@@ -78,7 +76,7 @@
 					<key>filename</key>
 					<string>Style/Main.sass</string>
 					<key>lastUsed</key>
-					<date>2011-11-23T23:56:33Z</date>
+					<date>2011-11-24T13:31:57Z</date>
 				</dict>
 				<dict>
 					<key>children</key>
@@ -87,19 +85,19 @@
 							<key>filename</key>
 							<string>Style/Alerts.sass</string>
 							<key>lastUsed</key>
-							<date>2011-11-23T23:47:06Z</date>
+							<date>2011-11-24T13:13:31Z</date>
 						</dict>
 						<dict>
 							<key>filename</key>
 							<string>Style/Inputs.sass</string>
 							<key>lastUsed</key>
-							<date>2011-11-23T23:47:06Z</date>
+							<date>2011-11-24T13:13:30Z</date>
 						</dict>
 						<dict>
 							<key>filename</key>
 							<string>Style/Tables.sass</string>
 							<key>lastUsed</key>
-							<date>2011-11-23T23:47:06Z</date>
+							<date>2011-11-24T16:43:32Z</date>
 						</dict>
 					</array>
 					<key>name</key>
@@ -118,17 +116,13 @@
 							<key>filename</key>
 							<string>Style/Utility.sass</string>
 							<key>lastUsed</key>
-							<date>2011-11-23T23:47:06Z</date>
+							<date>2011-11-24T13:16:52Z</date>
 						</dict>
 					</array>
-					<key>expanded</key>
-					<true/>
 					<key>name</key>
 					<string>Common</string>
 				</dict>
 			</array>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>Style</string>
 		</dict>
@@ -168,15 +162,9 @@
 				</dict>
 				<dict>
 					<key>filename</key>
-					<string>Style/OLd Inputs</string>
-					<key>lastUsed</key>
-					<date>2011-11-22T19:54:44Z</date>
-				</dict>
-				<dict>
-					<key>filename</key>
 					<string>Version.txt</string>
 					<key>lastUsed</key>
-					<date>2011-11-22T00:01:13Z</date>
+					<date>2011-11-24T16:44:10Z</date>
 				</dict>
 			</array>
 			<key>name</key>
@@ -192,79 +180,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>53</integer>
+				<integer>43</integer>
 				<key>line</key>
-				<integer>29</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>13</integer>
-		</dict>
-		<key>Brain/Constants.coffee</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>13</integer>
-				<key>line</key>
-				<integer>27</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>Brain/Formula.coffee</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>14</integer>
-				<key>line</key>
-				<integer>15</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>Brain/Main.coffee</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>9</integer>
-				<key>line</key>
-				<integer>4</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>Brain/Manifest.mf</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>9</integer>
-				<key>line</key>
-				<integer>3</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>Brain/Utility.coffee</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>1</integer>
-				<key>line</key>
-				<integer>32</integer>
+				<integer>235</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -299,26 +217,12 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>Style/Main.sass</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>14</integer>
-				<key>line</key>
-				<integer>60</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>26</integer>
-		</dict>
 		<key>index.html</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>64</integer>
+				<integer>76</integer>
 				<key>line</key>
 				<integer>55</integer>
 			</dict>
@@ -330,18 +234,12 @@
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>Brain/Answer.coffee</string>
-		<string>Brain/Constants.coffee</string>
-		<string>Brain/Manifest.mf</string>
-		<string>Brain/Utility.coffee</string>
-		<string>Brain/Formula.coffee</string>
-		<string>Brain/Main.coffee</string>
 		<string>index.html</string>
-		<string>Style/Main.sass</string>
+		<string>Brain/Answer.coffee</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>
 	<key>windowFrame</key>
-	<string>{{5, 4}, {1440, 874}}</string>
+	<string>{{0, 4}, {1440, 874}}</string>
 </dict>
 </plist>

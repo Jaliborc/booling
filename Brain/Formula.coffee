@@ -3,11 +3,11 @@ autoSyntax = (board) ->
 	value = Formula.value
 	
 	if board.altKey
-		for operator, data of Keys
+		for operator, data of Operators
 			for code in data.altKeys 
 				value = value.slice(0, -1) + operator if board.keyCode == code
 
-	for operator, data of Keys
+	for operator, data of Operators
 		for match in data.keys
 			value = value.replace(match, operator)
 			
@@ -28,7 +28,7 @@ addOperator = (operator) ->
 	Formula.value += operator.getAttribute('key')
 	
 fillKeys = ->
-	for operator, data of Keys
+	for operator, data of Operators
 		li = '<li onclick="addOperator(this)" key="' + operator + '">'
 		keys = data.keys
 		text = li

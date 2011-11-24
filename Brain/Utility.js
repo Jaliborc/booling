@@ -16,13 +16,13 @@ String.prototype.times = function(n) {
 String.prototype.escape = function() {
   return this.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
 };
-switchFrames = function(hide, show, time, onFinish) {
+switchFrames = function(hide, show, onFinish) {
   hide.className = 'fade';
   return setTimeout(function() {
     hide.className = 'hide';
     show.className = 'show';
     return typeof onFinish === "function" ? onFinish() : void 0;
-  }, time);
+  }, ANIMATE_TIME);
 };
 globals = function(list) {
   var id, _i, _len, _results;

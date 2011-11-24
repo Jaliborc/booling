@@ -15,14 +15,14 @@ String.prototype.escape = ->
 	
 
 # Animation
-switchFrames = (hide, show, time, onFinish) ->
+switchFrames = (hide, show, onFinish) ->
 	hide.className = 'fade'
 	
 	setTimeout(->
 		hide.className = 'hide'
 		show.className = 'show'
 		onFinish?()
-	, time)
+	, ANIMATE_TIME)
 	
 	
 # General	

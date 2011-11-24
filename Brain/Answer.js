@@ -1,4 +1,4 @@
-var Char, Parser, clearRelations, focusRelation, focusRelations, getColumns, parseBolean, parseSyntax, showFormula;
+var Char, Parser, clearRelations, focusRelation, focusRelations, getColumns, getOper, parseBolean, parseSyntax, showFormula, verifyAnswer;
 Char = (function() {
   function Char(parser, i) {
     this.parser = parser;
@@ -7,7 +7,7 @@ Char = (function() {
     this[this.type] = true;
     this.operable = this.oper || this.no;
     if (this.operable) {
-      this.priority = Keys[this.text].priority;
+      this.priority = Operators[this.text].priority;
     }
     this.list = this.parser.list;
     this.i = this.list.length;
@@ -22,7 +22,7 @@ Char = (function() {
       return 'close';
     } else if (this.text === NOT) {
       return 'no';
-    } else if (Keys[this.text]) {
+    } else if (Operators[this.text]) {
       return 'oper';
     } else if ((65 <= (_ref = this.text.charCodeAt(0)) && _ref <= 122)) {
       return 'var';
@@ -30,16 +30,26 @@ Char = (function() {
       return 'unkown';
     }
   };
-  Char.prototype.getIndex = function() {
+  Char.prototype.getValue = function(x) {
+    if (this.value(x)) {
+      return 'T';
+    } else {
+      return 'F';
+    }
+  };
+  Char.prototype.value = function(x) {
+    if (this.data) {
+      return this.data.values[x];
+    } else {
+      return Operators[this.text].value(this.a.value(x), this.b.value(x));
+    }
+  };
+  Char.prototype.index = function() {
     if (this.data) {
       return this.data.i;
     } else {
       return this.i + this.parser.numVars + 1;
     }
-  };
-  Char.prototype.getValue = function(x) {
-    var _ref;
-    return (_ref = this.data) != null ? _ref.values[x] : void 0;
   };
   return Char;
 })();
@@ -137,7 +147,7 @@ Parser = (function() {
       record.i = x;
       this.startCell(id);
       for (y = 0, _ref2 = this.lines; 0 <= _ref2 ? y <= _ref2 : y >= _ref2; 0 <= _ref2 ? y++ : y--) {
-        v = floor(y / pow(2, x)) % 2;
+        v = 1 - floor(y / pow(2, x)) % 2;
         this.result += '<li>' + this.createBolean(v) + '</li>';
         record.values[y] = v;
       }
@@ -182,7 +192,7 @@ Parser = (function() {
     return '<input oninput="parseBolean(this)" onfocus="focusRelations(this)" onblur="clearRelations()" i="' + i + '">';
   };
   Parser.prototype.createBolean = function(n) {
-    if (n === 0) {
+    if (n === 1) {
       return T;
     } else {
       return F;
@@ -233,7 +243,7 @@ parseSyntax = function() {
   if (parser.error) {
     return print(parser.error);
   } else {
-    return switchFrames(FormulaSection, AnswerSection, TIME, function() {
+    return switchFrames(FormulaSection, AnswerSection, function() {
       AnswerSection.style.width = parser.width;
       AnswerTable.innerHTML = parser.result;
       return AnswerTable.parser = parser;
@@ -252,16 +262,27 @@ parseBolean = function(input) {
     return input.value = '';
   }
 };
+verifyAnswer = function() {
+  var i, input, inputs, numLines, text, value, x, _ref, _results;
+  inputs = AnswerTable.getElementsByTagName('input');
+  numLines = AnswerTable.parser.lines + 1;
+  _results = [];
+  for (i = 0, _ref = inputs.length - 1; 0 <= _ref ? i <= _ref : i >= _ref; 0 <= _ref ? i++ : i--) {
+    input = inputs[i];
+    text = input.value;
+    _results.push(!text ? print('Value missing') : (x = i % numLines, value = getOper(input).getValue(x), value !== text ? print('Incorrect value') : void 0));
+  }
+  return _results;
+};
 showFormula = function() {
-  return switchFrames(AnswerSection, FormulaSection, TIME, function() {
+  return switchFrames(AnswerSection, FormulaSection, function() {
     AnswerSection.style.width = '1px';
     return AnswerTable.innerHTML = '';
   });
 };
 focusRelations = function(input) {
-  var i, oper, uls;
-  i = input.getAttribute('i');
-  oper = AnswerTable.parser.list[i];
+  var oper, uls;
+  oper = getOper(input);
   uls = getColumns();
   clearRelations();
   focusRelation('a', oper, uls);
@@ -269,7 +290,7 @@ focusRelations = function(input) {
 };
 focusRelation = function(rel, oper, uls) {
   var i, _ref, _ref2;
-  i = (_ref = oper[rel]) != null ? _ref.getIndex() : void 0;
+  i = (_ref = oper[rel]) != null ? _ref.index() : void 0;
   return (_ref2 = uls[i]) != null ? _ref2.className = 'focus' : void 0;
 };
 clearRelations = function() {
@@ -284,4 +305,9 @@ clearRelations = function() {
 };
 getColumns = function() {
   return AnswerTable.getElementsByTagName('ul');
+};
+getOper = function(input) {
+  var i;
+  i = input.getAttribute('i');
+  return AnswerTable.parser.list[i];
 };
