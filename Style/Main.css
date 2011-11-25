@@ -135,7 +135,8 @@ input[type="submit"] {
 /* Body */
 body {
   font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
-  background-color: #eeeeee; }
+  background-color: #eeeeee;
+  height: 100%; }
 
 * {
   font-weight: normal;

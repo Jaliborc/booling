@@ -1,6 +1,6 @@
-Online = true
-
+DEV = true
 ANIMATE_TIME = 400
+
 T = '<a class="green">T</a>'
 F = '<a class="red">F</a>'
 NOT = '¬'

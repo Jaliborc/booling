@@ -1,5 +1,5 @@
-var ANIMATE_TIME, F, NOT, Online, Operators, Placeholders, T;
-Online = true;
+var ANIMATE_TIME, DEV, F, NOT, Operators, Placeholders, T;
+DEV = true;
 ANIMATE_TIME = 400;
 T = '<a class="green">T</a>';
 F = '<a class="red">F</a>';
