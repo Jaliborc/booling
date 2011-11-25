@@ -16,8 +16,7 @@ function easyWrite($path, $content){
 
 
 # Check if new version is available
-#$DIR = 'https://raw.github.com/Jaliborc/Booling/master/';
-$DIR = '../';
+$DIR = 'https://raw.github.com/Jaliborc/Booling/master/';
 $version = smallOpen($DIR . 'version.mf', 2);
 
 if ($version == @smallOpen('version.mf', 2))
@@ -60,4 +59,5 @@ easyWrite('manifest.mf', $manifest);
 easyWrite('version.mf', $version);
 easyWrite('index.html', $html);
 
+include 'index.html'
 ?>

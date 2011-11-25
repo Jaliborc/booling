@@ -139,7 +139,7 @@
 					<key>filename</key>
 					<string>Server/bundler.php</string>
 					<key>lastUsed</key>
-					<date>2011-11-24T22:56:01Z</date>
+					<date>2011-11-25T15:50:55Z</date>
 					<key>selected</key>
 					<true/>
 				</dict>
@@ -234,30 +234,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>63</integer>
+				<integer>16</integer>
 				<key>line</key>
-				<integer>43</integer>
+				<integer>32</integer>
 			</dict>
-			<key>columnSelection</key>
-			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>23</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>52</integer>
-				<key>line</key>
-				<integer>43</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>63</integer>
-				<key>line</key>
-				<integer>43</integer>
-			</dict>
+			<integer>22</integer>
 		</dict>
 		<key>Server/downloader.php</key>
 		<dict>
