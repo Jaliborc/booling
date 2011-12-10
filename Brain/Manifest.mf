@@ -1,5 +1,0 @@
-Constants.js
-Utility.js
-Formula.js
-Answer.js
-Main.js
