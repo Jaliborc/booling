@@ -17,9 +17,9 @@ function easyWrite($path, $content){
 
 # Check if new version is available
 $DIR = 'https://raw.github.com/Jaliborc/Booling/master/';
-$version = smallOpen($DIR . 'version.mf', 2);
+$version = smallOpen($DIR . 'version', 2);
 
-if ($version == @smallOpen('version.mf', 2))
+if ($version == @smallOpen('version', 2))
 	return;
 	
 	
@@ -31,7 +31,7 @@ $css = '<style media="screen" type="text/css">' . $css . '</style>';
 
 # Bundle Scripts
 $BRAIN = $DIR . 'Brain/';
-$Brain = file($BRAIN . 'Manifest.mf', FILE_IGNORE_NEW_LINES);
+$Brain = file($BRAIN . 'Compile', FILE_IGNORE_NEW_LINES);
 $scripts = '';
 
 foreach($Brain as $file) {
@@ -50,12 +50,12 @@ $html = str_replace($replace[0], $css . $scripts, $html);
 
 
 # Update Manifest
-$manifest = file_get_contents($DIR . 'manifest.mf');
+$manifest = file_get_contents($DIR . 'cache.manifest');
 $manifest = str_replace('VERSION', 'Version ' . $version, $manifest);
 
 
 # Save Results
-easyWrite('manifest.mf', $manifest);
+easyWrite('cache.manifest', $manifest);
 easyWrite('version.mf', $version);
 easyWrite('index.html', $html);
 

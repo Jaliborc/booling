@@ -10,19 +10,19 @@
 			<key>filename</key>
 			<string>index.html</string>
 			<key>lastUsed</key>
-			<date>2011-11-24T17:43:14Z</date>
+			<date>2011-11-25T23:24:06Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
-			<string>manifest.mf</string>
+			<string>cache.manifest</string>
 			<key>lastUsed</key>
-			<date>2011-11-24T22:54:19Z</date>
+			<date>2011-11-25T23:24:19Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
-			<string>version.mf</string>
+			<string>version</string>
 			<key>lastUsed</key>
-			<date>2011-11-24T22:52:13Z</date>
+			<date>2011-11-25T23:24:25Z</date>
 		</dict>
 		<dict>
 			<key>children</key>
@@ -65,9 +65,9 @@
 				</dict>
 				<dict>
 					<key>filename</key>
-					<string>Brain/Manifest.mf</string>
+					<string>Brain/Compile</string>
 					<key>lastUsed</key>
-					<date>2011-11-24T13:13:41Z</date>
+					<date>2011-11-25T23:24:15Z</date>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -139,7 +139,7 @@
 					<key>filename</key>
 					<string>Server/bundler.php</string>
 					<key>lastUsed</key>
-					<date>2011-11-25T15:50:55Z</date>
+					<date>2011-11-27T22:33:56Z</date>
 					<key>selected</key>
 					<true/>
 				</dict>
@@ -147,7 +147,7 @@
 					<key>filename</key>
 					<string>Server/downloader.php</string>
 					<key>lastUsed</key>
-					<date>2011-11-24T22:52:18Z</date>
+					<date>2011-11-25T23:35:11Z</date>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -181,6 +181,20 @@
 				<integer>43</integer>
 				<key>line</key>
 				<integer>235</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>Brain/Compile</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>9</integer>
+				<key>line</key>
+				<integer>3</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -234,23 +248,23 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>16</integer>
+				<integer>31</integer>
 				<key>line</key>
-				<integer>32</integer>
+				<integer>33</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>22</integer>
+			<integer>24</integer>
 		</dict>
 		<key>Server/downloader.php</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>15</integer>
+				<integer>2</integer>
 				<key>line</key>
-				<integer>3</integer>
+				<integer>4</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -271,21 +285,7 @@
 			<key>firstVisibleLine</key>
 			<integer>4</integer>
 		</dict>
-		<key>index.html</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>76</integer>
-				<key>line</key>
-				<integer>55</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>18</integer>
-		</dict>
-		<key>manifest.mf</key>
+		<key>cache.manifest</key>
 		<dict>
 			<key>caret</key>
 			<dict>
@@ -299,7 +299,21 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>version.mf</key>
+		<key>index.html</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>30</integer>
+				<key>line</key>
+				<integer>1</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>version</key>
 		<dict>
 			<key>caret</key>
 			<dict>
@@ -317,15 +331,16 @@
 	<key>openDocuments</key>
 	<array>
 		<string>index.html</string>
+		<string>Brain/Compile</string>
 		<string>Style/Main.sass</string>
 		<string>Brain/Answer.coffee</string>
 		<string>Server/downloader.php</string>
 		<string>Server/bundler.php</string>
 		<string>Brain/Utility.coffee</string>
 		<string>Brain/Constants.coffee</string>
-		<string>manifest.mf</string>
+		<string>cache.manifest</string>
 		<string>Old Bool.html</string>
-		<string>version.mf</string>
+		<string>version</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>
