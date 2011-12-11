@@ -1,8 +1,10 @@
 @mixin border($attr: border, $size: 1px)
 	#{$attr}: $size solid #DDD
 
-.round
+.box
+	@include border
 	@include border-radius(7px, 7px, 7px, 7px)
+	background-color: #FFF
 
 .gradient
 	@include linear-gradient(#EEE, #FFF)

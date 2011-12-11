@@ -43,11 +43,25 @@
 	position: absolute
 	top: 0
 	
+.right
+	float: right
+	
+.left
+	float: left
+	
 .cell
 	display: table-cell
 	
 .wide
 	width: 100%
+	
+.clear
+	&:after
+		visibility: hidden
+		display: block
+		content: "."
+		clear: both
+		height: 0
 
 	
 /* Fading */

@@ -14,11 +14,24 @@
   position: absolute;
   top: 0; }
 
+.right {
+  float: right; }
+
+.left {
+  float: left; }
+
 .cell {
   display: table-cell; }
 
 .wide {
   width: 100%; }
+
+.clear:after, #Features .box:after, #Features .table:after, #Features input:after {
+  visibility: hidden;
+  display: block;
+  content: ".";
+  clear: both;
+  height: 0; }
 
 /* Fading */
 .fade, .show {
@@ -38,7 +51,8 @@
 .show {
   opacity: 1; }
 
-.round, .table, input {
+.box, .table, input {
+  border: 1px solid #dddddd;
   -webkit-background-clip: padding-box;
   -khtml-background-clip: padding-box;
   -moz-background-clip: padding-box;
@@ -50,7 +64,8 @@
   -moz-border-radius: 7px 7px 7px 7px;
   -ms-border-radius: 7px 7px 7px 7px;
   -o-border-radius: 7px 7px 7px 7px;
-  border-radius: 7px 7px 7px 7px; }
+  border-radius: 7px 7px 7px 7px;
+  background-color: white; }
 
 .gradient, .table, input[type="submit"] {
   background-image: -webkit-linear-gradient(bottom, #eeeeee 0%, white 100%);
@@ -68,8 +83,6 @@
   color: green; }
 
 .table {
-  border: 1px solid #dddddd;
-  background-color: white;
   background-size: 100% 49px;
   background-repeat: no-repeat;
   text-align: center; }
@@ -113,7 +126,6 @@
       color: rgba(255, 255, 255, 0); }
 
 input {
-  border: 1px solid #dddddd;
   outline: none; }
 
 input[type="submit"] {
@@ -140,13 +152,15 @@ body {
 
 * {
   font-weight: normal;
+  line-height: 120%;
   border: none;
   padding: 0;
   margin: 0; }
 
-section, header, footer {
+section, header {
   margin: auto;
-  margin-top: 40px; }
+  margin-top: 40px;
+  width: 1000px; }
 
 header {
   background-image: url(logo.png);
@@ -154,34 +168,78 @@ header {
   width: 277px; }
 
 footer {
-  position: absolute;
-  text-align: center;
-  font-size: 14px;
-  bottom: 15px;
-  width: 100%; }
+  -webkit-box-shadow: 0 0 1px black;
+  -khtml-box-shadow: 0 0 1px black;
+  -moz-box-shadow: 0 0 1px black;
+  -ms-box-shadow: 0 0 1px black;
+  -o-box-shadow: 0 0 1px black;
+  box-shadow: 0 0 1px black;
+  background-color: #392c26;
+  border-top: 2px solid #634c41;
+  font-size: 18px;
+  position: fixed;
+  height: 50px;
+  width: 100%;
+  bottom: 0; }
+  footer div {
+    display: inline;
+    margin: 15px 15px 0 15px; }
   footer a {
     text-decoration: none;
-    font-weight: bold;
-    color: #392c26; }
+    padding: 15px 15px 14px 15px;
+    color: white; }
     footer a:hover {
-      color: #58443a; }
+      background-color: #634c41; }
 
-/* Sections */
-#FormulaSection {
-  width: 930px; }
-  #FormulaSection #Formula {
-    margin: 0 20px 40px 0;
-    padding: 20px;
-    width: 715px;
-    height: 26px; }
-  #FormulaSection input {
-    font-size: 1.4em; }
-  #FormulaSection input[type="submit"] {
-    padding: 17px;
-    width: 147px;
-    margin: 0; }
+/* Application */
+#FormulaSection #Formula {
+  margin: 0 20px 40px 0;
+  padding: 20px;
+  width: 715px;
+  height: 26px; }
+#FormulaSection input {
+  font-size: 1.4em; }
+#FormulaSection input[type="submit"] {
+  padding: 17px;
+  width: 147px;
+  margin: 0; }
 
 #AnswerSection li {
   font-size: 14px; }
 #AnswerSection input[type="submit"] {
   float: right; }
+
+/* Overview */
+#Slogan {
+  font-size: 23px;
+  width: 850px; }
+
+#Features .box, #Features .table, #Features input {
+  margin-top: 40px;
+  padding: 25px; }
+#Features .img {
+  -webkit-box-shadow: 0 1px 9px #333333;
+  -khtml-box-shadow: 0 1px 9px #333333;
+  -moz-box-shadow: 0 1px 9px #333333;
+  -ms-box-shadow: 0 1px 9px #333333;
+  -o-box-shadow: 0 1px 9px #333333;
+  box-shadow: 0 1px 9px #333333;
+  -webkit-background-clip: padding-box;
+  -khtml-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  -ms-background-clip: padding-box;
+  -o-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  -khtml-border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -ms-border-radius: 3px 3px 3px 3px;
+  -o-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
+  background-size: cover;
+  margin-left: 100px;
+  width: 230px;
+  height: 143px;
+  float: right; }
+#Features h1 {
+  margin-bottom: 10px; }
