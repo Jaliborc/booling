@@ -23,10 +23,12 @@ if ($version == @smallOpen('version', 2))
 	return;
 	
 	
-# Copy CSS
-$css = file_get_contents($DIR . 'Style/Main.css');
+# Copy Files
+$css = file_get_contents($DIR . 'Design/Main.css');
 easyWrite('style.css', $css);
-$css = '<style media="screen" type="text/css">' . $css . '</style>';
+
+$overview = file_get_contents($DIR . 'Overview/index.html');
+easyWrite('Overview/index.html', $overview);
 
 
 # Bundle Scripts
@@ -40,7 +42,9 @@ foreach($Brain as $file) {
 
 
 # Inject Code
-$scripts = '<script>' . str_replace('DEV = true;', 'DEV = false;', $scripts) . '</script>';
+$scripts = '<script>' . $scripts . '</script>';
+$css = '<style media="screen" type="text/css">' . $css . '</style>';
+
 $html = file_get_contents($DIR . 'index.html');
 $replace = array();
 	
