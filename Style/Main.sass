@@ -9,6 +9,7 @@
 body
 	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif
 	background-color: #EEE
+	padding-bottom: 90px
 	height: 100%
 	
 *
@@ -48,7 +49,7 @@ footer
 		color: #FFF
 		
 		&:hover
-			background-color: #634C41
+			background-color: darken(#634C41, 10%)
 
 
 /* Application */
@@ -57,7 +58,7 @@ footer
 	#Formula
 		margin: 0 20px 40px 0
 		padding: 20px
-		width: 715px
+		width: 785px
 		height: 26px
 	input
 		font-size: 1.4em
@@ -67,6 +68,8 @@ footer
 		margin: 0
 	
 #AnswerSection
+	margin-bottom: 40px
+	
 	li
 		font-size: 14px
 	input[type="submit"]
@@ -85,12 +88,22 @@ footer
 		margin-top: 40px
 		padding: 25px
 	.img
-		@include shadow(0, 1px, 9px, #333)
+		@include shadow(0, 0, 5px, #444)
 		@include border-radius(3px, 3px, 3px, 3px)
 		background-size: cover
-		margin-left: 100px
 		width:  230px
 		height: 143px
-		float: right
 	h1
 		margin-bottom: 10px
+		
+		
+	.odd
+		.img
+			margin-left: 100px
+			float: right
+	.even
+		.img
+			margin-right: 100px
+			float: left
+		h1, p
+			text-align: right

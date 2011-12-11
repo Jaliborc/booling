@@ -148,6 +148,7 @@ input[type="submit"] {
 body {
   font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
   background-color: #eeeeee;
+  padding-bottom: 90px;
   height: 100%; }
 
 * {
@@ -189,13 +190,13 @@ footer {
     padding: 15px 15px 14px 15px;
     color: white; }
     footer a:hover {
-      background-color: #634c41; }
+      background-color: #44342d; }
 
 /* Application */
 #FormulaSection #Formula {
   margin: 0 20px 40px 0;
   padding: 20px;
-  width: 715px;
+  width: 785px;
   height: 26px; }
 #FormulaSection input {
   font-size: 1.4em; }
@@ -204,10 +205,12 @@ footer {
   width: 147px;
   margin: 0; }
 
-#AnswerSection li {
-  font-size: 14px; }
-#AnswerSection input[type="submit"] {
-  float: right; }
+#AnswerSection {
+  margin-bottom: 40px; }
+  #AnswerSection li {
+    font-size: 14px; }
+  #AnswerSection input[type="submit"] {
+    float: right; }
 
 /* Overview */
 #Slogan {
@@ -218,12 +221,12 @@ footer {
   margin-top: 40px;
   padding: 25px; }
 #Features .img {
-  -webkit-box-shadow: 0 1px 9px #333333;
-  -khtml-box-shadow: 0 1px 9px #333333;
-  -moz-box-shadow: 0 1px 9px #333333;
-  -ms-box-shadow: 0 1px 9px #333333;
-  -o-box-shadow: 0 1px 9px #333333;
-  box-shadow: 0 1px 9px #333333;
+  -webkit-box-shadow: 0 0 5px #444444;
+  -khtml-box-shadow: 0 0 5px #444444;
+  -moz-box-shadow: 0 0 5px #444444;
+  -ms-box-shadow: 0 0 5px #444444;
+  -o-box-shadow: 0 0 5px #444444;
+  box-shadow: 0 0 5px #444444;
   -webkit-background-clip: padding-box;
   -khtml-background-clip: padding-box;
   -moz-background-clip: padding-box;
@@ -237,9 +240,15 @@ footer {
   -o-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
   background-size: cover;
-  margin-left: 100px;
   width: 230px;
-  height: 143px;
-  float: right; }
+  height: 143px; }
 #Features h1 {
   margin-bottom: 10px; }
+#Features .odd .img {
+  margin-left: 100px;
+  float: right; }
+#Features .even .img {
+  margin-right: 100px;
+  float: left; }
+#Features .even h1, #Features .even p {
+  text-align: right; }
