@@ -17,9 +17,13 @@ function easyWrite($path, $content){
 
 # Check if new version is available
 $DIR = 'https://raw.github.com/Jaliborc/Booling/master/';
-$version = smallOpen($DIR . 'version', 2);
+$version = smallOpen($DIR . 'version', 3);
+$current = @smallOpen('version', 3);
 
-if ($version == @smallOpen('version', 2))
+echo 'GitHub: ' . $version;
+echo 'Server: ' . $current;
+
+if ($version == $current)
 	return;
 	
 	
@@ -60,8 +64,6 @@ $manifest = str_replace('VERSION', 'Version ' . $version, $manifest);
 
 # Save Results
 easyWrite('cache.manifest', $manifest);
-easyWrite('version.mf', $version);
 easyWrite('index.html', $html);
-
-include 'index.html'
+easyWrite('version', $version);
 ?>

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>Overview/index.html</string>
+	<string>Design/Main.sass</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -25,11 +25,9 @@
 					<key>filename</key>
 					<string>version</string>
 					<key>lastUsed</key>
-					<date>2011-12-12T00:11:15Z</date>
+					<date>2011-12-12T00:23:16Z</date>
 				</dict>
 			</array>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>App</string>
 		</dict>
@@ -40,13 +38,9 @@
 					<key>filename</key>
 					<string>Overview/index.html</string>
 					<key>lastUsed</key>
-					<date>2011-12-12T00:17:41Z</date>
-					<key>selected</key>
-					<true/>
+					<date>2011-12-12T00:19:47Z</date>
 				</dict>
 			</array>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>Overview</string>
 		</dict>
@@ -106,7 +100,7 @@
 					<key>filename</key>
 					<string>Design/Main.sass</string>
 					<key>lastUsed</key>
-					<date>2011-12-12T00:17:41Z</date>
+					<date>2011-12-12T00:33:09Z</date>
 				</dict>
 				<dict>
 					<key>children</key>
@@ -143,8 +137,6 @@
 					<string>Common</string>
 				</dict>
 			</array>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>Design</string>
 		</dict>
@@ -155,7 +147,7 @@
 					<key>filename</key>
 					<string>Server/bundler.php</string>
 					<key>lastUsed</key>
-					<date>2011-12-12T00:11:08Z</date>
+					<date>2011-12-12T00:33:09Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -198,21 +190,35 @@
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>70</integer>
+			<integer>0</integer>
 		</dict>
 		<key>Overview/index.html</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>59</integer>
+				<integer>72</integer>
 				<key>line</key>
 				<integer>52</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
+			<integer>35</integer>
+		</dict>
+		<key>Server/bundler.php</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>31</integer>
+				<key>line</key>
+				<integer>67</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
 			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>30</integer>
 		</dict>
 		<key>Server/downloader.php</key>
 		<dict>
@@ -256,6 +262,20 @@
 			<key>firstVisibleLine</key>
 			<integer>27</integer>
 		</dict>
+		<key>version</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>2</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
@@ -263,6 +283,8 @@
 		<string>index.html</string>
 		<string>Design/Main.sass</string>
 		<string>Overview/index.html</string>
+		<string>version</string>
+		<string>Server/bundler.php</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>
