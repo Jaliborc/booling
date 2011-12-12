@@ -28,7 +28,7 @@ $css = file_get_contents($DIR . 'Design/Main.css');
 easyWrite('Main.css', $css);
 
 $overview = file_get_contents($DIR . 'Overview/index.html');
-easyWrite('Overview/index.html', str_replace('../Design/', '../', $overview);
+easyWrite('Overview/index.html', str_replace('../Design/', '../', $overview));
 
 
 # Bundle Scripts
