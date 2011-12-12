@@ -25,10 +25,10 @@ if ($version == @smallOpen('version', 2))
 	
 # Copy Files
 $css = file_get_contents($DIR . 'Design/Main.css');
-easyWrite('style.css', $css);
+easyWrite('Main.css', $css);
 
 $overview = file_get_contents($DIR . 'Overview/index.html');
-easyWrite('Overview/index.html', $overview);
+easyWrite('Overview/index.html', str_replace('../Design/', '../', $overview);
 
 
 # Bundle Scripts
