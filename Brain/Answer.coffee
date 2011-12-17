@@ -6,15 +6,16 @@ parseSyntax = ->
 	error = parser.error
 
 	if error
+		Overlay.innerHTML = value.slice(0, i) + '<span>' + value.slice(i, i + 1) + '</span>'
+		
 		if messages = Errors[error]
-			getElement(Error, 'p').innerHTML = random(messages) if Error.current != error
-			
-			Overlay.innerHTML = value.slice(0, i) + '<span>' + value.slice(i, i + 1) + '</span>'
 			position = getElement(Overlay, 'span').offsetLeft - Overlay.offsetLeft - 195
 			offset = Math.max(position, 0)
 			
-			Error.style.marginLeft = offset + 'px'
 			Error.getElementsByClassName('arrow')[0].style.left = 224 + position - offset + 'px'
+			getElement(Error, 'p').innerHTML = random(messages) if Error.current != error
+			
+			Error.style.marginLeft = offset + 'px'
 			Error.className = 'show alert'
 			Error.current = error
 			

@@ -6,15 +6,15 @@ parseSyntax = function() {
   i = parser.i || parser.size - 1;
   error = parser.error;
   if (error) {
+    Overlay.innerHTML = value.slice(0, i) + '<span>' + value.slice(i, i + 1) + '</span>';
     if (messages = Errors[error]) {
+      position = getElement(Overlay, 'span').offsetLeft - Overlay.offsetLeft - 195;
+      offset = Math.max(position, 0);
+      Error.getElementsByClassName('arrow')[0].style.left = 224 + position - offset + 'px';
       if (Error.current !== error) {
         getElement(Error, 'p').innerHTML = random(messages);
       }
-      Overlay.innerHTML = value.slice(0, i) + '<span>' + value.slice(i, i + 1) + '</span>';
-      position = getElement(Overlay, 'span').offsetLeft - Overlay.offsetLeft - 195;
-      offset = Math.max(position, 0);
       Error.style.marginLeft = offset + 'px';
-      Error.getElementsByClassName('arrow')[0].style.left = 224 + position - offset + 'px';
       Error.className = 'show alert';
       Error.current = error;
     }
