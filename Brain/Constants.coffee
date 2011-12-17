@@ -36,3 +36,20 @@ Placeholders = [
 	'Are you going to enter a formula or not? Losing my patience here.'
 	'Being bullied? "Just act less gay", advise teachers.'
 ]
+
+Errors =
+	'SHORT' : [
+		"Sorry pal, I can't make anything with just two characters. Are you too lazy to type more?"
+		"Do you happen to be an eagle who struggles to type with its tallons? Because two characters do not make a formula."
+		"Kid, type more than two characters or this won't lead us anywhere. And you will not want to see me bored."
+	]
+	'DOUBLE VAR': [
+		"Are you trying to write your momma's name?! Why else would you be typing two letters in a row?"
+		"Why on earth are those two next to each other? Trying to send me a message?"
+		"Hey jackass, there must be an operator between those two. Got it?"
+	]
+	'NUM BRACKETS': [
+		"Kid, are you still in grade school? 'Cause the number of brackets do not match."
+		"Do you know how to count? Then check the number of brackets."
+	]
+	

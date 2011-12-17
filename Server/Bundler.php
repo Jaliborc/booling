@@ -21,7 +21,7 @@ $version = smallOpen($DIR . 'version', 3);
 $current = @smallOpen('version', 3);
 
 echo 'GitHub: ' . $version;
-echo 'Server: ' . $current;
+echo ' | Server: ' . $current;
 
 if ($version == $current)
 	return;

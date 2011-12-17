@@ -26,7 +26,7 @@
 .wide {
   width: 100%; }
 
-.clear:after, #Features .box:after, #Features .table:after, #Features input:after {
+.clear:after, #Features .box:after, #Features .table:after, #Features input:after, #Features .alert p:after, .alert #Features p:after {
   visibility: hidden;
   display: block;
   content: ".";
@@ -51,7 +51,7 @@
 .show {
   opacity: 1; }
 
-.box, .table, input {
+.box, .table, input, .alert p {
   border: 1px solid #dddddd;
   -webkit-background-clip: padding-box;
   -khtml-background-clip: padding-box;
@@ -144,6 +144,32 @@ input[type="submit"] {
     background-color: #e5e5e5;
     color: #333333; }
 
+.alert {
+  position: relative;
+  width: 492px; }
+  .alert.show {
+    margin-bottom: 30px; }
+  .alert p {
+    padding: 10px;
+    margin-top: 30px;
+    font-size: 16px;
+    z-index: 0; }
+  .alert .arrow {
+    border: 1px solid #dddddd;
+    -webkit-transform: rotate(45deg);
+    -khtml-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background-color: #f6f6f6;
+    left: 223.5px;
+    position: absolute;
+    height: 45px;
+    width: 45px;
+    z-index: -1;
+    top: -6px; }
+
 /* Body */
 body {
   font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
@@ -194,7 +220,7 @@ footer {
 
 /* Application */
 #FormulaSection #Formula {
-  margin: 0 20px 40px 0;
+  margin-right: 20px;
   padding: 20px;
   width: 785px;
   height: 26px; }
@@ -217,7 +243,7 @@ footer {
   font-size: 23px;
   width: 850px; }
 
-#Features .box, #Features .table, #Features input {
+#Features .box, #Features .table, #Features input, #Features .alert p, .alert #Features p {
   margin-top: 40px;
   padding: 25px; }
 #Features .img {

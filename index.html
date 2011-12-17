@@ -8,9 +8,9 @@
 		<link rel="stylesheet" href="Design/Main.css"/>
 		<script src="Brain/Constants.js"></script>
 		<script src="Brain/Utility.js"></script>
-		<script src="Brain/Answer.js"></script>
 		<script src="Brain/Formula.js"></script>
-		<script src="Brain/Version.js"></script>
+		<script src="Brain/Parser.js"></script>
+		<script src="Brain/Answer.js"></script>
 		<script src="Brain/Main.js"></script>
 	</BUNDLE>
 </head>
@@ -24,6 +24,12 @@
 	<section id = "FormulaSection">
 		<input id = "Formula" onkeyup="autoSyntax(event)" oninput="saveFormula()" class="cell">
 		<input value = "Start" onclick="parseSyntax()" type="submit" class="cell">
+		
+		<div id = "Overlay"></div>
+		<div id = "Error" class="hide alert">
+			<div class="arrow"></div>
+			<p></p>
+		</div>
 		
 		<div class="table">
 			<div class="cell">

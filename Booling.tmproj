@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>Design/Main.sass</string>
+	<string>Brain/Formula.coffee</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -13,21 +13,23 @@
 					<key>filename</key>
 					<string>index.html</string>
 					<key>lastUsed</key>
-					<date>2011-12-12T00:11:52Z</date>
+					<date>2011-12-16T14:27:12Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>cache.manifest</string>
 					<key>lastUsed</key>
-					<date>2011-12-12T00:11:48Z</date>
+					<date>2011-12-15T22:33:27Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>version</string>
 					<key>lastUsed</key>
-					<date>2011-12-12T00:23:16Z</date>
+					<date>2011-12-16T09:43:19Z</date>
 				</dict>
 			</array>
+			<key>expanded</key>
+			<true/>
 			<key>name</key>
 			<string>App</string>
 		</dict>
@@ -38,7 +40,7 @@
 					<key>filename</key>
 					<string>Overview/index.html</string>
 					<key>lastUsed</key>
-					<date>2011-12-12T00:19:47Z</date>
+					<date>2011-12-15T18:35:32Z</date>
 				</dict>
 			</array>
 			<key>name</key>
@@ -51,45 +53,43 @@
 					<key>filename</key>
 					<string>Brain/Main.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-11-24T17:38:27Z</date>
+					<date>2011-12-16T14:59:34Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Formula.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-11-24T16:49:37Z</date>
+					<date>2011-12-16T14:59:34Z</date>
+					<key>selected</key>
+					<true/>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Answer.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-12-11T15:06:42Z</date>
-				</dict>
-				<dict>
-					<key>filename</key>
-					<string>Brain/Version.coffee</string>
-					<key>lastUsed</key>
-					<date>2011-12-11T23:53:20Z</date>
+					<date>2011-12-15T20:02:11Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Constants.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-12-11T23:55:31Z</date>
+					<date>2011-12-16T14:38:01Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Utility.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-12-11T12:50:14Z</date>
+					<date>2011-12-15T20:01:23Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Compile</string>
 					<key>lastUsed</key>
-					<date>2011-11-25T23:24:15Z</date>
+					<date>2011-12-15T18:50:33Z</date>
 				</dict>
 			</array>
+			<key>expanded</key>
+			<true/>
 			<key>name</key>
 			<string>Brain</string>
 		</dict>
@@ -100,7 +100,7 @@
 					<key>filename</key>
 					<string>Design/Main.sass</string>
 					<key>lastUsed</key>
-					<date>2011-12-12T00:33:09Z</date>
+					<date>2011-12-16T14:59:33Z</date>
 				</dict>
 				<dict>
 					<key>children</key>
@@ -109,7 +109,7 @@
 							<key>filename</key>
 							<string>Design/Inputs.sass</string>
 							<key>lastUsed</key>
-							<date>2011-12-11T23:47:50Z</date>
+							<date>2011-12-15T22:36:21Z</date>
 						</dict>
 						<dict>
 							<key>filename</key>
@@ -131,6 +131,8 @@
 						<dict>
 							<key>filename</key>
 							<string>Design/Utility.sass</string>
+							<key>lastUsed</key>
+							<date>2011-12-15T22:36:23Z</date>
 						</dict>
 					</array>
 					<key>name</key>
@@ -147,13 +149,13 @@
 					<key>filename</key>
 					<string>Server/bundler.php</string>
 					<key>lastUsed</key>
-					<date>2011-12-12T00:33:09Z</date>
+					<date>2011-12-16T09:43:18Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Server/downloader.php</string>
 					<key>lastUsed</key>
-					<date>2011-11-25T23:35:11Z</date>
+					<date>2011-12-16T09:43:19Z</date>
 				</dict>
 			</array>
 			<key>name</key>
@@ -164,7 +166,67 @@
 	<integer>200</integer>
 	<key>metaData</key>
 	<dict>
-		<key>Brain/Compile</key>
+		<key>Brain/Constants.coffee</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>117</integer>
+				<key>line</key>
+				<integer>42</integer>
+			</dict>
+			<key>columnSelection</key>
+			<false/>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>16</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>3</integer>
+				<key>line</key>
+				<integer>42</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>117</integer>
+				<key>line</key>
+				<integer>42</integer>
+			</dict>
+		</dict>
+		<key>Brain/Formula.coffee</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>15</integer>
+				<key>line</key>
+				<integer>13</integer>
+			</dict>
+			<key>columnSelection</key>
+			<false/>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>4</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>13</integer>
+				<key>line</key>
+				<integer>13</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>20</integer>
+				<key>line</key>
+				<integer>13</integer>
+			</dict>
+		</dict>
+		<key>Brain/Main.coffee</key>
 		<dict>
 			<key>caret</key>
 			<dict>
@@ -183,108 +245,53 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>24</integer>
+				<integer>17</integer>
 				<key>line</key>
-				<integer>27</integer>
+				<integer>65</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>Overview/index.html</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>72</integer>
-				<key>line</key>
-				<integer>52</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>35</integer>
-		</dict>
-		<key>Server/bundler.php</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>31</integer>
-				<key>line</key>
-				<integer>67</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>30</integer>
-		</dict>
-		<key>Server/downloader.php</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>2</integer>
-				<key>line</key>
-				<integer>4</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>cache.manifest</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>1</integer>
-				<key>line</key>
-				<integer>3</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>38</integer>
 		</dict>
 		<key>index.html</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>14</integer>
+				<integer>6</integer>
 				<key>line</key>
-				<integer>62</integer>
+				<integer>29</integer>
 			</dict>
+			<key>columnSelection</key>
+			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>27</integer>
-		</dict>
-		<key>version</key>
-		<dict>
-			<key>caret</key>
+			<integer>8</integer>
+			<key>selectFrom</key>
 			<dict>
 				<key>column</key>
-				<integer>2</integer>
+				<integer>3</integer>
 				<key>line</key>
-				<integer>0</integer>
+				<integer>29</integer>
 			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>6</integer>
+				<key>line</key>
+				<integer>29</integer>
+			</dict>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>cache.manifest</string>
-		<string>index.html</string>
 		<string>Design/Main.sass</string>
-		<string>Overview/index.html</string>
-		<string>version</string>
-		<string>Server/bundler.php</string>
+		<string>Brain/Main.coffee</string>
+		<string>Brain/Formula.coffee</string>
+		<string>Brain/Constants.coffee</string>
+		<string>index.html</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>
