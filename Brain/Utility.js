@@ -1,4 +1,4 @@
-var floor, globals, pow, print, random, switchFrames;
+var floor, getElement, globals, pow, print, random, switchFrames;
 random = function(array) {
   return array[floor(Math.random() * array.length)];
 };
@@ -32,6 +32,9 @@ globals = function(list) {
     _results.push(window[id] = document.getElementById(id));
   }
   return _results;
+};
+getElement = function(parent, tag) {
+  return parent.getElementsByTagName(tag)[0];
 };
 print = function(text) {
   return console.log(text);

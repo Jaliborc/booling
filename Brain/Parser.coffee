@@ -61,10 +61,10 @@ class Parser
 		@connectOpers()
 		
 	parseFormula: ->	
-		size = @formula.length
-		if size is 0
+		@size = @formula.length
+		if @size is 0
 			return 'EMPTY'
-		else if size < 3
+		else if @size < 3
 			return 'SHORT'
 		
 		@numOpers = 0
@@ -74,7 +74,7 @@ class Parser
 		last = false
 		brackets = 0
 		
-		for i in [0 .. size - 1]
+		for i in [0 .. @size - 1]
 			char = new Char(this, i)
 			continue if char.ignore
 			

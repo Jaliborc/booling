@@ -1,17 +1,24 @@
 var clearRelations, focusRelation, focusRelations, getColumns, getOper, parseBolean, parseSyntax, showFormula, verifyAnswer;
 parseSyntax = function() {
-  var error, messages, parser, value;
+  var error, i, messages, offset, parser, position, value;
   value = Formula.value;
   parser = new Parser(value);
+  i = parser.i || parser.size - 1;
   error = parser.error;
   if (error) {
-    if (Error.current !== error && (messages = Errors[error])) {
-      Error.getElementsByTagName('p')[0].innerHTML = random(messages);
+    if (messages = Errors[error]) {
+      if (Error.current !== error) {
+        getElement(Error, 'p').innerHTML = random(messages);
+      }
+      Overlay.innerHTML = value.slice(0, i) + '<span>' + value.slice(i, i + 1) + '</span>';
+      position = getElement(Overlay, 'span').offsetLeft - Overlay.offsetLeft - 195;
+      offset = Math.max(position, 0);
+      Error.style.marginLeft = offset + 'px';
+      Error.getElementsByClassName('arrow')[0].style.left = 224 + position - offset + 'px';
       Error.className = 'show alert';
-      Overlay.innerHTML = value;
       Error.current = error;
     }
-    return print(error);
+    return print(error + ' at ' + i);
   } else {
     return switchFrames(FormulaSection, AnswerSection, function() {
       AnswerSection.style.width = parser.width;

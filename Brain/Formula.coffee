@@ -1,6 +1,7 @@
 # Input Box
 autoSyntax = (board) ->
 	value = Formula.value
+	Overlay.innerHTML = ''
 	
 	if board.altKey
 		for operator, data of Operators

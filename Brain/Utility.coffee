@@ -28,6 +28,9 @@ switchFrames = (hide, show, onFinish) ->
 # General	
 globals = (list) ->
 	window[id] = document.getElementById(id) for id in list
+	
+getElement = (parent, tag) ->
+	parent.getElementsByTagName(tag)[0]
 
 print = (text) ->
 	console.log(text)

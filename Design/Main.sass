@@ -21,6 +21,7 @@ body
 	margin: 0
 	
 section, header
+	position: relative
 	margin: auto
 	margin-top: 40px
 	width: 1000px
@@ -61,7 +62,15 @@ footer
 		padding: 20px
 		width: 785px
 		height: 26px
-	input
+	#Overlay
+		position: absolute
+		left: 22px
+		top: 21px
+		
+		span	
+			@extend .red
+	
+	input, #Overlay
 		font-size: 1.4em
 	input[type="submit"]
 		padding: 17px

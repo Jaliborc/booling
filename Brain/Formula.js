@@ -2,6 +2,7 @@ var addOperator, autoSyntax, fillKeys, initFormula, saveFormula;
 autoSyntax = function(board) {
   var code, data, match, operator, value, _i, _j, _len, _len2, _ref, _ref2;
   value = Formula.value;
+  Overlay.innerHTML = '';
   if (board.altKey) {
     for (operator in Operators) {
       data = Operators[operator];

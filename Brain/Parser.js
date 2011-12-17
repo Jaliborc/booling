@@ -85,11 +85,11 @@ Parser = (function() {
     this.connectOpers();
   }
   Parser.prototype.parseFormula = function() {
-    var brackets, char, error, i, last, size, _base, _name, _ref, _ref2;
-    size = this.formula.length;
-    if (size === 0) {
+    var brackets, char, error, i, last, _base, _name, _ref, _ref2;
+    this.size = this.formula.length;
+    if (this.size === 0) {
       return 'EMPTY';
-    } else if (size < 3) {
+    } else if (this.size < 3) {
       return 'SHORT';
     }
     this.numOpers = 0;
@@ -97,7 +97,7 @@ Parser = (function() {
     this.vars = {};
     last = false;
     brackets = 0;
-    for (i = 0, _ref = size - 1; 0 <= _ref ? i <= _ref : i >= _ref; 0 <= _ref ? i++ : i--) {
+    for (i = 0, _ref = this.size - 1; 0 <= _ref ? i <= _ref : i >= _ref; 0 <= _ref ? i++ : i--) {
       char = new Char(this, i);
       if (char.ignore) {
         continue;

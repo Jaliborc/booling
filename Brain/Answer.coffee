@@ -2,17 +2,23 @@
 parseSyntax = ->
 	value = Formula.value
 	parser = new Parser(value)
+	i = parser.i or parser.size - 1
 	error = parser.error
 
 	if error
-		if Error.current != error and messages = Errors[error]
-			Error.getElementsByTagName('p')[0].innerHTML = random(messages)
-			#Error.style.margin_left = Overlay.getElementsByTagName('span')[0].clientWidth
+		if messages = Errors[error]
+			getElement(Error, 'p').innerHTML = random(messages) if Error.current != error
+			
+			Overlay.innerHTML = value.slice(0, i) + '<span>' + value.slice(i, i + 1) + '</span>'
+			position = getElement(Overlay, 'span').offsetLeft - Overlay.offsetLeft - 195
+			offset = Math.max(position, 0)
+			
+			Error.style.marginLeft = offset + 'px'
+			Error.getElementsByClassName('arrow')[0].style.left = 224 + position - offset + 'px'
 			Error.className = 'show alert'
-			Overlay.innerHTML = value
 			Error.current = error
 			
-		print(error)
+		print(error + ' at ' + i)
 	else
 		switchFrames(FormulaSection, AnswerSection, ->
 			AnswerSection.style.width = parser.width

@@ -76,7 +76,7 @@
   background-image: linear-gradient(bottom, #eeeeee 0%, white 100%);
   background-color: #f6f6f6; }
 
-.red {
+.red, #FormulaSection #Overlay span {
   color: red; }
 
 .green {
@@ -148,10 +148,10 @@ input[type="submit"] {
   position: relative;
   width: 492px; }
   .alert.show {
-    margin-bottom: 30px; }
+    margin-bottom: 35px; }
   .alert p {
     padding: 10px;
-    margin-top: 30px;
+    margin-top: 25px;
     font-size: 16px;
     z-index: 0; }
   .alert .arrow {
@@ -163,7 +163,6 @@ input[type="submit"] {
     -o-transform: rotate(45deg);
     transform: rotate(45deg);
     background-color: #f6f6f6;
-    left: 223.5px;
     position: absolute;
     height: 45px;
     width: 45px;
@@ -185,6 +184,7 @@ body {
   margin: 0; }
 
 section, header {
+  position: relative;
   margin: auto;
   margin-top: 40px;
   width: 1000px; }
@@ -224,7 +224,11 @@ footer {
   padding: 20px;
   width: 785px;
   height: 26px; }
-#FormulaSection input {
+#FormulaSection #Overlay {
+  position: absolute;
+  left: 22px;
+  top: 21px; }
+#FormulaSection input, #FormulaSection #Overlay {
   font-size: 1.4em; }
 #FormulaSection input[type="submit"] {
   padding: 17px;
