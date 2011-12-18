@@ -112,7 +112,7 @@ class Parser
 
 			for y in [0 .. @lines]
 				v = 1 - floor(y / pow(2, x)) % 2
-				@result += '<li>' + @createBolean(v) + '</li>'
+				@result += @createBolean(v)
 				record.values[y] = v
 
 			@endCell()
@@ -166,10 +166,10 @@ class Parser
 			char = @list[i]
 			continue unless char.operable
 			
-			char.a = @getConnection(char, i, 1, 'open')
-			char.b = @getConnection(char, i, -1, 'close')
+			char.a = @getConnection(char, i, 1, 'open', 'close')
+			char.b = @getConnection(char, i, -1, 'close', 'open')
 			
-	getConnection: (char, start, order, bracket) ->
+	getConnection: (char, start, order, bracket, lose) ->
 		start += order
 		prio = char.priority + order
 		target = @list[start]
@@ -177,7 +177,9 @@ class Parser
 		i = start
 
 		while target
-			if target[bracket]
+			if target[lose]
+				break
+			else if target[bracket]
 				brackets++
 			else if target.operable
 				return target if brackets == 1 or target.priority > prio

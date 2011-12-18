@@ -1,7 +1,7 @@
 var ANIMATE_TIME, Errors, F, NOT, Operators, Placeholders, T;
 ANIMATE_TIME = 400;
-T = '<a class="green">T</a>';
-F = '<a class="red">F</a>';
+T = '<li class="green">T</li>';
+F = '<li class="red">F</li>';
 NOT = '¬';
 Operators = {
   '¬': {
@@ -30,7 +30,7 @@ Operators = {
   },
   '→': {
     value: function(a, b) {
-      return !a || b;
+      return !b || a;
     },
     keys: ['then', '->'],
     altKeys: [84],

@@ -76,12 +76,6 @@
   background-image: linear-gradient(bottom, #eeeeee 0%, white 100%);
   background-color: #f6f6f6; }
 
-.red, #FormulaSection #Overlay span {
-  color: red; }
-
-.green {
-  color: green; }
-
 .table {
   background-size: 100% 49px;
   background-repeat: no-repeat;
@@ -124,6 +118,16 @@
     .table > .cell .spacer {
       color: white;
       color: rgba(255, 255, 255, 0); }
+
+.red, #FormulaSection #Overlay span, .red *, #FormulaSection #Overlay span * {
+  color: red; }
+
+.green, .green * {
+  color: green; }
+
+.wrong, .wrong * {
+  background-color: red;
+  color: white; }
 
 input {
   outline: none; }

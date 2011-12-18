@@ -1,6 +1,6 @@
 ANIMATE_TIME = 400
-T = '<a class="green">T</a>'
-F = '<a class="red">F</a>'
+T = '<li class="green">T</li>'
+F = '<li class="red">F</li>'
 NOT = '¬'
 
 Operators =
@@ -20,7 +20,7 @@ Operators =
 		altKeys: [79, 85]
 		priority: 4
 	'→':
-		value: (a, b) -> not a or b
+		value: (a, b) -> not b or a
 		keys: ['then', '->']
 		altKeys: [84]
 		priority: 2

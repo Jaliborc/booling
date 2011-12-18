@@ -148,7 +148,7 @@ Parser = (function() {
       this.startCell(id);
       for (y = 0, _ref2 = this.lines; 0 <= _ref2 ? y <= _ref2 : y >= _ref2; 0 <= _ref2 ? y++ : y--) {
         v = 1 - floor(y / pow(2, x)) % 2;
-        this.result += '<li>' + this.createBolean(v) + '</li>';
+        this.result += this.createBolean(v);
         record.values[y] = v;
       }
       _results.push(this.endCell());
@@ -209,12 +209,12 @@ Parser = (function() {
       if (!char.operable) {
         continue;
       }
-      char.a = this.getConnection(char, i, 1, 'open');
-      _results.push(char.b = this.getConnection(char, i, -1, 'close'));
+      char.a = this.getConnection(char, i, 1, 'open', 'close');
+      _results.push(char.b = this.getConnection(char, i, -1, 'close', 'open'));
     }
     return _results;
   };
-  Parser.prototype.getConnection = function(char, start, order, bracket) {
+  Parser.prototype.getConnection = function(char, start, order, bracket, lose) {
     var brackets, i, prio, target;
     start += order;
     prio = char.priority + order;
@@ -222,7 +222,9 @@ Parser = (function() {
     brackets = 0;
     i = start;
     while (target) {
-      if (target[bracket]) {
+      if (target[lose]) {
+        break;
+      } else if (target[bracket]) {
         brackets++;
       } else if (target.operable) {
         if (brackets === 1 || target.priority > prio) {

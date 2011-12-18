@@ -32,10 +32,10 @@ parseBolean = function(input) {
   value = input.value.toUpperCase();
   color = (value === 'T' && 'green') || (value === 'F' && 'red');
   if (color) {
-    input.className = color;
+    input.parentNode.className = color;
     return input.value = value;
   } else {
-    input.className = '';
+    input.parentNode.className = '';
     return input.value = '';
   }
 };
@@ -47,7 +47,7 @@ verifyAnswer = function() {
   for (i = 0, _ref = inputs.length - 1; 0 <= _ref ? i <= _ref : i >= _ref; 0 <= _ref ? i++ : i--) {
     input = inputs[i];
     text = input.value;
-    _results.push(!text ? print('Value missing') : (x = i % numLines, value = getOper(input).getValue(x), value !== text ? print('Incorrect value') : void 0));
+    _results.push(!text ? input.parentNode.className = 'wrong' : (x = i % numLines, value = getOper(input).getValue(x), value !== text ? input.parentNode.className = 'wrong' : void 0));
   }
   return _results;
 };

@@ -32,10 +32,10 @@ parseBolean = (input) ->
 	color = (value == 'T' and 'green') or (value == 'F' and 'red')
 	
 	if color
-		input.className = color
+		input.parentNode.className = color
 		input.value = value
 	else
-		input.className = ''
+		input.parentNode.className = ''
 		input.value = ''
 
 
@@ -49,13 +49,13 @@ verifyAnswer = ->
 		text = input.value
 		
 		if not text
-			print('Value missing')
+			input.parentNode.className = 'wrong'
 		else
 			x = i % numLines
 			value = getOper(input).getValue(x)
 		
 			if value != text
-				print('Incorrect value')
+				input.parentNode.className = 'wrong'
 		
 showFormula = ->
 	switchFrames(AnswerSection, FormulaSection, ->
