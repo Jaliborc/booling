@@ -26,7 +26,7 @@
 .wide {
   width: 100%; }
 
-.clear:after, #Features .box:after, #Features .table:after, #Features input:after, #Features .alert p:after, .alert #Features p:after {
+.clear:after, #Spotlight .box:after, #Spotlight .table:after, #Spotlight input:after, #Spotlight .alert p:after, .alert #Spotlight p:after {
   visibility: hidden;
   display: block;
   content: ".";
@@ -251,10 +251,10 @@ footer {
   font-size: 23px;
   width: 850px; }
 
-#Features .box, #Features .table, #Features input, #Features .alert p, .alert #Features p {
+#Spotlight .box, #Spotlight .table, #Spotlight input, #Spotlight .alert p, .alert #Spotlight p {
   margin-top: 40px;
   padding: 25px; }
-#Features .img {
+#Spotlight .img {
   -webkit-box-shadow: 0 0 5px #444444;
   -khtml-box-shadow: 0 0 5px #444444;
   -moz-box-shadow: 0 0 5px #444444;
@@ -276,13 +276,21 @@ footer {
   background-size: cover;
   width: 230px;
   height: 143px; }
-#Features h1 {
+#Spotlight h1, #Spotlight p {
   margin-bottom: 10px; }
-#Features .odd .img {
+#Spotlight ul {
+  margin-right: 30px;
+  margin-left: 30px; }
+#Spotlight a {
+  text-decoration: none;
+  color: #392c26; }
+  #Spotlight a:hover {
+    color: #634c41; }
+#Spotlight .odd .img {
   margin-left: 100px;
   float: right; }
-#Features .even .img {
+#Spotlight .even .img {
   margin-right: 100px;
   float: left; }
-#Features .even h1, #Features .even p {
+#Spotlight .even h1, #Spotlight .even p {
   text-align: right; }
