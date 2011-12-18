@@ -2,7 +2,7 @@ var redirectOfficial;
 redirectOfficial = function() {
   var _ref;
   if ((typeof navigator !== "undefined" && navigator !== null ? navigator.onLine : void 0) && ((_ref = window.location) != null ? _ref.host : void 0) !== 'jaliborc.com') {
-    return print('');
+    return window.location = 'http://www.jaliborc.com/Booling/';
   }
 };
 window.onload = function() {

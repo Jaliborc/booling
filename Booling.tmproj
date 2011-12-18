@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>Design/Main.sass</string>
+	<string>version</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -25,7 +25,9 @@
 					<key>filename</key>
 					<string>version</string>
 					<key>lastUsed</key>
-					<date>2011-12-16T09:43:19Z</date>
+					<date>2011-12-17T17:55:19Z</date>
+					<key>selected</key>
+					<true/>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -71,7 +73,7 @@
 					<key>filename</key>
 					<string>Brain/Answer.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-12-17T16:43:35Z</date>
+					<date>2011-12-17T17:55:19Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -92,6 +94,8 @@
 					<date>2011-12-17T13:44:57Z</date>
 				</dict>
 			</array>
+			<key>expanded</key>
+			<true/>
 			<key>name</key>
 			<string>Brain</string>
 		</dict>
@@ -102,9 +106,7 @@
 					<key>filename</key>
 					<string>Design/Main.sass</string>
 					<key>lastUsed</key>
-					<date>2011-12-17T16:45:20Z</date>
-					<key>selected</key>
-					<true/>
+					<date>2011-12-17T17:53:33Z</date>
 				</dict>
 				<dict>
 					<key>children</key>
@@ -125,11 +127,9 @@
 							<key>filename</key>
 							<string>Design/Alerts.sass</string>
 							<key>lastUsed</key>
-							<date>2011-12-17T16:45:20Z</date>
+							<date>2011-12-17T17:53:34Z</date>
 						</dict>
 					</array>
-					<key>expanded</key>
-					<true/>
 					<key>name</key>
 					<string>Components</string>
 				</dict>
@@ -153,8 +153,6 @@
 					<string>Common</string>
 				</dict>
 			</array>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>Design</string>
 		</dict>
@@ -182,39 +180,39 @@
 	<integer>200</integer>
 	<key>metaData</key>
 	<dict>
-		<key>Design/Alerts.sass</key>
+		<key>Brain/Answer.coffee</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>19</integer>
+				<integer>80</integer>
 				<key>line</key>
-				<integer>4</integer>
+				<integer>15</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>Design/Main.sass</key>
+		<key>version</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>17</integer>
+				<integer>2</integer>
 				<key>line</key>
-				<integer>25</integer>
+				<integer>0</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>16</integer>
+			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>Design/Alerts.sass</string>
-		<string>Design/Main.sass</string>
+		<string>Brain/Answer.coffee</string>
+		<string>version</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>

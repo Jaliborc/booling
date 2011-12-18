@@ -1,7 +1,6 @@
 redirectOfficial = ->
 	if navigator?.onLine and window.location?.host != 'jaliborc.com'
-		#window.location = 'http://www.jaliborc.com/Booling/'
-		print('')
+		window.location = 'http://www.jaliborc.com/Booling/'
 
 window.onload = ->
 	redirectOfficial()
