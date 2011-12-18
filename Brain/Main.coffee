@@ -1,5 +1,5 @@
 redirectOfficial = ->
-	if navigator?.onLine and window.location?.host != 'jaliborc.com'
+	if navigator?.onLine and window.location?.host != 'www.jaliborc.com'
 		window.location = 'http://www.jaliborc.com/Booling/'
 
 window.onload = ->
