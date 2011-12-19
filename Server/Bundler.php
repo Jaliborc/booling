@@ -29,6 +29,7 @@ if ($version == $current)
 
 # Copy Pages
 function copyPage($path){
+	global $DIR;
 	$page = file_get_contents($DIR . $path);
 	easyWrite($path, str_replace('../Design/', '../', $page));
 }
@@ -39,14 +40,15 @@ copyPage('About/index.html');
 	
 # Copy Files
 function copyFile($origin, $target){
-	$file = file_get_contents($DIR . $origin);
+	global $DIR;
+	$file = file_get_contents($DIR . $origin . $target);
 	easyWrite($target, $file);
 	return $file;
 }
 
-$css = copyFile('Design/Main.css', 'Main.css');
-copyFile('Server/downloader.php', 'downloader.php');
-copyFile('Server/bundler.php', 'bundler.php');
+$css = copyFile('Design/', 'Main.css');
+copyFile('Server/', 'downloader.php');
+copyFile('Server/', 'bundler.php');
 
 
 # Bundle Scripts
@@ -82,5 +84,5 @@ $manifest = str_replace('VERSION', 'Version ' . $version, $manifest);
 # Save Results
 easyWrite('cache.manifest', $manifest);
 easyWrite('index.html', $html);
-easyWrite('version', $version);
+#easyWrite('version', $version);
 ?>
