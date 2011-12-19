@@ -25,14 +25,28 @@ echo ' | Server: ' . $current;
 
 if ($version == $current)
 	return;
+
+
+# Copy Pages
+function copyPage($path){
+	$page = file_get_contents($DIR . $path);
+	easyWrite($path, str_replace('../Design/', '../', $page));
+}
+
+copyPage('Overview/index.html');
+copyPage('About/index.html');
 	
 	
 # Copy Files
-$css = file_get_contents($DIR . 'Design/Main.css');
-easyWrite('Main.css', $css);
+function copyFile($origin, $target){
+	$file = file_get_contents($DIR . $origin);
+	easyWrite($target, $file);
+	return $file;
+}
 
-$overview = file_get_contents($DIR . 'Overview/index.html');
-easyWrite('Overview/index.html', str_replace('../Design/', '../', $overview));
+$css = copyFile('Design/Main.css', 'Main.css');
+copyFile('Server/downloader.php', 'downloader.php');
+copyFile('Server/bundler.php', 'bundler.php');
 
 
 # Bundle Scripts
@@ -43,6 +57,9 @@ $scripts = '';
 foreach($Brain as $file) {
 	$scripts = $scripts . file_get_contents($BRAIN . $file);
 }
+
+easyWrite('tempScript.js', 'USER=true;' . $scripts);
+$scripts = file_get_contents("http://www.marijnhaverbeke.nl/uglifyjs?code_url=http://www.jaliborc.com/Booling/tempScript.js");
 
 
 # Inject Code
