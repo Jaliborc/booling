@@ -46,7 +46,7 @@ function copyFile($origin, $target){
 	return $file;
 }
 
-$css = copyFile('Design/', 'Main.css');
+$css = copyFile('Design/Main.css', 'Main.css');
 copyFile('Server/Downloader.php', 'downloader.php');
 copyFile('Server/Bundler.php', 'bundler.php');
 
@@ -84,5 +84,5 @@ $manifest = str_replace('VERSION', 'Version ' . $version, $manifest);
 # Save Results
 easyWrite('cache.manifest', $manifest);
 easyWrite('index.html', $html);
-#easyWrite('version', $version);
+easyWrite('version', $version);
 ?>

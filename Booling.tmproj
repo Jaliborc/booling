@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>Brain/Answer.coffee</string>
+	<string>Server/bundler.php</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -13,7 +13,7 @@
 					<key>filename</key>
 					<string>index.html</string>
 					<key>lastUsed</key>
-					<date>2011-12-17T16:22:36Z</date>
+					<date>2011-12-18T20:21:42Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -25,7 +25,7 @@
 					<key>filename</key>
 					<string>version</string>
 					<key>lastUsed</key>
-					<date>2011-12-18T00:15:41Z</date>
+					<date>2011-12-19T00:11:08Z</date>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -40,9 +40,11 @@
 					<key>filename</key>
 					<string>Overview/index.html</string>
 					<key>lastUsed</key>
-					<date>2011-12-16T20:29:16Z</date>
+					<date>2011-12-18T23:09:25Z</date>
 				</dict>
 			</array>
+			<key>expanded</key>
+			<true/>
 			<key>name</key>
 			<string>Overview</string>
 		</dict>
@@ -51,35 +53,48 @@
 			<array>
 				<dict>
 					<key>filename</key>
+					<string>About/index.html</string>
+					<key>lastUsed</key>
+					<date>2011-12-19T00:27:35Z</date>
+				</dict>
+			</array>
+			<key>expanded</key>
+			<true/>
+			<key>name</key>
+			<string>About</string>
+		</dict>
+		<dict>
+			<key>children</key>
+			<array>
+				<dict>
+					<key>filename</key>
 					<string>Brain/Main.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-12-18T00:09:22Z</date>
+					<date>2011-12-19T00:29:07Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Formula.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-12-17T16:29:38Z</date>
+					<date>2011-12-18T23:38:10Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Parser.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-12-17T16:43:35Z</date>
+					<date>2011-12-18T23:38:09Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Answer.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-12-18T00:15:41Z</date>
-					<key>selected</key>
-					<true/>
+					<date>2011-12-18T20:29:53Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Constants.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-12-17T13:36:58Z</date>
+					<date>2011-12-18T20:21:46Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -106,7 +121,7 @@
 					<key>filename</key>
 					<string>Design/Main.sass</string>
 					<key>lastUsed</key>
-					<date>2011-12-17T17:53:33Z</date>
+					<date>2011-12-18T23:09:24Z</date>
 				</dict>
 				<dict>
 					<key>children</key>
@@ -115,13 +130,13 @@
 							<key>filename</key>
 							<string>Design/Inputs.sass</string>
 							<key>lastUsed</key>
-							<date>2011-12-15T22:36:21Z</date>
+							<date>2011-12-18T20:04:12Z</date>
 						</dict>
 						<dict>
 							<key>filename</key>
 							<string>Design/Tables.sass</string>
 							<key>lastUsed</key>
-							<date>2011-12-16T22:35:20Z</date>
+							<date>2011-12-18T20:12:45Z</date>
 						</dict>
 						<dict>
 							<key>filename</key>
@@ -140,13 +155,13 @@
 							<key>filename</key>
 							<string>Design/Common.sass</string>
 							<key>lastUsed</key>
-							<date>2011-12-16T22:47:22Z</date>
+							<date>2011-12-18T20:05:17Z</date>
 						</dict>
 						<dict>
 							<key>filename</key>
 							<string>Design/Utility.sass</string>
 							<key>lastUsed</key>
-							<date>2011-12-16T23:00:51Z</date>
+							<date>2011-12-18T19:45:42Z</date>
 						</dict>
 					</array>
 					<key>name</key>
@@ -163,15 +178,19 @@
 					<key>filename</key>
 					<string>Server/bundler.php</string>
 					<key>lastUsed</key>
-					<date>2011-12-16T09:43:18Z</date>
+					<date>2011-12-19T00:29:07Z</date>
+					<key>selected</key>
+					<true/>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Server/downloader.php</string>
 					<key>lastUsed</key>
-					<date>2011-12-16T09:43:19Z</date>
+					<date>2011-12-19T00:24:48Z</date>
 				</dict>
 			</array>
+			<key>expanded</key>
+			<true/>
 			<key>name</key>
 			<string>Server</string>
 		</dict>
@@ -180,14 +199,14 @@
 	<integer>200</integer>
 	<key>metaData</key>
 	<dict>
-		<key>Brain/Answer.coffee</key>
+		<key>About/index.html</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>80</integer>
+				<integer>33</integer>
 				<key>line</key>
-				<integer>15</integer>
+				<integer>21</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -199,21 +218,35 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>52</integer>
+				<integer>93</integer>
 				<key>line</key>
-				<integer>6</integer>
+				<integer>1</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>version</key>
+		<key>Server/bundler.php</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>2</integer>
+				<integer>24</integer>
+				<key>line</key>
+				<integer>48</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>20</integer>
+		</dict>
+		<key>Server/downloader.php</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>5</integer>
 				<key>line</key>
 				<integer>0</integer>
 			</dict>
@@ -225,9 +258,10 @@
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>Brain/Answer.coffee</string>
-		<string>version</string>
+		<string>About/index.html</string>
 		<string>Brain/Main.coffee</string>
+		<string>Server/bundler.php</string>
+		<string>Server/downloader.php</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>
