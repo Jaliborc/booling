@@ -41,14 +41,14 @@ copyPage('About/index.html');
 # Copy Files
 function copyFile($origin, $target){
 	global $DIR;
-	$file = file_get_contents($DIR . $origin . $target);
+	$file = file_get_contents($DIR . $origin);
 	easyWrite($target, $file);
 	return $file;
 }
 
 $css = copyFile('Design/', 'Main.css');
-copyFile('Server/', 'downloader.php');
-copyFile('Server/', 'bundler.php');
+copyFile('Server/Downloader.php', 'downloader.php');
+copyFile('Server/Bundler.php', 'bundler.php');
 
 
 # Bundle Scripts
