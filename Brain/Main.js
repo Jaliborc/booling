@@ -1,7 +1,6 @@
 var redirectOfficial;
 redirectOfficial = function() {
-  var _ref;
-  if ((typeof USER !== "undefined" && USER !== null) && (typeof navigator !== "undefined" && navigator !== null ? navigator.onLine : void 0) && ((_ref = window.location) != null ? _ref.href : void 0) !== 'http://www.jaliborc.com/Booling/') {
+  if ((typeof DOWNLOAD !== "undefined" && DOWNLOAD !== null) && (typeof navigator !== "undefined" && navigator !== null ? navigator.onLine : void 0)) {
     return window.location = 'http://www.jaliborc.com/Booling/';
   }
 };

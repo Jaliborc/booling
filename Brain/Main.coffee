@@ -1,5 +1,5 @@
 redirectOfficial = ->
-	if USER? and navigator?.onLine and window.location?.href != 'http://www.jaliborc.com/Booling/'
+	if DOWNLOAD? and navigator?.onLine
 		window.location = 'http://www.jaliborc.com/Booling/'
 
 window.onload = ->

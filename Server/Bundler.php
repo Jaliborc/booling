@@ -60,20 +60,21 @@ foreach($Brain as $file) {
 	$scripts = $scripts . file_get_contents($BRAIN . $file);
 }
 
-easyWrite('tempScript.js', 'DOWNLOAD=true;' . $scripts);
+easyWrite('tempScript.js', $scripts);
 $scripts = file_get_contents("http://www.marijnhaverbeke.nl/uglifyjs?code_url=http://www.jaliborc.com/Booling/tempScript.js");
 
 
 # Inject Code
-$scripts = '<script>' . $scripts . '</script>';
-$css = '<style media="screen" type="text/css">' . $css . '</style>';
+$css = '<style media="screen" type="text/css">' . $css . '</style><script>';
+$scripts = $scripts . '</script>';
 
 $html = file_get_contents($DIR . 'index.html');
 $replace = array();
 	
 preg_match('/<BUNDLE>[\w\s<>"=\/.]+<\/BUNDLE>/', $html, $replace);
 $html = str_replace('VERSION', 'Version ' . $version, $html);
-$html = str_replace($replace[0], $css . $scripts, $html);
+$online = str_replace($replace[0], $css . $scripts, $html);
+$offline = str_replace($replace[0], $css . 'DOWNLOAD=true;' . $scripts, $html);
 
 
 # Update Manifest
@@ -83,6 +84,7 @@ $manifest = str_replace('VERSION', 'Version ' . $version, $manifest);
 
 # Save Results
 easyWrite('cache.manifest', $manifest);
-easyWrite('index.html', $html);
+easyWrite('offline.html', $offline);
+easyWrite('index.html', $online);
 easyWrite('version', $version);
 ?>
