@@ -30,7 +30,7 @@ class Char
 		if @value(x) then 'T' else 'F'
 		
 	value: (x) ->
-		if @data then @data.values[x] else Operators[@text].value(@a.value(x), @b.value(x))
+		if @data then @data.values[x] else Operators[@text].value(@a.value(x), @b?.value(x))
 		
 	index: ->
 		if @data then @data.i else @i + @parser.numVars + 1
@@ -166,8 +166,8 @@ class Parser
 			char = @list[i]
 			continue unless char.operable
 			
+			char.b = @getConnection(char, i, -1, 'close', 'open') if not char.no
 			char.a = @getConnection(char, i, 1, 'open', 'close')
-			char.b = @getConnection(char, i, -1, 'close', 'open')
 			
 	getConnection: (char, start, order, bracket, lose) ->
 		start += order
@@ -181,9 +181,11 @@ class Parser
 				break
 			else if target[bracket]
 				brackets++
-			else if target.operable
+			else if target.oper
 				return target if brackets == 1 or target.priority > prio
 				brackets--
+			else if target.no
+				return target if brackets == 0
 				
 			i += order
 			target = @list[i]

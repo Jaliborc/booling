@@ -60,7 +60,7 @@ foreach($Brain as $file) {
 	$scripts = $scripts . file_get_contents($BRAIN . $file);
 }
 
-easyWrite('tempScript.js', 'USER=true;' . $scripts);
+easyWrite('tempScript.js', 'DOWNLOAD=true;' . $scripts);
 $scripts = file_get_contents("http://www.marijnhaverbeke.nl/uglifyjs?code_url=http://www.jaliborc.com/Booling/tempScript.js");
 
 

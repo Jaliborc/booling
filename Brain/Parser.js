@@ -38,10 +38,11 @@ Char = (function() {
     }
   };
   Char.prototype.value = function(x) {
+    var _ref;
     if (this.data) {
       return this.data.values[x];
     } else {
-      return Operators[this.text].value(this.a.value(x), this.b.value(x));
+      return Operators[this.text].value(this.a.value(x), (_ref = this.b) != null ? _ref.value(x) : void 0);
     }
   };
   Char.prototype.index = function() {
@@ -209,8 +210,10 @@ Parser = (function() {
       if (!char.operable) {
         continue;
       }
-      char.a = this.getConnection(char, i, 1, 'open', 'close');
-      _results.push(char.b = this.getConnection(char, i, -1, 'close', 'open'));
+      if (!char.no) {
+        char.b = this.getConnection(char, i, -1, 'close', 'open');
+      }
+      _results.push(char.a = this.getConnection(char, i, 1, 'open', 'close'));
     }
     return _results;
   };
@@ -226,11 +229,15 @@ Parser = (function() {
         break;
       } else if (target[bracket]) {
         brackets++;
-      } else if (target.operable) {
+      } else if (target.oper) {
         if (brackets === 1 || target.priority > prio) {
           return target;
         }
         brackets--;
+      } else if (target.no) {
+        if (brackets === 0) {
+          return target;
+        }
       }
       i += order;
       target = this.list[i];

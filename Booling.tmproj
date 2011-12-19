@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>Server/bundler.php</string>
+	<string>Brain/Parser.coffee</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -28,8 +28,6 @@
 					<date>2011-12-19T00:11:08Z</date>
 				</dict>
 			</array>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>App</string>
 		</dict>
@@ -43,8 +41,6 @@
 					<date>2011-12-18T23:09:25Z</date>
 				</dict>
 			</array>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>Overview</string>
 		</dict>
@@ -55,11 +51,9 @@
 					<key>filename</key>
 					<string>About/index.html</string>
 					<key>lastUsed</key>
-					<date>2011-12-19T00:27:35Z</date>
+					<date>2011-12-19T11:04:24Z</date>
 				</dict>
 			</array>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>About</string>
 		</dict>
@@ -70,19 +64,19 @@
 					<key>filename</key>
 					<string>Brain/Main.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-12-19T00:29:07Z</date>
+					<date>2011-12-19T18:52:05Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Formula.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-12-18T23:38:10Z</date>
+					<date>2011-12-19T19:40:43Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Parser.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-12-18T23:38:09Z</date>
+					<date>2011-12-19T19:48:59Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -94,7 +88,7 @@
 					<key>filename</key>
 					<string>Brain/Constants.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-12-18T20:21:46Z</date>
+					<date>2011-12-19T19:48:59Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -109,10 +103,10 @@
 					<date>2011-12-17T13:44:57Z</date>
 				</dict>
 			</array>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>Brain</string>
+			<key>selected</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>children</key>
@@ -178,19 +172,15 @@
 					<key>filename</key>
 					<string>Server/bundler.php</string>
 					<key>lastUsed</key>
-					<date>2011-12-19T00:29:07Z</date>
-					<key>selected</key>
-					<true/>
+					<date>2011-12-19T18:41:33Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Server/downloader.php</string>
 					<key>lastUsed</key>
-					<date>2011-12-19T00:24:48Z</date>
+					<date>2011-12-19T18:41:34Z</date>
 				</dict>
 			</array>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>Server</string>
 		</dict>
@@ -199,69 +189,24 @@
 	<integer>200</integer>
 	<key>metaData</key>
 	<dict>
-		<key>About/index.html</key>
+		<key>Brain/Parser.coffee</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>33</integer>
+				<integer>22</integer>
 				<key>line</key>
-				<integer>21</integer>
+				<integer>183</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>Brain/Main.coffee</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>93</integer>
-				<key>line</key>
-				<integer>1</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>Server/bundler.php</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>24</integer>
-				<key>line</key>
-				<integer>48</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>20</integer>
-		</dict>
-		<key>Server/downloader.php</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>5</integer>
-				<key>line</key>
-				<integer>0</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>154</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>About/index.html</string>
-		<string>Brain/Main.coffee</string>
-		<string>Server/bundler.php</string>
-		<string>Server/downloader.php</string>
+		<string>Brain/Parser.coffee</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>
