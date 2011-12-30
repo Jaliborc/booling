@@ -14,14 +14,14 @@ Char = (function() {
   }
   Char.prototype.getType = function() {
     var _ref;
-    if (this.text === ' ' || this.text === '') {
-      return 'ignore';
-    } else if (this.text === '(') {
+    if (this.text === '(') {
       return 'open';
     } else if (this.text === ')') {
       return 'close';
     } else if (this.text === NOT) {
       return 'no';
+    } else if (this.text === '') {
+      return 'ignore';
     } else if (Operators[this.text]) {
       return 'oper';
     } else if ((65 <= (_ref = this.text.charCodeAt(0)) && _ref <= 122)) {

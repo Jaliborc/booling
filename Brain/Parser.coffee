@@ -11,14 +11,14 @@ class Char
 		@i = @list.length
 			
 	getType: ->	
-		if @text == ' ' or @text == ''
-			'ignore'
-		else if @text == '('
+		if @text == '('
 			'open'
 		else if @text == ')'
 			'close'
 		else if @text == NOT
 			'no'
+		else if @text == ''
+			'ignore'
 		else if Operators[@text]
 			'oper'
 		else if 65 <= @text.charCodeAt(0) <= 122

@@ -4,7 +4,7 @@ initAnswer = ->
 	window.Columns = AnswerTable.getElementsByTagName('ul')
 
 showAnswer = ->
-	value = Formula.value
+	value = Formula.value.replace(///\s///g, '')
 	window.Parsed = new Parser(value)
 	
 	i = Parsed.i or Parsed.size - 1
