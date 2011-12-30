@@ -1,10 +1,14 @@
-var clearRelations, focusRelation, focusRelations, getColumns, getOper, parseBolean, parseSyntax, showFormula, verifyAnswer;
-parseSyntax = function() {
-  var error, i, messages, offset, parser, position, value;
+var clearRelations, focusRelation, focusRelations, getOper, initAnswer, parseInput, showAnswer, verifyAnswer;
+initAnswer = function() {
+  window.Inputs = AnswerTable.getElementsByTagName('input');
+  return window.Columns = AnswerTable.getElementsByTagName('ul');
+};
+showAnswer = function() {
+  var error, i, isSame, messages, offset, position, value;
   value = Formula.value;
-  parser = new Parser(value);
-  i = parser.i || parser.size - 1;
-  error = parser.error;
+  window.Parsed = new Parser(value);
+  i = Parsed.i || Parsed.size - 1;
+  error = Parsed.error;
   if (error) {
     Overlay.innerHTML = value.slice(0, i) + '<span>' + value.slice(i, i + 1) + '</span>';
     if (messages = Errors[error]) {
@@ -16,75 +20,69 @@ parseSyntax = function() {
       }
       Error.style.marginLeft = offset + 'px';
       Error.className = 'show alert';
-      Error.current = error;
+      return Error.current = error;
     }
-    return print(error + ' at ' + i);
   } else {
+    isSame = localStorage.getItem('lastFormula') === value;
+    localStorage.setItem('lastFormula', value);
+    localStorage.setItem('state', 'answer');
     return switchFrames(FormulaSection, AnswerSection, function() {
-      AnswerSection.style.width = parser.width;
-      AnswerTable.innerHTML = parser.result;
-      return AnswerTable.parser = parser;
+      var i, input, _ref, _results;
+      AnswerSection.style.width = Parsed.width;
+      AnswerTable.innerHTML = Parsed.result;
+      _results = [];
+      for (i = 0, _ref = Inputs.length - 1; 0 <= _ref ? i <= _ref : i >= _ref; 0 <= _ref ? i++ : i--) {
+        input = Inputs[i];
+        input.i = i;
+        _results.push(isSame ? (input.value = localStorage.getItem(i), parseInput(input)) : localStorage.setItem(i, ''));
+      }
+      return _results;
     });
   }
 };
-parseBolean = function(input) {
+parseInput = function(input) {
   var color, value;
   value = input.value.toUpperCase();
   color = (value === 'T' && 'green') || (value === 'F' && 'red');
-  if (color) {
-    input.parentNode.className = color;
-    return input.value = value;
-  } else {
-    input.parentNode.className = '';
-    return input.value = '';
+  if (!color) {
+    value = '';
   }
+  localStorage.setItem(input.i, value);
+  input.parentNode.className = color || '';
+  return input.value = value;
 };
 verifyAnswer = function() {
-  var i, input, inputs, numLines, text, value, x, _ref, _results;
-  inputs = AnswerTable.getElementsByTagName('input');
-  numLines = AnswerTable.parser.lines + 1;
+  var i, input, numLines, text, value, x, _ref, _results;
+  numLines = Parsed.lines + 1;
   _results = [];
-  for (i = 0, _ref = inputs.length - 1; 0 <= _ref ? i <= _ref : i >= _ref; 0 <= _ref ? i++ : i--) {
-    input = inputs[i];
+  for (i = 0, _ref = Inputs.length - 1; 0 <= _ref ? i <= _ref : i >= _ref; 0 <= _ref ? i++ : i--) {
+    input = Inputs[i];
     text = input.value;
-    _results.push(!text ? input.parentNode.className = 'wrong' : (x = i % numLines, value = getOper(input).getValue(x), value !== text ? input.parentNode.className = 'wrong' : void 0));
+    _results.push(!text ? input.parentNode.className = 'wrong' : (x = i % numLines, value = getOper(input).getValue(x), value !== text ? input.parentNode.className = 'wrong' : input.parentNode.className = 'correct'));
   }
   return _results;
 };
-showFormula = function() {
-  return switchFrames(AnswerSection, FormulaSection, function() {
-    AnswerSection.style.width = '1px';
-    return AnswerTable.innerHTML = '';
-  });
-};
 focusRelations = function(input) {
-  var oper, uls;
+  var oper;
   oper = getOper(input);
-  uls = getColumns();
   clearRelations();
-  focusRelation('a', oper, uls);
-  return focusRelation('b', oper, uls);
+  focusRelation('a', oper);
+  return focusRelation('b', oper);
 };
-focusRelation = function(rel, oper, uls) {
+focusRelation = function(rel, oper) {
   var i, _ref, _ref2;
   i = (_ref = oper[rel]) != null ? _ref.index() : void 0;
-  return (_ref2 = uls[i]) != null ? _ref2.className = 'focus' : void 0;
+  return (_ref2 = Columns[i]) != null ? _ref2.className = 'focus' : void 0;
 };
 clearRelations = function() {
-  var ul, uls, _i, _len, _results;
-  uls = getColumns();
+  var ul, _i, _len, _results;
   _results = [];
-  for (_i = 0, _len = uls.length; _i < _len; _i++) {
-    ul = uls[_i];
+  for (_i = 0, _len = Columns.length; _i < _len; _i++) {
+    ul = Columns[_i];
     _results.push(ul.className = '');
   }
   return _results;
 };
-getColumns = function() {
-  return AnswerTable.getElementsByTagName('ul');
-};
 getOper = function(input) {
-  var i;
-  i = input.getAttribute('i');
-  return AnswerTable.parser.list[i];
+  return Parsed.list[input.getAttribute('oper')];
 };

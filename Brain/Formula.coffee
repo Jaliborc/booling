@@ -1,3 +1,16 @@
+#Startup
+showFormula = ->
+	localStorage.setItem('state', 'formula')
+	switchFrames(AnswerSection, FormulaSection, ->
+		AnswerSection.style.width = '1px'
+		AnswerTable.innerHTML = ''
+	)
+	
+initFormula = ->
+	Formula.value = localStorage.getItem('formula') or ''
+	Formula.placeholder = random(Placeholders)
+	
+
 # Input Box
 autoSyntax = (board) ->
 	value = Formula.value
@@ -15,10 +28,6 @@ autoSyntax = (board) ->
 	if value != Formula.value
 		Formula.value = value 
 		saveFormula()
-			
-initFormula = ->
-	Formula.value = localStorage?.getItem('formula') or ''
-	Formula.placeholder = random(Placeholders)
 		
 saveFormula = ->
 	localStorage?.setItem('formula', Formula.value)

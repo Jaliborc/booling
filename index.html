@@ -21,9 +21,9 @@
 	<header></header>
 	
 	<!-- Formula -->
-	<section id = "FormulaSection">
+	<section id = "FormulaSection" class="hide">
 		<input id = "Formula" onkeyup="autoSyntax(event)" oninput="saveFormula()" class="cell">
-		<input value = "Start" onclick="parseSyntax()" type="submit" class="cell">
+		<input value = "Start" onclick="showAnswer()" type="submit" class="cell">
 		
 		<div id = "Overlay"></div>
 		<div id = "Error" class="hide alert">

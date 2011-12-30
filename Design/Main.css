@@ -129,6 +129,10 @@
   background-color: red;
   color: white; }
 
+.correct, .correct * {
+  background-color: green;
+  color: white; }
+
 input {
   outline: none; }
 

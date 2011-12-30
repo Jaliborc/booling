@@ -189,8 +189,8 @@ Parser = (function() {
   Parser.prototype.startCell = function(header) {
     return this.result += '<div class="cell"><h1>' + header + '</h1><ul>';
   };
-  Parser.prototype.createInput = function(i) {
-    return '<input oninput="parseBolean(this)" onfocus="focusRelations(this)" onblur="clearRelations()" i="' + i + '">';
+  Parser.prototype.createInput = function(oper) {
+    return '<input oninput="parseInput(this)" onfocus="focusRelations(this)" onblur="clearRelations()" oper="' + oper + '">';
   };
   Parser.prototype.createBolean = function(n) {
     if (n === 1) {

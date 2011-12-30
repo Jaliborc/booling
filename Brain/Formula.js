@@ -1,4 +1,15 @@
-var addOperator, autoSyntax, fillKeys, initFormula, saveFormula;
+var addOperator, autoSyntax, fillKeys, initFormula, saveFormula, showFormula;
+showFormula = function() {
+  localStorage.setItem('state', 'formula');
+  return switchFrames(AnswerSection, FormulaSection, function() {
+    AnswerSection.style.width = '1px';
+    return AnswerTable.innerHTML = '';
+  });
+};
+initFormula = function() {
+  Formula.value = localStorage.getItem('formula') || '';
+  return Formula.placeholder = random(Placeholders);
+};
 autoSyntax = function(board) {
   var code, data, match, operator, value, _i, _j, _len, _len2, _ref, _ref2;
   value = Formula.value;
@@ -27,10 +38,6 @@ autoSyntax = function(board) {
     Formula.value = value;
     return saveFormula();
   }
-};
-initFormula = function() {
-  Formula.value = (typeof localStorage !== "undefined" && localStorage !== null ? localStorage.getItem('formula') : void 0) || '';
-  return Formula.placeholder = random(Placeholders);
 };
 saveFormula = function() {
   return typeof localStorage !== "undefined" && localStorage !== null ? localStorage.setItem('formula', Formula.value) : void 0;

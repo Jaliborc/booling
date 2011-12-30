@@ -1,10 +1,19 @@
 redirectOfficial = ->
 	if DOWNLOAD? and navigator?.onLine
 		window.location = 'http://www.jaliborc.com/Booling/'
+		
+updateVersion = ->
+	if applicationCache.status is applicationCache.UPDATEREADY
+		applicationCache.swapCache()
+		location.reload()
 
 window.onload = ->
 	redirectOfficial()
-	window.addEventListener('online', redirectOfficial)
+	addEventListener('online', redirectOfficial)
+	applicationCache?.addEventListener('updateready', updateVersion)
+	window.localStorage or=
+		'getItem': ->
+		'setItem': ->
 	
 	globals([
 		'FormulaSection'
@@ -18,6 +27,11 @@ window.onload = ->
 		'NewVersion'
 	])
 	
-	
-	initFormula()
 	fillKeys()
+	initFormula()
+	initAnswer()
+	
+	if localStorage.getItem('state') is 'answer'
+		showAnswer()
+	else
+		showFormula()

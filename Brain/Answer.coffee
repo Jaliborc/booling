@@ -1,51 +1,67 @@
-# Parse Events
-parseSyntax = ->
+# Startup
+initAnswer = ->
+	window.Inputs = AnswerTable.getElementsByTagName('input')
+	window.Columns = AnswerTable.getElementsByTagName('ul')
+
+showAnswer = ->
 	value = Formula.value
-	parser = new Parser(value)
-	i = parser.i or parser.size - 1
-	error = parser.error
+	window.Parsed = new Parser(value)
+	
+	i = Parsed.i or Parsed.size - 1
+	error = Parsed.error
 
 	if error
 		Overlay.innerHTML = value.slice(0, i) + '<span>' + value.slice(i, i + 1) + '</span>'
-		
+
 		if messages = Errors[error]
 			position = getElement(Overlay, 'span').offsetLeft - Overlay.offsetLeft - 195
 			offset = Math.max(position, 0)
-			
+
 			Error.getElementsByClassName('arrow')[0].style.left = 224 + position - offset + 'px'
 			getElement(Error, 'p').innerHTML = random(messages) if Error.current != error
-			
+
 			Error.style.marginLeft = offset + 'px'
 			Error.className = 'show alert'
 			Error.current = error
 			
-		print(error + ' at ' + i)
 	else
-		switchFrames(FormulaSection, AnswerSection, ->
-			AnswerSection.style.width = parser.width
-			AnswerTable.innerHTML = parser.result
-			AnswerTable.parser = parser
-		)
+		isSame = localStorage.getItem('lastFormula') is value
+		localStorage.setItem('lastFormula', value)
+		localStorage.setItem('state', 'answer')
 		
-parseBolean = (input) ->
+		switchFrames(FormulaSection, AnswerSection, ->
+			AnswerSection.style.width = Parsed.width
+			AnswerTable.innerHTML = Parsed.result
+		
+			for i in [0 .. Inputs.length - 1]
+				input = Inputs[i]
+				input.i = i
+				
+				if isSame
+					input.value = localStorage.getItem(i)
+					parseInput(input)
+				else
+					localStorage.setItem(i, '')
+		)
+
+
+# Answer Events
+parseInput = (input) ->
 	value = input.value.toUpperCase()
 	color = (value == 'T' and 'green') or (value == 'F' and 'red')
 	
-	if color
-		input.parentNode.className = color
-		input.value = value
-	else
-		input.parentNode.className = ''
-		input.value = ''
+	if not color
+		value = ''
 
+	localStorage.setItem(input.i, value)
+	input.parentNode.className = color or ''
+	input.value = value
 
-# Button Events
 verifyAnswer = ->
-	inputs = AnswerTable.getElementsByTagName('input')
-	numLines = AnswerTable.parser.lines + 1
+	numLines = Parsed.lines + 1
 	
-	for i in [0 .. inputs.length - 1]
-		input = inputs[i]
+	for i in [0 .. Inputs.length - 1]
+		input = Inputs[i]
 		text = input.value
 		
 		if not text
@@ -56,38 +72,25 @@ verifyAnswer = ->
 		
 			if value != text
 				input.parentNode.className = 'wrong'
-		
-showFormula = ->
-	switchFrames(AnswerSection, FormulaSection, ->
-		AnswerSection.style.width = '1px'
-		AnswerTable.innerHTML = ''
-	)
+			else
+				input.parentNode.className = 'correct'
 
 	
 # Focus Events
 focusRelations = (input) ->
 	oper = getOper(input)
-	uls = getColumns()
 
 	clearRelations()
-	focusRelation('a', oper, uls)
-	focusRelation('b', oper, uls)
+	focusRelation('a', oper)
+	focusRelation('b', oper)
 	
-focusRelation = (rel, oper, uls) ->
+focusRelation = (rel, oper) ->
 	i = oper[rel]?.index()
-	uls[i]?.className = 'focus'
+	Columns[i]?.className = 'focus'
 		
 clearRelations = ->
-	uls = getColumns()
-	
-	for ul in uls
+	for ul in Columns
 		ul.className = ''
-
-
-# API
-getColumns = ->
-	AnswerTable.getElementsByTagName('ul')
 	
 getOper = (input) ->
-	i = input.getAttribute('i')
-	AnswerTable.parser.list[i]
+	Parsed.list[input.getAttribute('oper')]

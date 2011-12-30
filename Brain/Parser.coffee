@@ -150,8 +150,8 @@ class Parser
 	startCell: (header) ->
 		@result += '<div class="cell"><h1>' + header + '</h1><ul>'
 
-	createInput: (i) ->
-		'<input oninput="parseBolean(this)" onfocus="focusRelations(this)" onblur="clearRelations()" i="' + i + '">'
+	createInput: (oper) ->
+		'<input oninput="parseInput(this)" onfocus="focusRelations(this)" onblur="clearRelations()" oper="' + oper + '">'
 
 	createBolean: (n) ->
 		if n == 1 then T else F
