@@ -4,13 +4,14 @@ initAnswer = function() {
   return window.Columns = AnswerTable.getElementsByTagName('ul');
 };
 showAnswer = function() {
-  var error, i, isSame, messages, offset, position, value;
-  value = Formula.value.replace(/\s/g, '');
+  var error, i, isSame, messages, offset, position, text, value;
+  text = Formula.value;
+  value = text.replace(/\s/g, '');
   window.Parsed = new Parser(value);
   i = Parsed.i || Parsed.size - 1;
   error = Parsed.error;
   if (error) {
-    Overlay.innerHTML = value.slice(0, i) + '<span>' + value.slice(i, i + 1) + '</span>';
+    Overlay.innerHTML = text.slice(0, i) + '<span>' + text.slice(i, i + 1) + '</span>';
     if (messages = Errors[error]) {
       position = getElement(Overlay, 'span').offsetLeft - Overlay.offsetLeft - 195;
       offset = Math.max(position, 0);

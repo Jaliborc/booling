@@ -4,14 +4,15 @@ initAnswer = ->
 	window.Columns = AnswerTable.getElementsByTagName('ul')
 
 showAnswer = ->
-	value = Formula.value.replace(///\s///g, '')
+	text = Formula.value
+	value = text.replace(///\s///g, '')
 	window.Parsed = new Parser(value)
 	
 	i = Parsed.i or Parsed.size - 1
 	error = Parsed.error
 
 	if error
-		Overlay.innerHTML = value.slice(0, i) + '<span>' + value.slice(i, i + 1) + '</span>'
+		Overlay.innerHTML = text.slice(0, i) + '<span>' + text.slice(i, i + 1) + '</span>'
 
 		if messages = Errors[error]
 			position = getElement(Overlay, 'span').offsetLeft - Overlay.offsetLeft - 195
