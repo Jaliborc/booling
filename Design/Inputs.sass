@@ -4,11 +4,11 @@
 	&:active
 		padding: $top + $off $left - $off $top - $off $left + $off
 
-input
+input, .drop
 	@extend .box
 	outline: none
 	
-input[type = "submit"]
+input[type = "submit"], .drop
 	@include press-pading(6px, 10px, 1)
 	@extend .gradient
 	margin: 20px 0 0 10px
@@ -17,3 +17,25 @@ input[type = "submit"]
 	&:active
 		@include linear-gradient(#DDD, #EEE)
 		color: #333
+		
+.drop
+	cursor: pointer
+	position: relative
+	margin-left: 0
+	float: left
+	
+	ul
+		@extend .box
+		@include property(transition, opacity 0.2s ease-in-out)
+		visibility: hidden
+		position: absolute
+		top: 30px
+		opacity: 0
+		
+		li
+			list-style: none
+			margin: 10px
+			
+	&:hover ul
+		visibility: visible
+		opacity: 1

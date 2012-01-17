@@ -21,8 +21,8 @@
 			
 		ul
 			@include property(transition, background-color .3s ease-in-out)
-		ul.focus
-			background-color: #FFFFE2
+			&.focus
+				background-color: #FFFFE2
 			
 		li
 			@include border(border-top)
@@ -32,9 +32,8 @@
 			
 		> ul > li
 			padding: 10px 10px 2px 10px
-			
-			&[onclick]:active
-				background-color: lighten(#F5F5F5, 0.8)
+			&:active
+				background-color: darken(#F5F5F5, 1)
 				padding: 12px 10px 0 12px
 				
 		input
