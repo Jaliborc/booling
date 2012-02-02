@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>Design/Inputs.sass</string>
+	<string>Brain/Answer.coffee</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -13,7 +13,7 @@
 					<key>filename</key>
 					<string>index.html</string>
 					<key>lastUsed</key>
-					<date>2012-01-16T18:15:45Z</date>
+					<date>2012-01-17T12:10:03Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -72,19 +72,21 @@
 					<key>filename</key>
 					<string>Brain/Formula.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-12-30T16:57:56Z</date>
+					<date>2012-01-17T12:10:44Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Parser.coffee</string>
 					<key>lastUsed</key>
-					<date>2012-01-07T12:41:48Z</date>
+					<date>2012-01-17T12:10:34Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Answer.coffee</string>
 					<key>lastUsed</key>
-					<date>2011-12-30T17:01:21Z</date>
+					<date>2012-01-17T12:10:44Z</date>
+					<key>selected</key>
+					<true/>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -105,6 +107,8 @@
 					<date>2011-12-17T13:44:57Z</date>
 				</dict>
 			</array>
+			<key>expanded</key>
+			<true/>
 			<key>name</key>
 			<string>Brain</string>
 		</dict>
@@ -115,7 +119,7 @@
 					<key>filename</key>
 					<string>Design/Main.sass</string>
 					<key>lastUsed</key>
-					<date>2012-01-16T18:15:45Z</date>
+					<date>2012-01-17T12:10:03Z</date>
 				</dict>
 				<dict>
 					<key>children</key>
@@ -124,15 +128,13 @@
 							<key>filename</key>
 							<string>Design/Inputs.sass</string>
 							<key>lastUsed</key>
-							<date>2012-01-16T18:15:45Z</date>
-							<key>selected</key>
-							<true/>
+							<date>2012-01-17T12:10:03Z</date>
 						</dict>
 						<dict>
 							<key>filename</key>
 							<string>Design/Tables.sass</string>
 							<key>lastUsed</key>
-							<date>2011-12-30T10:43:27Z</date>
+							<date>2012-01-17T12:10:04Z</date>
 						</dict>
 						<dict>
 							<key>filename</key>
@@ -141,8 +143,6 @@
 							<date>2011-12-17T17:53:34Z</date>
 						</dict>
 					</array>
-					<key>expanded</key>
-					<true/>
 					<key>name</key>
 					<string>Components</string>
 				</dict>
@@ -159,15 +159,13 @@
 							<key>filename</key>
 							<string>Design/Utility.sass</string>
 							<key>lastUsed</key>
-							<date>2011-12-18T19:45:42Z</date>
+							<date>2012-01-17T12:10:04Z</date>
 						</dict>
 					</array>
 					<key>name</key>
 					<string>Common</string>
 				</dict>
 			</array>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>Design</string>
 		</dict>
@@ -202,53 +200,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>45</integer>
+				<integer>56</integer>
 				<key>line</key>
-				<integer>6</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>Brain/Formula.coffee</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>20</integer>
-				<key>line</key>
-				<integer>46</integer>
-			</dict>
-			<key>columnSelection</key>
-			<false/>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>15</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>17</integer>
-				<key>line</key>
-				<integer>46</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>23</integer>
-				<key>line</key>
-				<integer>46</integer>
-			</dict>
-		</dict>
-		<key>Design/Inputs.sass</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>2</integer>
-				<key>line</key>
-				<integer>22</integer>
+				<integer>14</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -258,7 +212,7 @@
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>Design/Inputs.sass</string>
+		<string>Brain/Answer.coffee</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>

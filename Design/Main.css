@@ -10,7 +10,7 @@
   cursor: default; }
 
 /* Layout */
-.top, .hide {
+.top {
   position: absolute;
   top: 0; }
 
@@ -34,7 +34,7 @@
   height: 0; }
 
 /* Fading */
-.fade, .show {
+.show, .fade, .hide {
   -webkit-transition: opacity 0.3s ease-in-out;
   -khtml-transition: opacity 0.3s ease-in-out;
   -moz-transition: opacity 0.3s ease-in-out;
@@ -42,14 +42,11 @@
   -o-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out; }
 
-.hide {
-  z-index: -100; }
-
 .fade, .hide {
   opacity: 0; }
 
-.show {
-  opacity: 1; }
+.hide {
+  display: none; }
 
 .box, .table, input, .drop, .drop ul, .alert p {
   border: 1px solid #dddddd;

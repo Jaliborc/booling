@@ -17,12 +17,14 @@ String.prototype.escape = ->
 # Animation
 switchFrames = (hide, show, onFinish) ->
 	hide.className = 'fade'
-	
-	setTimeout(->
+	func = ->
 		hide.className = 'hide'
-		show.className = 'show'
+		show.className = 'fade'
+			
+		setTimeout(-> show.className = 'show', 0)
 		onFinish?()
-	, ANIMATE_TIME)
+	
+	setTimeout(func, ANIMATE_TIME)
 	
 	
 # General	

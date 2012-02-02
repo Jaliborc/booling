@@ -20,7 +20,10 @@ switchFrames = function(hide, show, onFinish) {
   hide.className = 'fade';
   return setTimeout(function() {
     hide.className = 'hide';
-    show.className = 'show';
+    show.className = 'fade';
+    setTimeout(function() {
+      return show.className = 'show';
+    });
     return typeof onFinish === "function" ? onFinish() : void 0;
   }, ANIMATE_TIME);
 };
