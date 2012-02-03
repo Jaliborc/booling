@@ -13,15 +13,16 @@
 
 .dialog
 	@include fixed-middle(400px)
-	@include shadow(0, 0, 4px, #555)
-	@extend .box
+	@include shadow(0, 0, 2px, rgba(0, 0, 0, .3))
 	@extend .caption
+	
 	z-index: 20
 	top: 250px
 	
 	h1
 		@include border(border-bottom)
 		padding: 15px
+
 	ul
 		margin: 5px 0 5px 0
 	li
@@ -29,6 +30,16 @@
 		cursor: pointer
 		list-style: none
 		text-align: center
+	
+	input
+		font-size: .8em	
+	input[placeholder]
+		@include border-radius(0, 0, 0, 0)
+		padding: 5px
+		margin: 15px
+		width: 90%
+	.buttons input
+		margin: 0 15px 10px 15px
 
 .alert
 	position: relative

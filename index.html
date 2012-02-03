@@ -11,7 +11,7 @@
 		<script src="Brain/Formula.js"></script>
 		<script src="Brain/Parser.js"></script>
 		<script src="Brain/Answer.js"></script>
-		<script src="Brain/Saved.js"></script>
+		<script src="Brain/Dialogs.js"></script>
 		<script src="Brain/Main.js"></script>
 	</BUNDLE>
 </head>
@@ -22,7 +22,7 @@
 	<header></header>
 	
 	<!-- Formula -->
-	<section id = "FormulaSection">
+	<section id = "FormulaSection" class="hide">
 		<input id = "Formula" onkeyup="autoSyntax(event)" oninput="saveFormula()" class="cell">
 		<div class="buttons">
 			<input value = "Open" onclick="listSaved()" type="submit" class="cell rightCorner">
@@ -48,11 +48,11 @@
 	</section>
 	
 	<!-- Answer -->
-	<section id = "AnswerSection">
+	<section id = "AnswerSection" class="hide">
 		<div id = "AnswerTable" class="table"></div>
 		
 		<div class="buttons">
-			<input value = "Save" onclick="saveTable()" type="submit" class="left">
+			<input value = "Save" onclick="saveAs()" type="submit" class="left">
 			<input value = "Back" onclick="showFormula()" type="submit">
 			<input value = "Answer" onclick="verifyAnswer()" type="submit">
 		</div>
@@ -68,9 +68,14 @@
 			<li>Jelly
 		</ul>
 	</div>
+	
 	<div id="NewSave" class="dialog hide">
-		<h1>Enter Name</h1>
-		<input>
+		<h1>Enter a Name...</h1>
+		<input placeholder="And you will never forget me. Never.">
+		<div class="buttons">
+			<input value = "Save" onclick="saveResult()" type="submit" class="left">
+			<input value = "Cancel" onclick="closeDialogs()" type="submit">
+		</div>
 	</div>
 	
 	<!-- Footer -->

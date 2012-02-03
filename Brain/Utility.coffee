@@ -18,20 +18,28 @@ String.prototype.escape = ->
 switchFrames = (hide, show, onFinish) ->
 	hideFrame(hide, -> showFrame(show); onFinish?())
 	
-showFrame = (target) ->
-	switchClass(target, 'hide', 'fade')
-	delay = -> switchClass(target, 'fade', 'show')
-	setTimeout(delay, 0)
+showFrame = (frame) ->
+	unless hasClass(frame, 'show')
+		delay = -> switchClass(frame, 'fade', 'show')
+		switchClass(frame, 'hide', 'fade')
+		setTimeout(delay, 0)
 	
-hideFrame = (target, onFinish) ->
-	switchClass(target, 'show', 'fade')	
-	delay = -> switchClass(target, 'fade', 'hide'); onFinish?()
+hideFrame = (frame, onFinish) ->
+	hidden = hasClass(frame, 'hide')
+	delay = ->
+		switchClass(frame, 'fade', 'hide') unless hidden
+		onFinish?()
+	
+	switchClass(frame, 'show', 'fade') unless hidden
 	setTimeout(delay, ANIMATE_TIME)
 	
-switchClass = (target, original, replace) ->
-	console.log(target, target.className, original, replace)
-	target.className = target.className.replace(original, '') + replace
-	console.log(target.className)
+	
+# Classes
+switchClass = (frame, original, replace) ->
+	frame.className = frame.className.replace(original, '') + replace
+		
+hasClass = (frame, target) ->
+	frame.className.indexOf(target) != -1
 	
 	
 # General	

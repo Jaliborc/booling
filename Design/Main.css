@@ -17,7 +17,7 @@
 .right {
   float: right; }
 
-.left {
+.left, .buttons .left {
   float: left; }
 
 .cell {
@@ -26,7 +26,7 @@
 .wide {
   width: 100%; }
 
-.clear:after, #Spotlight .box:after, #Spotlight .table:after, #Spotlight input:after, #Spotlight .dialog:after, #Spotlight .alert p:after, .alert #Spotlight p:after {
+.clear:after, #Spotlight .box:after, #Spotlight .caption:after, #Spotlight .table:after, #Spotlight .dialog:after, #Spotlight input:after, #Spotlight .alert p:after, .alert #Spotlight p:after {
   visibility: hidden;
   display: block;
   content: ".";
@@ -48,7 +48,7 @@
 .hide {
   display: none; }
 
-.box, .table, input, .dialog, .alert p {
+.box, .caption, .table, .dialog, input, .alert p {
   border: 1px solid #dddddd;
   -webkit-background-clip: padding-box;
   -khtml-background-clip: padding-box;
@@ -155,8 +155,6 @@ input {
       background-image: linear-gradient(bottom, #dddddd 0%, #eeeeee 100%);
       background-color: #e5e5e5;
       color: #333333; }
-  .buttons .left {
-    float: left; }
   .buttons .rightCorner {
     -webkit-background-clip: padding-box;
     -khtml-background-clip: padding-box;
@@ -200,12 +198,12 @@ input {
   margin-left: -200px;
   width: 400px;
   left: 50%;
-  -webkit-box-shadow: 0 0 4px #555555;
-  -khtml-box-shadow: 0 0 4px #555555;
-  -moz-box-shadow: 0 0 4px #555555;
-  -ms-box-shadow: 0 0 4px #555555;
-  -o-box-shadow: 0 0 4px #555555;
-  box-shadow: 0 0 4px #555555;
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  -khtml-box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
   z-index: 20;
   top: 250px; }
   .dialog h1 {
@@ -220,6 +218,26 @@ input {
     text-align: center; }
     .dialog li:active {
       padding: 6px 4px 4px 6px; }
+  .dialog input {
+    font-size: 0.8em; }
+  .dialog input[placeholder] {
+    -webkit-background-clip: padding-box;
+    -khtml-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    -ms-background-clip: padding-box;
+    -o-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-border-radius: 0 0 0 0;
+    -khtml-border-radius: 0 0 0 0;
+    -moz-border-radius: 0 0 0 0;
+    -ms-border-radius: 0 0 0 0;
+    -o-border-radius: 0 0 0 0;
+    border-radius: 0 0 0 0;
+    padding: 5px;
+    margin: 15px;
+    width: 90%; }
+  .dialog .buttons input {
+    margin: 0 15px 10px 15px; }
 
 .alert {
   position: relative;
@@ -250,7 +268,7 @@ input {
   font-size: 23px;
   width: 850px; }
 
-#Spotlight .box, #Spotlight .table, #Spotlight input, #Spotlight .dialog, #Spotlight .alert p, .alert #Spotlight p {
+#Spotlight .box, #Spotlight .caption, #Spotlight .table, #Spotlight .dialog, #Spotlight input, #Spotlight .alert p, .alert #Spotlight p {
   margin-top: 40px;
   padding: 25px; }
 #Spotlight .img {
@@ -365,8 +383,6 @@ footer {
   #AnswerSection li {
     font-size: 14px; }
   #AnswerSection .buttons input {
-    margin: 20px 0 0 10px;
-    float: right; }
-  #AnswerSection .buttons .left {
-    margin-left: 0;
-    float: left; }
+    margin: 20px 0 0 10px; }
+  #AnswerSection .buttons .left, #AnswerSection .buttons .left {
+    margin-left: 0; }
