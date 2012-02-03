@@ -1,0 +1,36 @@
+#Slogan
+	font-size: 23px
+	width: 850px
+
+#Spotlight
+	.box
+		@extend .clear
+		margin-top: 40px
+		padding: 25px
+	.img
+		@include shadow(0, 0, 5px, #444)
+		@include border-radius(3px, 3px, 3px, 3px)
+		background-size: cover
+		width:  230px
+		height: 143px
+	h1, p
+		margin-bottom: 10px
+	ul
+		margin-right: 30px
+		margin-left: 30px
+	a
+		text-decoration: none
+		color: #392C26
+		&:hover
+			color: #634C41
+
+	.odd
+		.img
+			margin-left: 100px
+			float: right
+	.even
+		.img
+			margin-right: 100px
+			float: left
+		h1, p
+			text-align: right

@@ -44,7 +44,7 @@ Operators = {
     priority: 0
   }
 };
-Placeholders = ['Enter a formula or prepare for humiliation...', "Enter a formula. You don't want to see me bored...", 'Are you going to enter a formula or not? Losing my patience here.', 'Being bullied? "Just act less gay", advise teachers.'];
+Placeholders = ['Enter a formula or prepare for humiliation...', "Enter a formula. You don't want to see me bored...", 'Are you going to enter a formula? Losing my patience here.', 'Being bullied? "Just act less gay", advise teachers.'];
 Errors = {
   'SHORT': ["Sorry pal, I can't make anything with just two characters. Are you too lazy to type more?", "Do you happen to be a chicken? Only chickens have trouble typing more than two characters.", "Kid, type more than two characters or this won't lead us anywhere. And you do not want to see me bored...", "Are you trying to get me mad? Just type more than two characters."],
   'DOUBLE VAR': ["Are you trying to write your momma's name?! Why else would you be typing two letters in a row?", "Why on earth are those two next to each other? Trying to send your momma a message?", "Hey jackass, there must be an operator between those two. Got it?"],

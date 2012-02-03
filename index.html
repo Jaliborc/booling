@@ -11,6 +11,7 @@
 		<script src="Brain/Formula.js"></script>
 		<script src="Brain/Parser.js"></script>
 		<script src="Brain/Answer.js"></script>
+		<script src="Brain/Saved.js"></script>
 		<script src="Brain/Main.js"></script>
 	</BUNDLE>
 </head>
@@ -23,7 +24,10 @@
 	<!-- Formula -->
 	<section id = "FormulaSection" class="hide">
 		<input id = "Formula" onkeyup="autoSyntax(event)" oninput="saveFormula()" class="cell">
-		<input value = "Start" onclick="showAnswer()" type="submit" class="big cell">
+		<div class="buttons">
+			<input value = "Open" onclick="openAnswer()" type="submit" class="cell rightCorner">
+			<input value = "Start" onclick="showAnswer()" type="submit" class="cell leftCorner">
+		</div>
 		
 		<div id = "Overlay"></div>
 		<div id = "Error" class="hide alert">
@@ -41,30 +45,26 @@
 				<ul id = "KeyList"></ul>
 			</div>
 		</div>
-		
-		<div class="drop" onclick="openAnswer()">
-			<ul><li>Test<li>Tested</ul>
-			Open...
-		</div>
 	</section>
 	
 	<!-- Answer -->
 	<section id = "AnswerSection" class="hide">
-		<div id = "AnswerTable" class="table">
-		</div>
+		<div id = "AnswerTable" class="table"></div>
 		
-		<div class="drop" onclick="saveAnswer()">
-			<ul></ul>
-			Save As...
+		<div class="buttons">
+			<input value = "Save" onclick="saveTable()" type="submit" class="left">
+			<input value = "Back" onclick="showFormula()" type="submit">
+			<input value = "Answer" onclick="verifyAnswer()" type="submit">
 		</div>
-		
-		<input value = "Cancel" onclick="showFormula()" type="submit">
-		<input value = "Answer" onclick="verifyAnswer()" type="submit">
 	</section>
 	
-	<!-- Version -->
-	<aside>
-	</aside>
+	<!-- Saved Tables -->
+	<div class="fader"></div>
+	<ul class="dialog">
+		<li>Banana
+		<li>Peanut
+		<li>Jelly
+	</ul>
 	
 	<!-- Footer -->
 	<footer>

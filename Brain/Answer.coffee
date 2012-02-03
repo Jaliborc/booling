@@ -6,7 +6,7 @@ initAnswer = ->
 showAnswer = ->
 	text = Formula.value
 	value = text.replace(///\s///g, '')
-	window.Parsed = new Parser(value)
+	window.Parsed = new Parser(text)
 	
 	i = Parsed.i or Parsed.size - 1
 	error = Parsed.error

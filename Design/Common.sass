@@ -1,5 +1,11 @@
 @mixin border($attr: border, $size: 1px)
 	#{$attr}: $size solid #DDD
+	
+@mixin press-pading($top, $left, $off)
+	padding: $top $left $top $left
+
+	&:active
+		padding: $top + $off $left - $off $top - $off $left + $off
 
 .box
 	@include border

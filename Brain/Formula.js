@@ -14,6 +14,7 @@ autoSyntax = function(board) {
   var code, data, match, operator, value, _i, _j, _len, _len2, _ref, _ref2;
   value = Formula.value;
   Overlay.innerHTML = '';
+  Error.className = 'hide';
   if (board.altKey) {
     for (operator in Operators) {
       data = Operators[operator];

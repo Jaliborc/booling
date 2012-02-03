@@ -15,6 +15,7 @@ initFormula = ->
 autoSyntax = (board) ->
 	value = Formula.value
 	Overlay.innerHTML = ''
+	Error.className = 'hide'
 	
 	if board.altKey
 		for operator, data of Operators

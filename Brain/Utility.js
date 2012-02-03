@@ -17,15 +17,18 @@ String.prototype.escape = function() {
   return this.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
 };
 switchFrames = function(hide, show, onFinish) {
+  var func;
   hide.className = 'fade';
-  return setTimeout(function() {
+  func = function() {
     hide.className = 'hide';
     show.className = 'fade';
-    setTimeout(function() {
+    func = function() {
       return show.className = 'show';
-    });
+    };
+    setTimeout(func, 0);
     return typeof onFinish === "function" ? onFinish() : void 0;
-  }, ANIMATE_TIME);
+  };
+  return setTimeout(func, ANIMATE_TIME);
 };
 globals = function(list) {
   var id, _i, _len, _results;

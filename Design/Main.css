@@ -26,7 +26,7 @@
 .wide {
   width: 100%; }
 
-.clear:after, #Spotlight .box:after, #Spotlight .table:after, #Spotlight input:after, #Spotlight .drop:after, #Spotlight .drop ul:after, .drop #Spotlight ul:after, #Spotlight .alert p:after, .alert #Spotlight p:after {
+.clear:after, #Spotlight .box:after, #Spotlight .table:after, #Spotlight input:after, #Spotlight .dialog:after, #Spotlight .alert p:after, .alert #Spotlight p:after {
   visibility: hidden;
   display: block;
   content: ".";
@@ -48,7 +48,7 @@
 .hide {
   display: none; }
 
-.box, .table, input, .drop, .drop ul, .alert p {
+.box, .table, input, .dialog, .alert p {
   border: 1px solid #dddddd;
   -webkit-background-clip: padding-box;
   -khtml-background-clip: padding-box;
@@ -64,7 +64,7 @@
   border-radius: 7px 7px 7px 7px;
   background-color: white; }
 
-.gradient, .table, input[type="submit"], .drop {
+.gradient, .table, .buttons input {
   background-image: -webkit-linear-gradient(bottom, #eeeeee 0%, white 100%);
   background-image: -khtml-linear-gradient(bottom, #eeeeee 0%, white 100%);
   background-image: -moz-linear-gradient(bottom, #eeeeee 0%, white 100%);
@@ -76,7 +76,8 @@
 .table {
   background-size: 100% 49px;
   background-repeat: no-repeat;
-  text-align: center; }
+  text-align: center;
+  margin-top: 40px; }
   .table > .cell {
     border-left: 1px solid #dddddd; }
     .table > .cell:first-child {
@@ -130,47 +131,75 @@
   background-color: green;
   color: white; }
 
-input, .drop {
+input {
   outline: none; }
 
-input[type="submit"], .drop {
-  padding: 6px 10px 6px 10px;
-  margin: 20px 0 0 10px;
-  font-size: 0.9em; }
-  input[type="submit"]:active, .drop:active {
-    padding: 7px 9px 5px 11px; }
-  input[type="submit"]:active, .drop:active {
-    background-image: -webkit-linear-gradient(bottom, #dddddd 0%, #eeeeee 100%);
-    background-image: -khtml-linear-gradient(bottom, #dddddd 0%, #eeeeee 100%);
-    background-image: -moz-linear-gradient(bottom, #dddddd 0%, #eeeeee 100%);
-    background-image: -ms-linear-gradient(bottom, #dddddd 0%, #eeeeee 100%);
-    background-image: -o-linear-gradient(bottom, #dddddd 0%, #eeeeee 100%);
-    background-image: linear-gradient(bottom, #dddddd 0%, #eeeeee 100%);
-    background-color: #e5e5e5;
-    color: #333333; }
+.buttons {
+  position: relative; }
+  .buttons input {
+    padding: 6px 10px 6px 10px;
+    font-size: 0.9em;
+    float: right; }
+    .buttons input:active {
+      padding: 7px 9px 5px 11px; }
+    .buttons input:active {
+      background-image: -webkit-linear-gradient(bottom, #dddddd 0%, #eeeeee 100%);
+      background-image: -khtml-linear-gradient(bottom, #dddddd 0%, #eeeeee 100%);
+      background-image: -moz-linear-gradient(bottom, #dddddd 0%, #eeeeee 100%);
+      background-image: -ms-linear-gradient(bottom, #dddddd 0%, #eeeeee 100%);
+      background-image: -o-linear-gradient(bottom, #dddddd 0%, #eeeeee 100%);
+      background-image: linear-gradient(bottom, #dddddd 0%, #eeeeee 100%);
+      background-color: #e5e5e5;
+      color: #333333; }
+  .buttons .left {
+    float: left; }
+  .buttons .rightCorner {
+    -webkit-background-clip: padding-box;
+    -khtml-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    -ms-background-clip: padding-box;
+    -o-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-border-radius: 0 7px 7px 0;
+    -khtml-border-radius: 0 7px 7px 0;
+    -moz-border-radius: 0 7px 7px 0;
+    -ms-border-radius: 0 7px 7px 0;
+    -o-border-radius: 0 7px 7px 0;
+    border-radius: 0 7px 7px 0; }
+  .buttons .leftCorner {
+    -webkit-background-clip: padding-box;
+    -khtml-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    -ms-background-clip: padding-box;
+    -o-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-border-radius: 7px 0 0 7px;
+    -khtml-border-radius: 7px 0 0 7px;
+    -moz-border-radius: 7px 0 0 7px;
+    -ms-border-radius: 7px 0 0 7px;
+    -o-border-radius: 7px 0 0 7px;
+    border-radius: 7px 0 0 7px;
+    border-right: none; }
 
-.drop {
-  cursor: pointer;
-  position: relative;
-  margin-left: 0;
-  float: left; }
-  .drop ul {
-    -webkit-transition: opacity 0.2s ease-in-out;
-    -khtml-transition: opacity 0.2s ease-in-out;
-    -moz-transition: opacity 0.2s ease-in-out;
-    -ms-transition: opacity 0.2s ease-in-out;
-    -o-transition: opacity 0.2s ease-in-out;
-    transition: opacity 0.2s ease-in-out;
-    visibility: hidden;
-    position: absolute;
-    top: 30px;
-    opacity: 0; }
-    .drop ul li {
-      list-style: none;
-      margin: 10px; }
-  .drop:hover ul {
-    visibility: visible;
-    opacity: 1; }
+.dialog {
+  position: absolute;
+  margin-left: -200px;
+  width: 400px;
+  left: 50%;
+  padding: 10px;
+  z-index: 20;
+  top: 250px; }
+  .dialog li {
+    list-style: none; }
+
+.fader {
+  top: 0;
+  position: fixed;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  opacity: 0.4; }
 
 .alert {
   position: relative;
@@ -197,87 +226,11 @@ input[type="submit"], .drop {
     z-index: -1;
     top: -6px; }
 
-/* Body */
-body {
-  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
-  background-color: #eeeeee;
-  padding-bottom: 90px;
-  height: 100%; }
-
-* {
-  font-weight: normal;
-  line-height: 120%;
-  border: none;
-  padding: 0;
-  margin: 0; }
-
-section, header {
-  position: relative;
-  margin: auto;
-  margin-top: 40px;
-  width: 1000px; }
-
-header {
-  background-image: url(logo.png);
-  height: 120px;
-  width: 277px; }
-
-footer {
-  -webkit-box-shadow: 0 0 1px black;
-  -khtml-box-shadow: 0 0 1px black;
-  -moz-box-shadow: 0 0 1px black;
-  -ms-box-shadow: 0 0 1px black;
-  -o-box-shadow: 0 0 1px black;
-  box-shadow: 0 0 1px black;
-  background-color: #392c26;
-  border-top: 2px solid #634c41;
-  font-size: 18px;
-  position: fixed;
-  height: 50px;
-  width: 100%;
-  bottom: 0; }
-  footer div {
-    display: inline;
-    margin: 15px 15px 0 15px; }
-  footer a {
-    text-decoration: none;
-    padding: 15px 15px 14px 15px;
-    color: white; }
-    footer a:hover {
-      background-color: #44342d; }
-
-/* Application */
-#FormulaSection #Formula {
-  margin-right: 20px;
-  padding: 20px;
-  width: 785px;
-  height: 26px; }
-#FormulaSection #Overlay {
-  position: absolute;
-  left: 22px;
-  top: 21px; }
-#FormulaSection input, #FormulaSection #Overlay {
-  font-size: 1.4em; }
-#FormulaSection input {
-  padding: 17px;
-  width: 147px;
-  margin: 0; }
-#FormulaSection .drop {
-  margin-top: 40px; }
-
-#AnswerSection {
-  margin-bottom: 40px; }
-  #AnswerSection li {
-    font-size: 14px; }
-  #AnswerSection input[type="submit"] {
-    float: right; }
-
-/* Overview */
 #Slogan {
   font-size: 23px;
   width: 850px; }
 
-#Spotlight .box, #Spotlight .table, #Spotlight input, #Spotlight .drop, #Spotlight .drop ul, .drop #Spotlight ul, #Spotlight .alert p, .alert #Spotlight p {
+#Spotlight .box, #Spotlight .table, #Spotlight input, #Spotlight .dialog, #Spotlight .alert p, .alert #Spotlight p {
   margin-top: 40px;
   padding: 25px; }
 #Spotlight .img {
@@ -320,3 +273,80 @@ footer {
   float: left; }
 #Spotlight .even h1, #Spotlight .even p {
   text-align: right; }
+
+/* Body */
+body {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+  background-color: #eeeeee;
+  padding-bottom: 90px; }
+
+* {
+  font-weight: normal;
+  line-height: 120%;
+  border: none;
+  padding: 0;
+  margin: 0; }
+
+section, header {
+  position: relative;
+  margin: auto;
+  margin-top: 40px;
+  width: 1005px; }
+
+header {
+  background-image: url(logo.png);
+  height: 120px;
+  width: 277px; }
+
+footer {
+  -webkit-box-shadow: 0 0 1px black;
+  -khtml-box-shadow: 0 0 1px black;
+  -moz-box-shadow: 0 0 1px black;
+  -ms-box-shadow: 0 0 1px black;
+  -o-box-shadow: 0 0 1px black;
+  box-shadow: 0 0 1px black;
+  background-color: #392c26;
+  border-top: 2px solid #634c41;
+  font-size: 18px;
+  position: fixed;
+  height: 50px;
+  width: 100%;
+  bottom: 0; }
+  footer div {
+    display: inline;
+    margin: 15px 15px 0 15px; }
+  footer a {
+    text-decoration: none;
+    padding: 15px 15px 14px 15px;
+    color: white; }
+    footer a:hover {
+      background-color: #44342d; }
+
+/* Application */
+#FormulaSection #Formula {
+  padding: 20px;
+  width: 690px;
+  height: 26px; }
+#FormulaSection #Overlay {
+  position: absolute;
+  left: 22px;
+  top: 22px; }
+#FormulaSection input, #FormulaSection #Overlay {
+  font-size: 1.3em; }
+#FormulaSection input {
+  padding: 17px;
+  width: 120px; }
+#FormulaSection .buttons {
+  float: right;
+  margin-top: 3px; }
+
+#AnswerSection {
+  margin-bottom: 40px; }
+  #AnswerSection li {
+    font-size: 14px; }
+  #AnswerSection .buttons input {
+    margin: 20px 0 0 10px;
+    float: right; }
+  #AnswerSection .buttons .left {
+    margin-left: 0;
+    float: left; }

@@ -1,3 +1,22 @@
+.dialog
+	@extend .box
+	@include fixed-middle(400px)
+	padding: 10px
+	z-index: 20
+	top: 250px
+	
+	li
+		list-style: none
+		
+.fader
+	top: 0
+	position: fixed
+	background-color: white
+	height: 100%
+	width: 100%
+	z-index: 10
+	opacity: .4
+
 .alert
 	position: relative
 	width: 492px

@@ -20,8 +20,9 @@ switchFrames = (hide, show, onFinish) ->
 	func = ->
 		hide.className = 'hide'
 		show.className = 'fade'
+		func = -> show.className = 'show'
 			
-		setTimeout(-> show.className = 'show', 0)
+		setTimeout(func, 0)
 		onFinish?()
 	
 	setTimeout(func, ANIMATE_TIME)

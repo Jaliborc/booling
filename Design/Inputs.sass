@@ -1,41 +1,23 @@
-@mixin press-pading($top, $left, $off)
-	padding: $top $left $top $left
-	
-	&:active
-		padding: $top + $off $left - $off $top - $off $left + $off
-
-input, .drop
+input
 	@extend .box
 	outline: none
 	
-input[type = "submit"], .drop
-	@include press-pading(6px, 10px, 1)
-	@extend .gradient
-	margin: 20px 0 0 10px
-	font-size: 0.9em
-		
-	&:active
-		@include linear-gradient(#DDD, #EEE)
-		color: #333
-		
-.drop
-	cursor: pointer
+.buttons
 	position: relative
-	margin-left: 0
-	float: left
 	
-	ul
-		@extend .box
-		@include property(transition, opacity 0.2s ease-in-out)
-		visibility: hidden
-		position: absolute
-		top: 30px
-		opacity: 0
+	input
+		@extend .gradient
+		@include press-pading(6px, 10px, 1)
+		font-size: 0.9em
+		float: right
 		
-		li
-			list-style: none
-			margin: 10px
-			
-	&:hover ul
-		visibility: visible
-		opacity: 1
+		&:active
+			@include linear-gradient(#DDD, #EEE)
+			color: #333
+	.left
+		float: left
+	.rightCorner
+		@include border-radius(0, 7px, 7px, 0)
+	.leftCorner
+		@include border-radius(7px, 0, 0, 7px)
+		border-right: none

@@ -7,7 +7,7 @@ showAnswer = function() {
   var error, i, isSame, messages, offset, position, text, value;
   text = Formula.value;
   value = text.replace(/\s/g, '');
-  window.Parsed = new Parser(value);
+  window.Parsed = new Parser(text);
   i = Parsed.i || Parsed.size - 1;
   error = Parsed.error;
   if (error) {

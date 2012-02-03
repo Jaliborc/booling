@@ -32,7 +32,7 @@ Operators =
 Placeholders = [
 	'Enter a formula or prepare for humiliation...'
 	"Enter a formula. You don't want to see me bored..."
-	'Are you going to enter a formula or not? Losing my patience here.'
+	'Are you going to enter a formula? Losing my patience here.'
 	'Being bullied? "Just act less gay", advise teachers.'
 ]
 
