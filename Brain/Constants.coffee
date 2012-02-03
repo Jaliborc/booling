@@ -1,4 +1,5 @@
 ANIMATE_TIME = 400
+NO_SAVES = '<li class="error">No tables have been recorded so far.'
 T = '<li class="green">T</li>'
 F = '<li class="red">F</li>'
 NOT = '¬'

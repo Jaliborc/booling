@@ -1,5 +1,6 @@
-var ANIMATE_TIME, Errors, F, NOT, Operators, Placeholders, T;
+var ANIMATE_TIME, Errors, F, NOT, NO_SAVES, Operators, Placeholders, T;
 ANIMATE_TIME = 400;
+NO_SAVES = '<li class="error">No tables have been recorded so far.';
 T = '<li class="green">T</li>';
 F = '<li class="red">F</li>';
 NOT = '¬';

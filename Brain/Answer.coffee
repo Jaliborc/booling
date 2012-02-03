@@ -3,7 +3,7 @@ initAnswer = ->
 	window.Inputs = AnswerTable.getElementsByTagName('input')
 	window.Columns = AnswerTable.getElementsByTagName('ul')
 
-showAnswer = ->
+showAnswer = (load) ->
 	text = Formula.value
 	value = text.replace(///\s///g, '')
 	window.Parsed = new Parser(text)
@@ -26,7 +26,7 @@ showAnswer = ->
 			Error.current = error
 			
 	else
-		isSame = localStorage.getItem('lastFormula') is value
+		load or= localStorage.getItem('lastFormula') is value
 		localStorage.setItem('lastFormula', value)
 		localStorage.setItem('state', 'answer')
 		
@@ -38,7 +38,7 @@ showAnswer = ->
 				input = Inputs[i]
 				input.i = i
 				
-				if isSame
+				if load
 					input.value = localStorage.getItem(i)
 					parseInput(input)
 				else

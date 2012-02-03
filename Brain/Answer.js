@@ -3,8 +3,8 @@ initAnswer = function() {
   window.Inputs = AnswerTable.getElementsByTagName('input');
   return window.Columns = AnswerTable.getElementsByTagName('ul');
 };
-showAnswer = function() {
-  var error, i, isSame, messages, offset, position, text, value;
+showAnswer = function(load) {
+  var error, i, messages, offset, position, text, value;
   text = Formula.value;
   value = text.replace(/\s/g, '');
   window.Parsed = new Parser(text);
@@ -24,7 +24,7 @@ showAnswer = function() {
       return Error.current = error;
     }
   } else {
-    isSame = localStorage.getItem('lastFormula') === value;
+    load || (load = localStorage.getItem('lastFormula') === value);
     localStorage.setItem('lastFormula', value);
     localStorage.setItem('state', 'answer');
     return switchFrames(FormulaSection, AnswerSection, function() {
@@ -35,7 +35,7 @@ showAnswer = function() {
       for (i = 0, _ref = Inputs.length - 1; 0 <= _ref ? i <= _ref : i >= _ref; 0 <= _ref ? i++ : i--) {
         input = Inputs[i];
         input.i = i;
-        _results.push(isSame ? (input.value = localStorage.getItem(i), parseInput(input)) : localStorage.setItem(i, ''));
+        _results.push(load ? (input.value = localStorage.getItem(i), parseInput(input)) : localStorage.setItem(i, ''));
       }
       return _results;
     });

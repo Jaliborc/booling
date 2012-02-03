@@ -194,7 +194,7 @@ input {
   /* browser bug fix */ }
 
 .dialog {
-  position: absolute;
+  position: fixed;
   margin-left: -200px;
   width: 400px;
   left: 50%;
@@ -218,6 +218,9 @@ input {
     text-align: center; }
     .dialog li:active {
       padding: 6px 4px 4px 6px; }
+  .dialog li.error {
+    margin: 10px;
+    color: red; }
   .dialog input {
     font-size: 0.8em; }
   .dialog input[placeholder] {
