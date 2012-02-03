@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>currentDocument</key>
-	<string>Design/Main.sass</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -13,7 +11,9 @@
 					<key>filename</key>
 					<string>index.html</string>
 					<key>lastUsed</key>
-					<date>2012-02-03T01:49:57Z</date>
+					<date>2012-02-03T12:05:11Z</date>
+					<key>selected</key>
+					<true/>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -28,6 +28,8 @@
 					<date>2011-12-30T16:51:57Z</date>
 				</dict>
 			</array>
+			<key>expanded</key>
+			<true/>
 			<key>name</key>
 			<string>App</string>
 		</dict>
@@ -64,13 +66,13 @@
 					<key>filename</key>
 					<string>Brain/Main.coffee</string>
 					<key>lastUsed</key>
-					<date>2012-02-02T19:17:52Z</date>
+					<date>2012-02-03T11:32:14Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Formula.coffee</string>
 					<key>lastUsed</key>
-					<date>2012-02-02T19:19:22Z</date>
+					<date>2012-02-03T11:32:21Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -88,7 +90,7 @@
 					<key>filename</key>
 					<string>Brain/Saved.coffee</string>
 					<key>lastUsed</key>
-					<date>2012-02-03T00:53:40Z</date>
+					<date>2012-02-03T12:05:10Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -100,7 +102,7 @@
 					<key>filename</key>
 					<string>Brain/Utility.coffee</string>
 					<key>lastUsed</key>
-					<date>2012-02-02T19:27:49Z</date>
+					<date>2012-02-03T12:05:10Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -109,8 +111,6 @@
 					<date>2012-02-03T00:47:35Z</date>
 				</dict>
 			</array>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>Brain</string>
 		</dict>
@@ -121,9 +121,7 @@
 					<key>filename</key>
 					<string>Design/Main.sass</string>
 					<key>lastUsed</key>
-					<date>2012-02-03T01:50:57Z</date>
-					<key>selected</key>
-					<true/>
+					<date>2012-02-03T11:56:54Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -138,19 +136,19 @@
 							<key>filename</key>
 							<string>Design/Inputs.sass</string>
 							<key>lastUsed</key>
-							<date>2012-02-03T01:28:21Z</date>
+							<date>2012-02-03T11:31:28Z</date>
 						</dict>
 						<dict>
 							<key>filename</key>
 							<string>Design/Tables.sass</string>
 							<key>lastUsed</key>
-							<date>2012-02-03T01:50:31Z</date>
+							<date>2012-02-03T10:52:15Z</date>
 						</dict>
 						<dict>
 							<key>filename</key>
 							<string>Design/Alerts.sass</string>
 							<key>lastUsed</key>
-							<date>2012-02-03T01:50:57Z</date>
+							<date>2012-02-03T12:05:10Z</date>
 						</dict>
 					</array>
 					<key>name</key>
@@ -163,21 +161,19 @@
 							<key>filename</key>
 							<string>Design/Common.sass</string>
 							<key>lastUsed</key>
-							<date>2012-02-03T01:28:53Z</date>
+							<date>2012-02-03T11:18:36Z</date>
 						</dict>
 						<dict>
 							<key>filename</key>
 							<string>Design/Utility.sass</string>
 							<key>lastUsed</key>
-							<date>2012-02-03T01:41:54Z</date>
+							<date>2012-02-03T11:55:44Z</date>
 						</dict>
 					</array>
 					<key>name</key>
 					<string>Common</string>
 				</dict>
 			</array>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>Design</string>
 		</dict>
@@ -204,90 +200,10 @@
 	<key>fileHierarchyDrawerWidth</key>
 	<integer>200</integer>
 	<key>metaData</key>
-	<dict>
-		<key>Design/Alerts.sass</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>12</integer>
-				<key>line</key>
-				<integer>17</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>Design/Main.sass</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>9</integer>
-				<key>line</key>
-				<integer>66</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>Design/Tables.sass</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>6</integer>
-				<key>line</key>
-				<integer>18</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>5</integer>
-		</dict>
-		<key>index.html</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>1</integer>
-				<key>line</key>
-				<integer>61</integer>
-			</dict>
-			<key>columnSelection</key>
-			<false/>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>40</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>26</integer>
-				<key>line</key>
-				<integer>61</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>1</integer>
-				<key>line</key>
-				<integer>61</integer>
-			</dict>
-		</dict>
-	</dict>
-	<key>openDocuments</key>
-	<array>
-		<string>index.html</string>
-		<string>Design/Main.sass</string>
-		<string>Design/Tables.sass</string>
-		<string>Design/Alerts.sass</string>
-	</array>
+	<dict/>
 	<key>showFileHierarchyDrawer</key>
 	<false/>
 	<key>windowFrame</key>
-	<string>{{0, 4}, {1440, 874}}</string>
+	<string>{{69, 4}, {1440, 874}}</string>
 </dict>
 </plist>

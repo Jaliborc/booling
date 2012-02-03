@@ -1,4 +1,4 @@
-var floor, getElement, globals, pow, print, random, switchFrames;
+var floor, getElement, globals, hideFrame, pow, print, random, showFrame, switchClass, switchFrames;
 random = function(array) {
   return array[floor(Math.random() * array.length)];
 };
@@ -17,18 +17,32 @@ String.prototype.escape = function() {
   return this.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
 };
 switchFrames = function(hide, show, onFinish) {
-  var func;
-  hide.className = 'fade';
-  func = function() {
-    hide.className = 'hide';
-    show.className = 'fade';
-    func = function() {
-      return show.className = 'show';
-    };
-    setTimeout(func, 0);
+  return hideFrame(hide, function() {
+    showFrame(show);
+    return typeof onFinish === "function" ? onFinish() : void 0;
+  });
+};
+showFrame = function(target) {
+  var delay;
+  switchClass(target, 'hide', 'fade');
+  delay = function() {
+    return switchClass(target, 'fade', 'show');
+  };
+  return setTimeout(delay, 0);
+};
+hideFrame = function(target, onFinish) {
+  var delay;
+  switchClass(target, 'show', 'fade');
+  delay = function() {
+    switchClass(target, 'fade', 'hide');
     return typeof onFinish === "function" ? onFinish() : void 0;
   };
-  return setTimeout(func, ANIMATE_TIME);
+  return setTimeout(delay, ANIMATE_TIME);
+};
+switchClass = function(target, original, replace) {
+  console.log(target, target.className, original, replace);
+  target.className = target.className.replace(original, '') + replace;
+  return console.log(target.className);
 };
 globals = function(list) {
   var id, _i, _len, _results;

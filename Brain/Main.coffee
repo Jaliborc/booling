@@ -24,7 +24,9 @@ window.onload = ->
 			'KeyList'
 		'AnswerSection'
 			'AnswerTable'
-		'NewVersion'
+		'Fader'
+		'SavedList'
+		'NewSave'
 	])
 	
 	fillKeys()

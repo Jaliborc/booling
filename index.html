@@ -22,10 +22,10 @@
 	<header></header>
 	
 	<!-- Formula -->
-	<section id = "FormulaSection" class="hide">
+	<section id = "FormulaSection">
 		<input id = "Formula" onkeyup="autoSyntax(event)" oninput="saveFormula()" class="cell">
 		<div class="buttons">
-			<input value = "Open" onclick="openAnswer()" type="submit" class="cell rightCorner">
+			<input value = "Open" onclick="listSaved()" type="submit" class="cell rightCorner">
 			<input value = "Start" onclick="showAnswer()" type="submit" class="cell leftCorner">
 		</div>
 		
@@ -48,7 +48,7 @@
 	</section>
 	
 	<!-- Answer -->
-	<section id = "AnswerSection" class="hide">
+	<section id = "AnswerSection">
 		<div id = "AnswerTable" class="table"></div>
 		
 		<div class="buttons">
@@ -58,13 +58,20 @@
 		</div>
 	</section>
 	
-	<!-- Saved Tables -->
-	<div class="fader"></div>
-	<ul class="dialog">
-		<li>Banana
-		<li>Peanut
-		<li>Jelly
-	</ul>
+	<!-- Dialogs -->
+	<div id="Fader" class="hide"></div>
+	<div id="SavedList" class="dialog hide">
+		<h1>Saved Tables</h1>
+		<ul>
+			<li>Banana
+			<li>Peanut
+			<li>Jelly
+		</ul>
+	</div>
+	<div id="NewSave" class="dialog hide">
+		<h1>Enter Name</h1>
+		<input>
+	</div>
 	
 	<!-- Footer -->
 	<footer>

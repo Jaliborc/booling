@@ -16,16 +16,22 @@ String.prototype.escape = ->
 
 # Animation
 switchFrames = (hide, show, onFinish) ->
-	hide.className = 'fade'
-	func = ->
-		hide.className = 'hide'
-		show.className = 'fade'
-		func = -> show.className = 'show'
-			
-		setTimeout(func, 0)
-		onFinish?()
+	hideFrame(hide, -> showFrame(show); onFinish?())
 	
-	setTimeout(func, ANIMATE_TIME)
+showFrame = (target) ->
+	switchClass(target, 'hide', 'fade')
+	delay = -> switchClass(target, 'fade', 'show')
+	setTimeout(delay, 0)
+	
+hideFrame = (target, onFinish) ->
+	switchClass(target, 'show', 'fade')	
+	delay = -> switchClass(target, 'fade', 'hide'); onFinish?()
+	setTimeout(delay, ANIMATE_TIME)
+	
+switchClass = (target, original, replace) ->
+	console.log(target, target.className, original, replace)
+	target.className = target.className.replace(original, '') + replace
+	console.log(target.className)
 	
 	
 # General	

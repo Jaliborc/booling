@@ -1,4 +1,5 @@
-var saveTable;
-saveTable = function() {
-  return prompt('Make funny sentence here.', 'Funny name.');
+var listSaved;
+listSaved = function() {
+  showFrame(SavedList);
+  return showFrame(Fader);
 };

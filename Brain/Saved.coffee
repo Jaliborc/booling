@@ -1,2 +1,3 @@
-saveTable = ->
-	prompt('Make funny sentence here.', 'Funny name.')
+listSaved = ->
+	showFrame(SavedList)
+	showFrame(Fader)

@@ -20,7 +20,7 @@ window.onload = function() {
     'getItem': function() {},
     'setItem': function() {}
   });
-  globals(['FormulaSection', 'Formula', 'Overlay', 'Error', 'OperatorList', 'KeyList', 'AnswerSection', 'AnswerTable', 'NewVersion']);
+  globals(['FormulaSection', 'Formula', 'Overlay', 'Error', 'OperatorList', 'KeyList', 'AnswerSection', 'AnswerTable', 'Fader', 'SavedList', 'NewSave']);
   fillKeys();
   initFormula();
   initAnswer();

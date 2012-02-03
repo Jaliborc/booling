@@ -34,7 +34,7 @@
   height: 0; }
 
 /* Fading */
-.show, .fade, .hide {
+.show, .fade, #Fader.fade, .hide {
   -webkit-transition: opacity 0.3s ease-in-out;
   -khtml-transition: opacity 0.3s ease-in-out;
   -moz-transition: opacity 0.3s ease-in-out;
@@ -42,7 +42,7 @@
   -o-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out; }
 
-.fade, .hide {
+.fade, #Fader.fade, .hide {
   opacity: 0; }
 
 .hide {
@@ -64,7 +64,7 @@
   border-radius: 7px 7px 7px 7px;
   background-color: white; }
 
-.gradient, .table, .buttons input {
+.gradient, .caption, .table, .dialog, .buttons input {
   background-image: -webkit-linear-gradient(bottom, #eeeeee 0%, white 100%);
   background-image: -khtml-linear-gradient(bottom, #eeeeee 0%, white 100%);
   background-image: -moz-linear-gradient(bottom, #eeeeee 0%, white 100%);
@@ -73,9 +73,14 @@
   background-image: linear-gradient(bottom, #eeeeee 0%, white 100%);
   background-color: #f6f6f6; }
 
-.table {
+.caption, .table, .dialog {
   background-size: 100% 49px;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; }
+  .caption h1, .table h1, .dialog h1 {
+    font-size: 20px;
+    height: 19px; }
+
+.table {
   text-align: center;
   margin-top: 40px; }
   .table > .cell {
@@ -83,9 +88,7 @@
     .table > .cell:first-child {
       border-left: none; }
     .table > .cell h1 {
-      font-size: 20px;
-      margin: 15px 0 15px 0;
-      height: 19px; }
+      margin: 15px 0 15px 0; }
     .table > .cell > h1 {
       text-align: left;
       margin: 15px; }
@@ -139,6 +142,7 @@ input {
   .buttons input {
     padding: 6px 10px 6px 10px;
     font-size: 0.9em;
+    cursor: pointer;
     float: right; }
     .buttons input:active {
       padding: 7px 9px 5px 11px; }
@@ -181,25 +185,41 @@ input {
     border-radius: 7px 0 0 7px;
     border-right: none; }
 
-.dialog {
-  position: absolute;
-  margin-left: -200px;
-  width: 400px;
-  left: 50%;
-  padding: 10px;
-  z-index: 20;
-  top: 250px; }
-  .dialog li {
-    list-style: none; }
-
-.fader {
+#Fader {
   top: 0;
   position: fixed;
   background-color: white;
   height: 100%;
   width: 100%;
   z-index: 10;
-  opacity: 0.4; }
+  opacity: 0.4;
+  /* browser bug fix */ }
+
+.dialog {
+  position: absolute;
+  margin-left: -200px;
+  width: 400px;
+  left: 50%;
+  -webkit-box-shadow: 0 0 4px #555555;
+  -khtml-box-shadow: 0 0 4px #555555;
+  -moz-box-shadow: 0 0 4px #555555;
+  -ms-box-shadow: 0 0 4px #555555;
+  -o-box-shadow: 0 0 4px #555555;
+  box-shadow: 0 0 4px #555555;
+  z-index: 20;
+  top: 250px; }
+  .dialog h1 {
+    border-bottom: 1px solid #dddddd;
+    padding: 15px; }
+  .dialog ul {
+    margin: 5px 0 5px 0; }
+  .dialog li {
+    padding: 5px 5px 5px 5px;
+    cursor: pointer;
+    list-style: none;
+    text-align: center; }
+    .dialog li:active {
+      padding: 6px 4px 4px 6px; }
 
 .alert {
   position: relative;

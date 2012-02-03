@@ -1,14 +1,4 @@
-.dialog
-	@extend .box
-	@include fixed-middle(400px)
-	padding: 10px
-	z-index: 20
-	top: 250px
-	
-	li
-		list-style: none
-		
-.fader
+#Fader
 	top: 0
 	position: fixed
 	background-color: white
@@ -16,6 +6,29 @@
 	width: 100%
 	z-index: 10
 	opacity: .4
+	
+	/* browser bug fix
+	&.fade
+		@extend .fade
+
+.dialog
+	@include fixed-middle(400px)
+	@include shadow(0, 0, 4px, #555)
+	@extend .box
+	@extend .caption
+	z-index: 20
+	top: 250px
+	
+	h1
+		@include border(border-bottom)
+		padding: 15px
+	ul
+		margin: 5px 0 5px 0
+	li
+		@include press-pading(5px, 5px, 1px)
+		cursor: pointer
+		list-style: none
+		text-align: center
 
 .alert
 	position: relative
