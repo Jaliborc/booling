@@ -62,12 +62,13 @@
 	<div id="Fader" class="hide"></div>
 	<div id="SavedList" class="dialog hide">
 		<h1>Saved Tables</h1>
+		<span onclick="closeDialogs()">x</span>
 		<ul></ul>
 	</div>
 	
 	<div id="NewSave" class="dialog hide">
 		<h1>Enter a Name...</h1>
-		<input placeholder="And you will never forget me. Never.">
+		<input placeholder="And you will never forget me. Never." maxlength="14">
 		<div class="buttons">
 			<input value = "Save" onclick="saveResult()" type="submit" class="left">
 			<input value = "Cancel" onclick="closeDialogs()" type="submit">

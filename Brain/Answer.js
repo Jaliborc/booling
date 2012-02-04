@@ -5,9 +5,13 @@ initAnswer = function() {
 };
 showAnswer = function(load) {
   var error, i, messages, offset, position, text, value;
+  if (window.transi) {
+    return;
+  }
   text = Formula.value;
   value = text.replace(/\s/g, '');
   window.Parsed = new Parser(text);
+  window.transi = true;
   i = Parsed.i || Parsed.size - 1;
   error = Parsed.error;
   if (error) {
@@ -31,6 +35,7 @@ showAnswer = function(load) {
       var i, input, _ref, _results;
       AnswerSection.style.width = Parsed.width;
       AnswerTable.innerHTML = Parsed.result;
+      window.transi = false;
       _results = [];
       for (i = 0, _ref = Inputs.length - 1; 0 <= _ref ? i <= _ref : i >= _ref; 0 <= _ref ? i++ : i--) {
         input = Inputs[i];

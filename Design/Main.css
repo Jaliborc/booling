@@ -26,7 +26,7 @@
 .wide {
   width: 100%; }
 
-.clear:after, #Spotlight .box:after, #Spotlight .caption:after, #Spotlight .table:after, #Spotlight .dialog:after, #Spotlight input:after, #Spotlight .alert p:after, .alert #Spotlight p:after {
+.clear:after, #Spotlight .box:after, #Spotlight .caption:after, #Spotlight .table:after, #Spotlight .dialog:after, #Spotlight input:after, #Spotlight .dialog span:after, .dialog #Spotlight span:after, #Spotlight .alert p:after, .alert #Spotlight p:after {
   visibility: hidden;
   display: block;
   content: ".";
@@ -48,7 +48,7 @@
 .hide {
   display: none; }
 
-.box, .caption, .table, .dialog, input, .alert p {
+.box, .caption, .table, .dialog, input, .dialog span, .alert p {
   border: 1px solid #dddddd;
   -webkit-background-clip: padding-box;
   -khtml-background-clip: padding-box;
@@ -209,6 +209,16 @@ input {
   .dialog h1 {
     border-bottom: 1px solid #dddddd;
     padding: 15px; }
+  .dialog span {
+    color: #666666;
+    font-size: 0.8em;
+    background-color: #f6f6f6;
+    padding: 2px 9px 5px 9px;
+    position: absolute;
+    text-align: center;
+    cursor: pointer;
+    right: 15px;
+    top: 15px; }
   .dialog ul {
     margin: 5px 0 5px 0; }
   .dialog li {
@@ -271,7 +281,7 @@ input {
   font-size: 23px;
   width: 850px; }
 
-#Spotlight .box, #Spotlight .caption, #Spotlight .table, #Spotlight .dialog, #Spotlight input, #Spotlight .alert p, .alert #Spotlight p {
+#Spotlight .box, #Spotlight .caption, #Spotlight .table, #Spotlight .dialog, #Spotlight input, #Spotlight .dialog span, .dialog #Spotlight span, #Spotlight .alert p, .alert #Spotlight p {
   margin-top: 40px;
   padding: 25px; }
 #Spotlight .img {

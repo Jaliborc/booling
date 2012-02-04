@@ -4,9 +4,12 @@ initAnswer = ->
 	window.Columns = AnswerTable.getElementsByTagName('ul')
 
 showAnswer = (load) ->
+	return if window.transi
+	
 	text = Formula.value
 	value = text.replace(///\s///g, '')
 	window.Parsed = new Parser(text)
+	window.transi = true
 	
 	i = Parsed.i or Parsed.size - 1
 	error = Parsed.error
@@ -33,6 +36,7 @@ showAnswer = (load) ->
 		switchFrames(FormulaSection, AnswerSection, ->
 			AnswerSection.style.width = Parsed.width
 			AnswerTable.innerHTML = Parsed.result
+			window.transi = false
 		
 			for i in [0 .. Inputs.length - 1]
 				input = Inputs[i]

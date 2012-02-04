@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>currentDocument</key>
+	<string>Brain/Dialogs.coffee</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -11,7 +13,7 @@
 					<key>filename</key>
 					<string>index.html</string>
 					<key>lastUsed</key>
-					<date>2012-02-03T19:56:29Z</date>
+					<date>2012-02-04T00:11:16Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -26,6 +28,8 @@
 					<date>2011-12-30T16:51:57Z</date>
 				</dict>
 			</array>
+			<key>expanded</key>
+			<true/>
 			<key>name</key>
 			<string>App</string>
 		</dict>
@@ -80,13 +84,15 @@
 					<key>filename</key>
 					<string>Brain/Answer.coffee</string>
 					<key>lastUsed</key>
-					<date>2012-02-03T18:16:05Z</date>
+					<date>2012-02-04T00:26:32Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Dialogs.coffee</string>
 					<key>lastUsed</key>
-					<date>2012-02-03T19:55:23Z</date>
+					<date>2012-02-04T00:33:40Z</date>
+					<key>selected</key>
+					<true/>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -107,6 +113,8 @@
 					<date>2012-02-03T13:34:42Z</date>
 				</dict>
 			</array>
+			<key>expanded</key>
+			<true/>
 			<key>name</key>
 			<string>Brain</string>
 		</dict>
@@ -117,13 +125,13 @@
 					<key>filename</key>
 					<string>Design/Main.sass</string>
 					<key>lastUsed</key>
-					<date>2012-02-03T19:56:15Z</date>
+					<date>2012-02-04T00:11:16Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Design/About.sass</string>
 					<key>lastUsed</key>
-					<date>2012-02-03T01:24:21Z</date>
+					<date>2012-02-03T20:01:06Z</date>
 				</dict>
 				<dict>
 					<key>children</key>
@@ -138,13 +146,13 @@
 							<key>filename</key>
 							<string>Design/Tables.sass</string>
 							<key>lastUsed</key>
-							<date>2012-02-03T17:22:16Z</date>
+							<date>2012-02-04T00:02:34Z</date>
 						</dict>
 						<dict>
 							<key>filename</key>
 							<string>Design/Alerts.sass</string>
 							<key>lastUsed</key>
-							<date>2012-02-03T19:56:18Z</date>
+							<date>2012-02-04T00:11:15Z</date>
 						</dict>
 					</array>
 					<key>name</key>
@@ -157,7 +165,7 @@
 							<key>filename</key>
 							<string>Design/Common.sass</string>
 							<key>lastUsed</key>
-							<date>2012-02-03T13:54:40Z</date>
+							<date>2012-02-04T00:10:06Z</date>
 						</dict>
 						<dict>
 							<key>filename</key>
@@ -172,8 +180,6 @@
 			</array>
 			<key>name</key>
 			<string>Design</string>
-			<key>selected</key>
-			<true/>
 		</dict>
 		<dict>
 			<key>children</key>
@@ -198,7 +204,57 @@
 	<key>fileHierarchyDrawerWidth</key>
 	<integer>200</integer>
 	<key>metaData</key>
-	<dict/>
+	<dict>
+		<key>Brain/Answer.coffee</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>21</integer>
+				<key>line</key>
+				<integer>6</integer>
+			</dict>
+			<key>columnSelection</key>
+			<false/>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>18</integer>
+				<key>line</key>
+				<integer>6</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>24</integer>
+				<key>line</key>
+				<integer>6</integer>
+			</dict>
+		</dict>
+		<key>Brain/Dialogs.coffee</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>1</integer>
+				<key>line</key>
+				<integer>50</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>20</integer>
+		</dict>
+	</dict>
+	<key>openDocuments</key>
+	<array>
+		<string>Brain/Answer.coffee</string>
+		<string>Brain/Dialogs.coffee</string>
+	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>
 	<key>windowFrame</key>
