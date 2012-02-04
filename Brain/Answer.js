@@ -16,6 +16,7 @@ showAnswer = function(load) {
   error = Parsed.error;
   if (error) {
     Overlay.innerHTML = text.slice(0, i) + '<span>' + text.slice(i, i + 1) + '</span>';
+    window.transi = false;
     if (messages = Errors[error]) {
       position = getElement(Overlay, 'span').offsetLeft - Overlay.offsetLeft - 195;
       offset = Math.max(position, 0);
