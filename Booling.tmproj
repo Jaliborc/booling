@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>currentDocument</key>
-	<string>Brain/Dialogs.coffee</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -25,7 +23,7 @@
 					<key>filename</key>
 					<string>version</string>
 					<key>lastUsed</key>
-					<date>2011-12-30T16:51:57Z</date>
+					<date>2012-02-04T00:42:31Z</date>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -84,15 +82,13 @@
 					<key>filename</key>
 					<string>Brain/Answer.coffee</string>
 					<key>lastUsed</key>
-					<date>2012-02-04T00:26:32Z</date>
+					<date>2012-02-04T00:42:28Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>Brain/Dialogs.coffee</string>
 					<key>lastUsed</key>
-					<date>2012-02-04T00:33:40Z</date>
-					<key>selected</key>
-					<true/>
+					<date>2012-02-04T00:42:32Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -113,8 +109,6 @@
 					<date>2012-02-03T13:34:42Z</date>
 				</dict>
 			</array>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>Brain</string>
 		</dict>
@@ -204,57 +198,7 @@
 	<key>fileHierarchyDrawerWidth</key>
 	<integer>200</integer>
 	<key>metaData</key>
-	<dict>
-		<key>Brain/Answer.coffee</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>21</integer>
-				<key>line</key>
-				<integer>6</integer>
-			</dict>
-			<key>columnSelection</key>
-			<false/>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>18</integer>
-				<key>line</key>
-				<integer>6</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>24</integer>
-				<key>line</key>
-				<integer>6</integer>
-			</dict>
-		</dict>
-		<key>Brain/Dialogs.coffee</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>1</integer>
-				<key>line</key>
-				<integer>50</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>20</integer>
-		</dict>
-	</dict>
-	<key>openDocuments</key>
-	<array>
-		<string>Brain/Answer.coffee</string>
-		<string>Brain/Dialogs.coffee</string>
-	</array>
+	<dict/>
 	<key>showFileHierarchyDrawer</key>
 	<false/>
 	<key>windowFrame</key>
