@@ -210,13 +210,13 @@ input {
     border-bottom: 1px solid #dddddd;
     padding: 15px; }
   .dialog span {
-    color: #666666;
-    font-size: 0.8em;
     background-color: #f6f6f6;
     padding: 2px 9px 5px 9px;
     position: absolute;
     text-align: center;
+    font-size: 0.8em;
     cursor: pointer;
+    color: #666666;
     right: 15px;
     top: 15px; }
   .dialog ul {
@@ -327,7 +327,7 @@ input {
 
 /* Body */
 body {
-  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Helvetica, Arial, Verdana, sans-serif;
   background-color: #eeeeee;
   padding-bottom: 90px; }
 
