@@ -46,6 +46,7 @@ class Parser
 			oper: 'DOUBLE OPER'
 			open: 'MISSING VAR'
 			none: 'MISSING VAR'
+			no: 'DOUBLE OPER'
 		open:
 			var: 'MISSING OPER'
 			close: 'MISSING OPER'
@@ -62,12 +63,6 @@ class Parser
 		@connectOpers()
 		
 	parseFormula: ->	
-		@size = @formula.length
-		if @size is 0
-			return 'EMPTY'
-		else if @size < 3
-			return 'SHORT'
-		
 		@numOpers = 0
 		@list = []
 		@vars = {}
@@ -75,7 +70,7 @@ class Parser
 		last = false
 		brackets = 0
 		
-		for i in [0 .. @size - 1]
+		for i in [0 .. @formula.length - 1]
 			char = new Char(this, i)
 			continue if char.ignore
 			
@@ -95,8 +90,14 @@ class Parser
 				
 			@list.push(char)
 			last = char
-			
-		return 'MISSING VAR' if last.type == 'oper' or last.type == 'no'
+		
+		@size = @list.length
+		if @size is 0
+			return 'EMPTY'
+		else if @size < 2
+			return 'SHORT'
+
+		return 'MISSING VAR' if last.type is 'oper' or last.type is 'no'
 		return 'NUM BRACKETS' if brackets != 0
 	
 	
@@ -120,7 +121,6 @@ class Parser
 			@endCell()
 			
 	calculateSize: ->
-		@size = @list.length
 		@formulaWidth = @numOpers * 17 + @size * 13
 		@varsWidth = @numVars * 43
 		

@@ -64,7 +64,8 @@ Parser = (function() {
     oper: {
       oper: 'DOUBLE OPER',
       open: 'MISSING VAR',
-      none: 'MISSING VAR'
+      none: 'MISSING VAR',
+      no: 'DOUBLE OPER'
     },
     open: {
       "var": 'MISSING OPER',
@@ -88,18 +89,12 @@ Parser = (function() {
   }
   Parser.prototype.parseFormula = function() {
     var brackets, char, error, i, last, _base, _name, _ref, _ref2;
-    this.size = this.formula.length;
-    if (this.size === 0) {
-      return 'EMPTY';
-    } else if (this.size < 3) {
-      return 'SHORT';
-    }
     this.numOpers = 0;
     this.list = [];
     this.vars = {};
     last = false;
     brackets = 0;
-    for (i = 0, _ref = this.size - 1; 0 <= _ref ? i <= _ref : i >= _ref; 0 <= _ref ? i++ : i--) {
+    for (i = 0, _ref = this.formula.length - 1; 0 <= _ref ? i <= _ref : i >= _ref; 0 <= _ref ? i++ : i--) {
       char = new Char(this, i);
       if (char.ignore) {
         continue;
@@ -125,6 +120,12 @@ Parser = (function() {
       }
       this.list.push(char);
       last = char;
+    }
+    this.size = this.list.length;
+    if (this.size === 0) {
+      return 'EMPTY';
+    } else if (this.size < 2) {
+      return 'SHORT';
     }
     if (last.type === 'oper' || last.type === 'no') {
       return 'MISSING VAR';
@@ -161,7 +162,6 @@ Parser = (function() {
     return _results;
   };
   Parser.prototype.calculateSize = function() {
-    this.size = this.list.length;
     this.formulaWidth = this.numOpers * 17 + this.size * 13;
     this.varsWidth = this.numVars * 43;
     this.width = Math.max(1000, this.varsWidth + this.formulaWidth);
