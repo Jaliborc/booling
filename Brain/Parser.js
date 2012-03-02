@@ -63,7 +63,8 @@ Parser = (function() {
     },
     oper: {
       oper: 'DOUBLE OPER',
-      open: 'MISSING VAR'
+      open: 'MISSING VAR',
+      none: 'MISSING VAR'
     },
     open: {
       "var": 'MISSING OPER',
@@ -77,7 +78,7 @@ Parser = (function() {
   function Parser(formula) {
     this.formula = formula;
     if (this.error = this.parseFormula()) {
-      return;
+      return console.log(this.error, this.i);
     }
     this.result = '';
     this.writeVars();
@@ -104,7 +105,7 @@ Parser = (function() {
         continue;
       }
       this.i = i;
-      if (error = (_ref2 = errors[char.type]) != null ? _ref2[last != null ? last.type : void 0] : void 0) {
+      if (error = (_ref2 = errors[char.type]) != null ? _ref2[(last != null ? last.type : void 0) || 'none'] : void 0) {
         return error;
       }
       if (char["var"]) {
@@ -124,6 +125,9 @@ Parser = (function() {
       }
       this.list.push(char);
       last = char;
+    }
+    if (last.type === 'oper') {
+      return 'MISSING VAR';
     }
     if (brackets !== 0) {
       return 'NUM BRACKETS';

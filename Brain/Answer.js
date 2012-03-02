@@ -12,7 +12,7 @@ showAnswer = function(load) {
   value = text.replace(/\s/g, '');
   window.Parsed = new Parser(text);
   window.transi = true;
-  i = Parsed.i || Parsed.size - 1;
+  i = Parsed.i != null ? Parsed.i : Parsed.size - 1;
   error = Parsed.error;
   if (error) {
     Overlay.innerHTML = text.slice(0, i) + '<span>' + text.slice(i, i + 1) + '</span>';

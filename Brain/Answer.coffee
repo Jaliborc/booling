@@ -11,7 +11,7 @@ showAnswer = (load) ->
 	window.Parsed = new Parser(text)
 	window.transi = true
 	
-	i = Parsed.i or Parsed.size - 1
+	i = if Parsed.i? then Parsed.i else Parsed.size - 1
 	error = Parsed.error
 
 	if error

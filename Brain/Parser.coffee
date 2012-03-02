@@ -45,6 +45,7 @@ class Parser
 		oper:
 			oper: 'DOUBLE OPER'
 			open: 'MISSING VAR'
+			none: 'MISSING VAR'
 		open:
 			var: 'MISSING OPER'
 			close: 'MISSING OPER'
@@ -53,7 +54,7 @@ class Parser
 			open: 'EMPTY BRACKET'
 			
 	constructor: (@formula) ->
-		return if @error = @parseFormula()
+		return console.log(@error, @i) if @error = @parseFormula()	
 		@result = ''
 		@writeVars()
 		@calculateSize()
@@ -79,7 +80,7 @@ class Parser
 			continue if char.ignore
 			
 			@i = i
-			return error if error = errors[char.type]?[last?.type]
+			return error if error = errors[char.type]?[last?.type or 'none']
 			
 			if char.var
 				@vars[char.text] or= {values: []}
@@ -95,6 +96,7 @@ class Parser
 			@list.push(char)
 			last = char
 			
+		return 'MISSING VAR' if last.type == 'oper'
 		return 'NUM BRACKETS' if brackets != 0
 	
 	
