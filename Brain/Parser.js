@@ -126,7 +126,7 @@ Parser = (function() {
       this.list.push(char);
       last = char;
     }
-    if (last.type === 'oper') {
+    if (last.type === 'oper' || last.type === 'no') {
       return 'MISSING VAR';
     }
     if (brackets !== 0) {

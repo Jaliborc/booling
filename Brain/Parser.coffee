@@ -96,7 +96,7 @@ class Parser
 			@list.push(char)
 			last = char
 			
-		return 'MISSING VAR' if last.type == 'oper'
+		return 'MISSING VAR' if last.type == 'oper' or last.type == 'no'
 		return 'NUM BRACKETS' if brackets != 0
 	
 	
