@@ -58,22 +58,26 @@ Parser = (function() {
   var errors;
   errors = {
     "var": {
-      "var": 'DOUBLE VAR',
-      close: 'MISSING OPER'
+      "var": 'TWO VAR',
+      close: 'MISS OPER'
     },
     oper: {
-      oper: 'DOUBLE OPER',
-      open: 'MISSING VAR',
-      none: 'MISSING VAR',
-      no: 'DOUBLE OPER'
+      oper: 'TWO OPER',
+      open: 'MISS VAR',
+      none: 'MISS VAR',
+      no: 'TWO OPER'
     },
     open: {
-      "var": 'MISSING OPER',
-      close: 'MISSING OPER'
+      "var": 'MISS OPER',
+      close: 'MISS OPER'
     },
     close: {
-      oper: 'MISSING VAR',
+      no: 'MISS VAR',
+      oper: 'MISS VAR',
       open: 'EMPTY BRACKET'
+    },
+    no: {
+      "var": 'MISS OPER'
     }
   };
   function Parser(formula) {
@@ -128,7 +132,7 @@ Parser = (function() {
       return 'SHORT';
     }
     if (last.type === 'oper' || last.type === 'no') {
-      return 'MISSING VAR';
+      return 'MISS VAR';
     }
     if (brackets !== 0) {
       return 'NUM BRACKETS';

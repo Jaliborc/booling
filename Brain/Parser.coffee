@@ -40,19 +40,22 @@ class Char
 class Parser
 	errors =
 		var:
-			var: 'DOUBLE VAR'
-			close: 'MISSING OPER'
+			var: 'TWO VAR'
+			close: 'MISS OPER'
 		oper:
-			oper: 'DOUBLE OPER'
-			open: 'MISSING VAR'
-			none: 'MISSING VAR'
-			no: 'DOUBLE OPER'
+			oper: 'TWO OPER'
+			open: 'MISS VAR'
+			none: 'MISS VAR'
+			no: 'TWO OPER'
 		open:
-			var: 'MISSING OPER'
-			close: 'MISSING OPER'
+			var: 'MISS OPER'
+			close: 'MISS OPER'
 		close:
-			oper: 'MISSING VAR'
+			no: 'MISS VAR'
+			oper: 'MISS VAR'
 			open: 'EMPTY BRACKET'
+		no:
+			var: 'MISS OPER'
 			
 	constructor: (@formula) ->
 		return console.log(@error, @i) if @error = @parseFormula()	
@@ -97,7 +100,7 @@ class Parser
 		else if @size < 2
 			return 'SHORT'
 
-		return 'MISSING VAR' if last.type is 'oper' or last.type is 'no'
+		return 'MISS VAR' if last.type is 'oper' or last.type is 'no'
 		return 'NUM BRACKETS' if brackets != 0
 	
 	

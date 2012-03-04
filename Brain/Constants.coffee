@@ -39,11 +39,11 @@ Placeholders = [
 
 ErrorTitle =
 	'SHORT' : 'TOO SHORT!'
-	'DOUBLE VAR': 'TWO VARIABLES!'
-	'DOUBLE OPER': 'TWO OPERATORS!'
-	'MISSING OPER': 'NO OPERATOR!'
-	'MISSING VAR': 'NO VARIABLE!'
-	'NUM BRACKETS': 'MISSING BRACKETS!'
+	'TWO VAR': 'TWO VARIABLES!'
+	'TWO OPER': 'TWO OPERATORS!'
+	'MISS OPER': 'NO OPERATOR!'
+	'MISS VAR': 'NO VARIABLE!'
+	'NUM BRACKETS': 'UNCLOSED BRACKETS!'
 	'EMPTY BRACKET': 'EMPTY BRACKETS!'
 
 Errors =
@@ -52,24 +52,24 @@ Errors =
 		"Do you happen to be a chicken? Only chicken can’t type more than one tiny character.<br><br>Start typing! NOW!"
 		"What are you doing? Trying to get me mad... one character won’t lead us anywhere!<br><br>Remember I know where YOU live."
 	]
-	'DOUBLE VAR': [
+	'TWO VAR': [
 		"Are you trying to write your mama's name?! Why else would you be typing two letters?<br><br>I DO NOT like mama's boys!"
 		"Why are those two next to each other? Trying to send your mama a message?<br><br>I DO NOT like mama's boys!"
 	]
-	'DOUBLE OPER': [
+	'TWO OPER': [
 		"Hey, you jackass! There must be a variable between those two.<br><br>Got it? Or would you like a better explanation?"
 		"What are you doing? You really are a piece of trash!<br><br>Put a variable between those two, or I'll put MY FIST into YOUR ASS!"
 	]
-	'MISSING OPER':[
+	'MISS OPER':[
 		"There must be an operator between those two!<br><br>Trying to get me mad? You are NOT worth it!"
 	]
-	'MISSING VAR':[
+	'MISS VAR':[
 		"Hey, you jackass! There must be a variable between those two.<br><br>Got it? Or would you like a better explanation?"
-		"What are you doing? You really are a piece of trash!<br><br>Put a variable between those two, or I'll put MY FIST into YOUR ASS!"
+		"What are you doing? You truly are a piece of trash!<br><br>Put a variable between those two, or I'll put MY FIST into YOUR ASS!"
 	]
 	'NUM BRACKETS': [
 		"Kid, are you still in grade school? The number of brackets DO NOT match.<br><br>Maybe, if I treat you like a square, you'll become one..."
-		'Do you know how to count? Check the number of brackets!<br><br>Math is for squares, but pissing me of is for suicidals.'
+		'Do you know how to count? Check the number of brackets!<br><br>Math is for squares, but pissing me of is suicidal.'
 	]
 	'EMPTY BRACKET': [
 		"You're just one step closer of getting a broken nose.<br><br>Why is there NOTHING between those brackets?!"
