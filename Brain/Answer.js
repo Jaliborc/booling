@@ -21,6 +21,7 @@ showAnswer = function(load) {
       position = getElement(Overlay, 'span').offsetLeft - Overlay.offsetLeft - 195;
       offset = Math.max(position, 0);
       Error.getElementsByClassName('arrow')[0].style.left = 224 + position - offset + 'px';
+      getElement(Error, 'h1').innerHTML = ErrorTitle[error];
       if (Error.current !== error) {
         getElement(Error, 'p').innerHTML = random(messages);
       }

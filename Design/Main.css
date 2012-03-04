@@ -26,7 +26,7 @@
 .wide {
   width: 100%; }
 
-.clear:after, #Spotlight .box:after, #Spotlight .caption:after, #Spotlight .table:after, #Spotlight .dialog:after, #Spotlight input:after, #Spotlight .dialog span:after, .dialog #Spotlight span:after, #Spotlight .alert p:after, .alert #Spotlight p:after {
+.clear:after, #Spotlight .box:after, #Spotlight .caption:after, #Spotlight .table:after, #Spotlight .dialog:after, #Spotlight input:after, #Spotlight .dialog span:after, .dialog #Spotlight span:after, #Spotlight .alert .text:after, .alert #Spotlight .text:after {
   visibility: hidden;
   display: block;
   content: ".";
@@ -48,7 +48,7 @@
 .hide {
   display: none; }
 
-.box, .caption, .table, .dialog, input, .dialog span, .alert p {
+.box, .caption, .table, .dialog, input, .dialog span, .alert .text {
   border: 1px solid #dddddd;
   -webkit-background-clip: padding-box;
   -khtml-background-clip: padding-box;
@@ -253,15 +253,20 @@ input {
     margin: 0 15px 10px 15px; }
 
 .alert {
-  position: relative;
-  width: 492px; }
+  position: relative; }
   .alert.show {
     margin-bottom: 35px; }
-  .alert p {
-    padding: 10px;
+  .alert .text {
+    background: white url(booling.png) no-repeat 355px bottom;
     margin-top: 25px;
-    font-size: 16px;
+    padding: 30px;
+    width: 510px;
+    height: 211px;
     z-index: 0; }
+  .alert p {
+    margin-top: 10px;
+    font-size: 16px;
+    width: 285px; }
   .alert .arrow {
     border: 1px solid #dddddd;
     -webkit-transform: rotate(45deg);
@@ -281,7 +286,7 @@ input {
   font-size: 23px;
   width: 850px; }
 
-#Spotlight .box, #Spotlight .caption, #Spotlight .table, #Spotlight .dialog, #Spotlight input, #Spotlight .dialog span, .dialog #Spotlight span, #Spotlight .alert p, .alert #Spotlight p {
+#Spotlight .box, #Spotlight .caption, #Spotlight .table, #Spotlight .dialog, #Spotlight input, #Spotlight .dialog span, .dialog #Spotlight span, #Spotlight .alert .text, .alert #Spotlight .text {
   margin-top: 40px;
   padding: 25px; }
 #Spotlight .img {

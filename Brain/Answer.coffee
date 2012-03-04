@@ -23,6 +23,7 @@ showAnswer = (load) ->
 			offset = Math.max(position, 0)
 
 			Error.getElementsByClassName('arrow')[0].style.left = 224 + position - offset + 'px'
+			getElement(Error, 'h1').innerHTML = ErrorTitle[error]
 			getElement(Error, 'p').innerHTML = random(messages) if Error.current != error
 
 			Error.style.marginLeft = offset + 'px'

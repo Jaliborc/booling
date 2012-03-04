@@ -58,16 +58,21 @@
 
 .alert
 	position: relative
-	width: 492px
 	&.show
 		margin-bottom: 35px
-		
-	p
+	
+	.text
 		@extend .box
-		padding: 10px
+		background: #FFF url(booling.png) no-repeat 355px bottom
 		margin-top: 25px
-		font-size: 16px
+		padding: 30px
+		width: 510px
+		height: 211px
 		z-index: 0
+	p
+		margin-top: 10px
+		font-size: 16px
+		width: 285px
 		
 	.arrow
 		@include border

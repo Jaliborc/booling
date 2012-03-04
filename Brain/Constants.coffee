@@ -37,33 +37,41 @@ Placeholders = [
 	'Being bullied? "Just act less gay", advise teachers.'
 ]
 
+ErrorTitle =
+	'SHORT' : 'TOO SHORT!'
+	'DOUBLE VAR': 'TWO VARIABLES!'
+	'DOUBLE OPER': 'TWO OPERATORS!'
+	'MISSING OPER': 'NO OPERATOR!'
+	'MISSING VAR': 'NO VARIABLE!'
+	'NUM BRACKETS': 'MISSING BRACKETS!'
+	'EMPTY BRACKET': 'EMPTY BRACKETS!'
+
 Errors =
 	'SHORT' : [
-		"I can't make anything with just one character. Are you too lazy to type more? ARE YOU A WEAKLING!?"
-		"Do you happen to be a chicken? Only chickens can't type more than a single character."
-		"Kid, type more than one character or this ain't go anywhere. And you do not want to see me bored..."
-		"Are you trying to get me mad? Type more than one character! NOW!!"
+		"I can’t make anything with just one character. Are you too lazy to type more?<br><br>OR ARE YOU A WEAKLING!?"
+		"Do you happen to be a chicken? Only chicken can’t type more than one tiny character.<br><br>Start typing! NOW!"
+		"What are you doing? Trying to get me mad... one character won’t lead us anywhere!<br><br>Remember I know where YOU live."
 	]
 	'DOUBLE VAR': [
-		"Are you trying to write your momma's name?! Why else would you be typing two letters in a row?"
-		"Why on earth are those two next to each other? Trying to send your momma a message?"
-		"Hey jackass, there must be an operator between those two. Got it?"
+		"Are you trying to write your mama's name?! Why else would you be typing two letters?<br><br>I DO NOT like mama's boys!"
+		"Why are those two next to each other? Trying to send your mama a message?<br><br>I DO NOT like mama's boys!"
 	]
 	'DOUBLE OPER': [
-		"Hey jackass, there must be a variable between those two. Got it?"
-		"WHAT ARE YOU DOING!?"
+		"Hey, you jackass! There must be a variable between those two.<br><br>Got it? Or would you like a better explanation?"
+		"What are you doing? You really are a piece of trash!<br><br>Put a variable between those two, or I'll put MY FIST into YOUR ASS!"
 	]
 	'MISSING OPER':[
-		"Hey jackass, there must be an operator between those two. Got it?"
+		"There must be an operator between those two!<br><br>Trying to get me mad? You are NOT worth it!"
 	]
 	'MISSING VAR':[
-		"Hey jackass, there must be a variable between those two. Got it?"
+		"Hey, you jackass! There must be a variable between those two.<br><br>Got it? Or would you like a better explanation?"
+		"What are you doing? You really are a piece of trash!<br><br>Put a variable between those two, or I'll put MY FIST into YOUR ASS!"
 	]
 	'NUM BRACKETS': [
-		"Kid, are you still in grade school? 'Cause the number of brackets do not match."
-		'Do you know how to count, or should I "teach" you? Check the number of brackets.'
+		"Kid, are you still in grade school? The number of brackets DO NOT match.<br><br>Maybe, if I treat you like a square, you'll become one..."
+		'Do you know how to count? Check the number of brackets!<br><br>Math is for squares, but pissing me of is for suicidals.'
 	]
 	'EMPTY BRACKET': [
-		"You're just one step closer of getting a broken nose. Why is there nothing between those brackets?!"
-		"What are those two lonely brackets doing there? Are they your imaginary friends?"
+		"You're just one step closer of getting a broken nose.<br><br>Why is there NOTHING between those brackets?!"
+		"What are those two lonely brackets doing there? Are they your imaginary friends?<br><br>You are spiking my imagination... Wanna SEE it?"
 	]
