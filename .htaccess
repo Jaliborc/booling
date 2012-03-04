@@ -1,3 +1,5 @@
+AddType text/cache-manifest .manifest
+
 RewriteEngine on
-RewriteRule overview/? overview.html [L]
-RewriteRule about/? about.html [L]
+RewriteRule [oO]verview/? overview.html [L]
+RewriteRule [aA]bout/? about.html [L]
