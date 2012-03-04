@@ -1,7 +1,7 @@
 var redirectOfficial, updateVersion;
 redirectOfficial = function() {
   if ((typeof DOWNLOAD !== "undefined" && DOWNLOAD !== null) && (typeof navigator !== "undefined" && navigator !== null ? navigator.onLine : void 0)) {
-    return window.location = 'http://www.jaliborc.com/Booling/';
+    return window.location = 'http://booling.jaliborc.com';
   }
 };
 updateVersion = function() {
