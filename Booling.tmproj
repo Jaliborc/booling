@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>index.html</string>
+	<string>Brain/Main.coffee</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -19,9 +19,7 @@
 					<key>filename</key>
 					<string>index.html</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T20:07:16Z</date>
-					<key>selected</key>
-					<true/>
+					<date>2012-03-04T20:36:18Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -36,8 +34,6 @@
 					<date>2012-03-04T19:48:49Z</date>
 				</dict>
 			</array>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>App</string>
 		</dict>
@@ -48,13 +44,13 @@
 					<key>filename</key>
 					<string>overview.html</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T19:50:46Z</date>
+					<date>2012-03-04T20:36:21Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>about.html</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T19:51:45Z</date>
+					<date>2012-03-04T20:39:32Z</date>
 				</dict>
 			</array>
 			<key>name</key>
@@ -67,7 +63,9 @@
 					<key>filename</key>
 					<string>Brain/Main.coffee</string>
 					<key>lastUsed</key>
-					<date>2012-03-03T20:09:40Z</date>
+					<date>2012-03-04T20:39:36Z</date>
+					<key>selected</key>
+					<true/>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -112,6 +110,8 @@
 					<date>2012-02-03T13:34:42Z</date>
 				</dict>
 			</array>
+			<key>expanded</key>
+			<true/>
 			<key>name</key>
 			<string>Brain</string>
 		</dict>
@@ -216,6 +216,20 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>Brain/Main.coffee</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>29</integer>
+				<key>line</key>
+				<integer>2</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 		<key>Design/Alerts.sass</key>
 		<dict>
 			<key>caret</key>
@@ -244,20 +258,6 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>index.html</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>73</integer>
-				<key>line</key>
-				<integer>73</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>52</integer>
-		</dict>
 		<key>overview.html</key>
 		<dict>
 			<key>caret</key>
@@ -275,7 +275,7 @@
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>index.html</string>
+		<string>Brain/Main.coffee</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>

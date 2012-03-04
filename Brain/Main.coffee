@@ -1,6 +1,6 @@
 redirectOfficial = ->
 	if DOWNLOAD? and navigator?.onLine
-		window.location = 'http://www.jaliborc.com/Booling/'
+		window.location = 'http://booling.jaliborc.com'
 		
 updateVersion = ->
 	if applicationCache.status is applicationCache.UPDATEREADY
