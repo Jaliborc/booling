@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>about.html</string>
+	<string>index.html</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -19,7 +19,9 @@
 					<key>filename</key>
 					<string>index.html</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T19:48:52Z</date>
+					<date>2012-03-04T20:07:16Z</date>
+					<key>selected</key>
+					<true/>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -52,13 +54,9 @@
 					<key>filename</key>
 					<string>about.html</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T19:50:46Z</date>
-					<key>selected</key>
-					<true/>
+					<date>2012-03-04T19:51:45Z</date>
 				</dict>
 			</array>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>Pages</string>
 		</dict>
@@ -99,7 +97,7 @@
 					<key>filename</key>
 					<string>Brain/Constants.coffee</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T19:21:54Z</date>
+					<date>2012-03-04T20:07:13Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -196,8 +194,6 @@
 					<date>2011-12-19T22:09:33Z</date>
 				</dict>
 			</array>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>Server</string>
 		</dict>
@@ -248,33 +244,19 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>about.html</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>50</integer>
-				<key>line</key>
-				<integer>15</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>25</integer>
-		</dict>
 		<key>index.html</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>2</integer>
+				<integer>73</integer>
 				<key>line</key>
-				<integer>7</integer>
+				<integer>73</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>52</integer>
 		</dict>
 		<key>overview.html</key>
 		<dict>
@@ -294,8 +276,6 @@
 	<key>openDocuments</key>
 	<array>
 		<string>index.html</string>
-		<string>about.html</string>
-		<string>overview.html</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>
