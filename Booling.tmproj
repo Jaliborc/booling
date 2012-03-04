@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>Brain/Constants.coffee</string>
+	<string>index.html</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -11,9 +11,17 @@
 			<array>
 				<dict>
 					<key>filename</key>
+					<string>.htaccess</string>
+					<key>lastUsed</key>
+					<date>2012-03-04T19:07:55Z</date>
+				</dict>
+				<dict>
+					<key>filename</key>
 					<string>index.html</string>
 					<key>lastUsed</key>
-					<date>2012-03-03T20:50:08Z</date>
+					<date>2012-03-04T19:08:29Z</date>
+					<key>selected</key>
+					<true/>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -38,28 +46,17 @@
 			<array>
 				<dict>
 					<key>filename</key>
-					<string>Overview/index.html</string>
-					<key>lastUsed</key>
-					<date>2012-03-03T23:29:14Z</date>
+					<string>overview.html</string>
 				</dict>
-			</array>
-			<key>name</key>
-			<string>Overview</string>
-		</dict>
-		<dict>
-			<key>children</key>
-			<array>
 				<dict>
 					<key>filename</key>
-					<string>About/index.html</string>
-					<key>lastUsed</key>
-					<date>2012-03-03T23:31:11Z</date>
+					<string>about.html</string>
 				</dict>
 			</array>
 			<key>expanded</key>
 			<true/>
 			<key>name</key>
-			<string>About</string>
+			<string>Pages</string>
 		</dict>
 		<dict>
 			<key>children</key>
@@ -98,9 +95,7 @@
 					<key>filename</key>
 					<string>Brain/Constants.coffee</string>
 					<key>lastUsed</key>
-					<date>2012-03-03T23:31:11Z</date>
-					<key>selected</key>
-					<true/>
+					<date>2012-03-04T19:03:12Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -115,8 +110,6 @@
 					<date>2012-02-03T13:34:42Z</date>
 				</dict>
 			</array>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>Brain</string>
 		</dict>
@@ -157,8 +150,6 @@
 							<date>2012-03-03T22:48:55Z</date>
 						</dict>
 					</array>
-					<key>expanded</key>
-					<true/>
 					<key>name</key>
 					<string>Components</string>
 				</dict>
@@ -182,8 +173,6 @@
 					<string>Common</string>
 				</dict>
 			</array>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>Design</string>
 		</dict>
@@ -194,7 +183,7 @@
 					<key>filename</key>
 					<string>Server/bundler.php</string>
 					<key>lastUsed</key>
-					<date>2012-01-07T12:41:44Z</date>
+					<date>2012-03-04T19:08:26Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -224,36 +213,6 @@
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
-		</dict>
-		<key>Brain/Constants.coffee</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>109</integer>
-				<key>line</key>
-				<integer>71</integer>
-			</dict>
-			<key>columnSelection</key>
-			<false/>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>38</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>108</integer>
-				<key>line</key>
-				<integer>71</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>111</integer>
-				<key>line</key>
-				<integer>71</integer>
-			</dict>
 		</dict>
 		<key>Brain/Parser.coffee</key>
 		<dict>
@@ -327,16 +286,28 @@
 			<key>firstVisibleLine</key>
 			<integer>48</integer>
 		</dict>
+		<key>index.html</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>41</integer>
+				<key>line</key>
+				<integer>84</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>52</integer>
+		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>Brain/Answer.coffee</string>
-		<string>Brain/Parser.coffee</string>
-		<string>Brain/Constants.coffee</string>
+		<string>index.html</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>
 	<key>windowFrame</key>
-	<string>{{0, 4}, {1440, 874}}</string>
+	<string>{{169, -10}, {1440, 874}}</string>
 </dict>
 </plist>

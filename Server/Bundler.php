@@ -34,8 +34,8 @@ function copyPage($path){
 	easyWrite($path, str_replace('../Design/', '../', $page));
 }
 
-copyPage('Overview/index.html');
-copyPage('About/index.html');
+copyPage('overview.html');
+copyPage('about.html');
 	
 	
 # Copy Files
