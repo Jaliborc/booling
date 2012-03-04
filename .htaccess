@@ -3,3 +3,4 @@ AddType text/cache-manifest .manifest
 RewriteEngine on
 RewriteRule [oO]verview/? overview.html [L]
 RewriteRule [aA]bout/? about.html [L]
+RewriteRule [bB]undler/? bundler.php [L]
