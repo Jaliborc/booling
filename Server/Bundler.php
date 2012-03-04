@@ -49,6 +49,7 @@ function copyFile($origin, $target){
 $css = copyFile('Design/Main.css', 'Main.css');
 copyFile('Server/Downloader.php', 'downloader.php');
 copyFile('Server/Bundler.php', 'bundler.php');
+copyFile('.htaccess', '.htaccess');
 
 
 # Bundle Scripts
