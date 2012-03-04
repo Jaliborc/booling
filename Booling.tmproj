@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>.htaccess</string>
+	<string>about.html</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -13,15 +13,13 @@
 					<key>filename</key>
 					<string>.htaccess</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T19:41:20Z</date>
-					<key>selected</key>
-					<true/>
+					<date>2012-03-04T19:48:49Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>index.html</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T19:36:27Z</date>
+					<date>2012-03-04T19:48:52Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -33,7 +31,7 @@
 					<key>filename</key>
 					<string>version</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T19:35:10Z</date>
+					<date>2012-03-04T19:48:49Z</date>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -48,13 +46,15 @@
 					<key>filename</key>
 					<string>overview.html</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T19:39:39Z</date>
+					<date>2012-03-04T19:50:46Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>about.html</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T19:39:24Z</date>
+					<date>2012-03-04T19:50:46Z</date>
+					<key>selected</key>
+					<true/>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -187,7 +187,7 @@
 					<key>filename</key>
 					<string>Server/bundler.php</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T19:41:20Z</date>
+					<date>2012-03-04T19:44:08Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -206,20 +206,6 @@
 	<integer>200</integer>
 	<key>metaData</key>
 	<dict>
-		<key>.htaccess</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>36</integer>
-				<key>line</key>
-				<integer>5</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
 		<key>Brain/Answer.coffee</key>
 		<dict>
 			<key>caret</key>
@@ -262,33 +248,19 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>Server/bundler.php</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>9</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
 		<key>about.html</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>42</integer>
+				<integer>50</integer>
 				<key>line</key>
-				<integer>4</integer>
+				<integer>15</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>25</integer>
 		</dict>
 		<key>index.html</key>
 		<dict>
@@ -299,49 +271,31 @@
 				<key>line</key>
 				<integer>7</integer>
 			</dict>
-			<key>columnSelection</key>
-			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>49</integer>
-				<key>line</key>
-				<integer>7</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>2</integer>
-				<key>line</key>
-				<integer>7</integer>
-			</dict>
 		</dict>
 		<key>overview.html</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>42</integer>
+				<integer>51</integer>
 				<key>line</key>
-				<integer>4</integer>
+				<integer>52</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>34</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>overview.html</string>
-		<string>about.html</string>
-		<string>.htaccess</string>
 		<string>index.html</string>
-		<string>Server/bundler.php</string>
+		<string>about.html</string>
+		<string>overview.html</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>
