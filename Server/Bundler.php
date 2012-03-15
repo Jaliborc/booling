@@ -31,7 +31,7 @@ if ($version == $current)
 function copyPage($path){
 	global $DIR;
 	$page = file_get_contents($DIR . $path);
-	easyWrite($path, str_replace('../Design/', '../', $page));
+	easyWrite($path, str_replace('//Design/', '/', $page));
 }
 
 copyPage('overview.html');

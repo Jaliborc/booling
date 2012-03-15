@@ -290,24 +290,24 @@ input {
   margin-top: 40px;
   padding: 25px; }
 #Spotlight .img {
-  -webkit-box-shadow: 0 0 5px #444444;
-  -khtml-box-shadow: 0 0 5px #444444;
-  -moz-box-shadow: 0 0 5px #444444;
-  -ms-box-shadow: 0 0 5px #444444;
-  -o-box-shadow: 0 0 5px #444444;
-  box-shadow: 0 0 5px #444444;
+  -webkit-box-shadow: 0 0 3px #444444;
+  -khtml-box-shadow: 0 0 3px #444444;
+  -moz-box-shadow: 0 0 3px #444444;
+  -ms-box-shadow: 0 0 3px #444444;
+  -o-box-shadow: 0 0 3px #444444;
+  box-shadow: 0 0 3px #444444;
   -webkit-background-clip: padding-box;
   -khtml-background-clip: padding-box;
   -moz-background-clip: padding-box;
   -ms-background-clip: padding-box;
   -o-background-clip: padding-box;
   background-clip: padding-box;
-  -webkit-border-radius: 3px 3px 3px 3px;
-  -khtml-border-radius: 3px 3px 3px 3px;
-  -moz-border-radius: 3px 3px 3px 3px;
-  -ms-border-radius: 3px 3px 3px 3px;
-  -o-border-radius: 3px 3px 3px 3px;
-  border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 2px 2px 2px 2px;
+  -khtml-border-radius: 2px 2px 2px 2px;
+  -moz-border-radius: 2px 2px 2px 2px;
+  -ms-border-radius: 2px 2px 2px 2px;
+  -o-border-radius: 2px 2px 2px 2px;
+  border-radius: 2px 2px 2px 2px;
   background-size: cover;
   width: 230px;
   height: 143px; }

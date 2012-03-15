@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>Brain/Main.coffee</string>
+	<string>about.html</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -19,7 +19,7 @@
 					<key>filename</key>
 					<string>index.html</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T20:36:18Z</date>
+					<date>2012-03-04T20:45:24Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -44,15 +44,19 @@
 					<key>filename</key>
 					<string>overview.html</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T20:36:21Z</date>
+					<date>2012-03-05T16:32:19Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
 					<string>about.html</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T20:39:32Z</date>
+					<date>2012-03-05T16:32:19Z</date>
+					<key>selected</key>
+					<true/>
 				</dict>
 			</array>
+			<key>expanded</key>
+			<true/>
 			<key>name</key>
 			<string>Pages</string>
 		</dict>
@@ -63,9 +67,7 @@
 					<key>filename</key>
 					<string>Brain/Main.coffee</string>
 					<key>lastUsed</key>
-					<date>2012-03-04T20:39:36Z</date>
-					<key>selected</key>
-					<true/>
+					<date>2012-03-04T20:45:17Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -110,8 +112,6 @@
 					<date>2012-02-03T13:34:42Z</date>
 				</dict>
 			</array>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>Brain</string>
 		</dict>
@@ -216,20 +216,6 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>Brain/Main.coffee</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>29</integer>
-				<key>line</key>
-				<integer>2</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
 		<key>Design/Alerts.sass</key>
 		<dict>
 			<key>caret</key>
@@ -258,24 +244,24 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>overview.html</key>
+		<key>about.html</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>51</integer>
+				<integer>87</integer>
 				<key>line</key>
-				<integer>52</integer>
+				<integer>21</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>34</integer>
+			<integer>24</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>Brain/Main.coffee</string>
+		<string>about.html</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>
