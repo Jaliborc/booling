@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>Brain/Parser.coffee</string>
+	<string>Brain/Main.coffee</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -65,27 +65,27 @@
 					<key>filename</key>
 					<string>Brain/Main.coffee</string>
 					<key>lastUsed</key>
-					<date>2012-04-04T17:55:17Z</date>
-				</dict>
-				<dict>
-					<key>filename</key>
-					<string>Brain/Formula.coffee</string>
-					<key>lastUsed</key>
-					<date>2012-04-04T17:56:10Z</date>
-				</dict>
-				<dict>
-					<key>filename</key>
-					<string>Brain/Parser.coffee</string>
-					<key>lastUsed</key>
-					<date>2012-04-04T17:56:10Z</date>
+					<date>2012-06-04T22:24:56Z</date>
 					<key>selected</key>
 					<true/>
 				</dict>
 				<dict>
 					<key>filename</key>
+					<string>Brain/Formula.coffee</string>
+					<key>lastUsed</key>
+					<date>2012-06-04T22:24:56Z</date>
+				</dict>
+				<dict>
+					<key>filename</key>
+					<string>Brain/Parser.coffee</string>
+					<key>lastUsed</key>
+					<date>2012-06-04T22:22:24Z</date>
+				</dict>
+				<dict>
+					<key>filename</key>
 					<string>Brain/Answer.coffee</string>
 					<key>lastUsed</key>
-					<date>2012-03-16T13:06:36Z</date>
+					<date>2012-06-04T22:24:34Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -103,7 +103,7 @@
 					<key>filename</key>
 					<string>Brain/Utility.coffee</string>
 					<key>lastUsed</key>
-					<date>2012-03-16T13:06:46Z</date>
+					<date>2012-06-04T22:24:29Z</date>
 				</dict>
 				<dict>
 					<key>filename</key>
@@ -218,19 +218,77 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>Brain/Answer.coffee</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>27</integer>
+				<key>line</key>
+				<integer>10</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>Brain/Formula.coffee</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>34</integer>
+				<key>line</key>
+				<integer>4</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>Brain/Main.coffee</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>13</integer>
+				<key>line</key>
+				<integer>27</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 		<key>Brain/Parser.coffee</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>17</integer>
+				<integer>8</integer>
 				<key>line</key>
-				<integer>53</integer>
+				<integer>39</integer>
 			</dict>
+			<key>columnSelection</key>
+			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>159</integer>
+			<integer>28</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>6</integer>
+				<key>line</key>
+				<integer>39</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>12</integer>
+				<key>line</key>
+				<integer>39</integer>
+			</dict>
 		</dict>
 		<key>Design/Alerts.sass</key>
 		<dict>
@@ -278,10 +336,13 @@
 	<key>openDocuments</key>
 	<array>
 		<string>Brain/Parser.coffee</string>
+		<string>Brain/Answer.coffee</string>
+		<string>Brain/Formula.coffee</string>
+		<string>Brain/Main.coffee</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>
 	<key>windowFrame</key>
-	<string>{{5, 4}, {1435, 874}}</string>
+	<string>{{17, -6}, {1435, 874}}</string>
 </dict>
 </plist>
