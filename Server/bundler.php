@@ -42,7 +42,7 @@ copyPage('about.html');
 function copyFile($origin, $target){
 	global $DIR;
 	$file = file_get_contents($DIR . $origin);
-	easyWrite($target, $file);
+	easyWrite($target, str_replace('../Design/', '', $file));
 	return $file;
 }
 
