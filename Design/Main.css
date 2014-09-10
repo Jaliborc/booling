@@ -49,7 +49,7 @@
   display: none; }
 
 .box, .caption, .table, .dialog, input, .dialog span, .alert .text {
-  border: 1px solid #dddddd;
+  border: 1px solid #DDD;
   -webkit-background-clip: padding-box;
   -khtml-background-clip: padding-box;
   -moz-background-clip: padding-box;
@@ -62,15 +62,15 @@
   -ms-border-radius: 7px 7px 7px 7px;
   -o-border-radius: 7px 7px 7px 7px;
   border-radius: 7px 7px 7px 7px;
-  background-color: white; }
+  background-color: #FFF; }
 
 .gradient, .caption, .table, .dialog, .buttons input {
-  background-image: -webkit-linear-gradient(bottom, #eeeeee 0%, white 100%);
-  background-image: -khtml-linear-gradient(bottom, #eeeeee 0%, white 100%);
-  background-image: -moz-linear-gradient(bottom, #eeeeee 0%, white 100%);
-  background-image: -ms-linear-gradient(bottom, #eeeeee 0%, white 100%);
-  background-image: -o-linear-gradient(bottom, #eeeeee 0%, white 100%);
-  background-image: linear-gradient(bottom, #eeeeee 0%, white 100%);
+  background-image: -webkit-linear-gradient(bottom, #EEE 0%, #FFF 100%);
+  background-image: -khtml-linear-gradient(bottom, #EEE 0%, #FFF 100%);
+  background-image: -moz-linear-gradient(bottom, #EEE 0%, #FFF 100%);
+  background-image: -ms-linear-gradient(bottom, #EEE 0%, #FFF 100%);
+  background-image: -o-linear-gradient(bottom, #EEE 0%, #FFF 100%);
+  background-image: linear-gradient(bottom, #EEE 0%, #FFF 100%);
   background-color: #f6f6f6; }
 
 .caption, .table, .dialog {
@@ -84,7 +84,7 @@
   text-align: center;
   margin-top: 40px; }
   .table > .cell {
-    border-left: 1px solid #dddddd; }
+    border-left: 1px solid #DDD; }
     .table > .cell:first-child {
       border-left: none; }
     .table > .cell h1 {
@@ -100,9 +100,9 @@
       -o-transition: background-color 0.3s ease-in-out;
       transition: background-color 0.3s ease-in-out; }
       .table > .cell ul.focus {
-        background-color: #ffffe2; }
+        background-color: #FFFFE2; }
     .table > .cell li {
-      border-top: 1px solid #dddddd;
+      border-top: 1px solid #DDD;
       padding: 10px 0 2px 10px;
       list-style: none;
       height: 28px; }
@@ -147,14 +147,14 @@ input {
     .buttons input:active {
       padding: 7px 9px 5px 11px; }
     .buttons input:active {
-      background-image: -webkit-linear-gradient(bottom, #dddddd 0%, #eeeeee 100%);
-      background-image: -khtml-linear-gradient(bottom, #dddddd 0%, #eeeeee 100%);
-      background-image: -moz-linear-gradient(bottom, #dddddd 0%, #eeeeee 100%);
-      background-image: -ms-linear-gradient(bottom, #dddddd 0%, #eeeeee 100%);
-      background-image: -o-linear-gradient(bottom, #dddddd 0%, #eeeeee 100%);
-      background-image: linear-gradient(bottom, #dddddd 0%, #eeeeee 100%);
+      background-image: -webkit-linear-gradient(bottom, #DDD 0%, #EEE 100%);
+      background-image: -khtml-linear-gradient(bottom, #DDD 0%, #EEE 100%);
+      background-image: -moz-linear-gradient(bottom, #DDD 0%, #EEE 100%);
+      background-image: -ms-linear-gradient(bottom, #DDD 0%, #EEE 100%);
+      background-image: -o-linear-gradient(bottom, #DDD 0%, #EEE 100%);
+      background-image: linear-gradient(bottom, #DDD 0%, #EEE 100%);
       background-color: #e5e5e5;
-      color: #333333; }
+      color: #333; }
   .buttons .rightCorner {
     -webkit-background-clip: padding-box;
     -khtml-background-clip: padding-box;
@@ -207,7 +207,7 @@ input {
   z-index: 20;
   top: 250px; }
   .dialog h1 {
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid #DDD;
     padding: 15px; }
   .dialog span {
     background-color: #f6f6f6;
@@ -216,7 +216,7 @@ input {
     text-align: center;
     font-size: 0.8em;
     cursor: pointer;
-    color: #666666;
+    color: #666;
     right: 15px;
     top: 15px; }
   .dialog ul {
@@ -257,7 +257,7 @@ input {
   .alert.show {
     margin-bottom: 35px; }
   .alert .text {
-    background: white url(booling.png) no-repeat 355px bottom;
+    background: #FFF url(booling.png) no-repeat 355px bottom;
     margin-top: 25px;
     padding: 30px;
     width: 510px;
@@ -268,7 +268,7 @@ input {
     font-size: 16px;
     width: 285px; }
   .alert .arrow {
-    border: 1px solid #dddddd;
+    border: 1px solid #DDD;
     -webkit-transform: rotate(45deg);
     -khtml-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
@@ -290,12 +290,12 @@ input {
   margin-top: 40px;
   padding: 25px; }
 #Spotlight .img {
-  -webkit-box-shadow: 0 0 3px #444444;
-  -khtml-box-shadow: 0 0 3px #444444;
-  -moz-box-shadow: 0 0 3px #444444;
-  -ms-box-shadow: 0 0 3px #444444;
-  -o-box-shadow: 0 0 3px #444444;
-  box-shadow: 0 0 3px #444444;
+  -webkit-box-shadow: 0 0 3px #444;
+  -khtml-box-shadow: 0 0 3px #444;
+  -moz-box-shadow: 0 0 3px #444;
+  -ms-box-shadow: 0 0 3px #444;
+  -o-box-shadow: 0 0 3px #444;
+  box-shadow: 0 0 3px #444;
   -webkit-background-clip: padding-box;
   -khtml-background-clip: padding-box;
   -moz-background-clip: padding-box;
@@ -308,9 +308,17 @@ input {
   -ms-border-radius: 2px 2px 2px 2px;
   -o-border-radius: 2px 2px 2px 2px;
   border-radius: 2px 2px 2px 2px;
+  background: #123d7c url(../Design/noise.png) repeat right top;
   background-size: cover;
+  text-align: center;
+  color: white;
   width: 230px;
   height: 143px; }
+  #Spotlight .img .fa-5x {
+    margin-top: 30px; }
+  #Spotlight .img .fa-4x {
+    margin: 10px;
+    margin-top: 40px; }
 #Spotlight h1, #Spotlight p {
   margin-bottom: 10px; }
 #Spotlight ul {
@@ -318,9 +326,9 @@ input {
   margin-left: 30px; }
 #Spotlight a {
   text-decoration: none;
-  color: #392c26; }
+  color: #392C26; }
   #Spotlight a:hover {
-    color: #634c41; }
+    color: #634C41; }
 #Spotlight .odd .img {
   margin-left: 100px;
   float: right; }
@@ -333,7 +341,7 @@ input {
 /* Body */
 body {
   font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Helvetica, Arial, Verdana, sans-serif;
-  background-color: #eeeeee;
+  background-color: #EEE;
   padding-bottom: 90px; }
 
 * {
@@ -355,14 +363,14 @@ header {
   width: 277px; }
 
 footer {
-  -webkit-box-shadow: 0 0 1px black;
-  -khtml-box-shadow: 0 0 1px black;
-  -moz-box-shadow: 0 0 1px black;
-  -ms-box-shadow: 0 0 1px black;
-  -o-box-shadow: 0 0 1px black;
-  box-shadow: 0 0 1px black;
-  background-color: #392c26;
-  border-top: 2px solid #634c41;
+  -webkit-box-shadow: 0 0 1px #000;
+  -khtml-box-shadow: 0 0 1px #000;
+  -moz-box-shadow: 0 0 1px #000;
+  -ms-box-shadow: 0 0 1px #000;
+  -o-box-shadow: 0 0 1px #000;
+  box-shadow: 0 0 1px #000;
+  background-color: #392C26;
+  border-top: 2px solid #634C41;
   font-size: 18px;
   position: fixed;
   height: 50px;
@@ -374,7 +382,7 @@ footer {
   footer a {
     text-decoration: none;
     padding: 15px 15px 14px 15px;
-    color: white; }
+    color: #FFF; }
     footer a:hover {
       background-color: #44342d; }
 
@@ -402,5 +410,7 @@ footer {
     font-size: 14px; }
   #AnswerSection .buttons input {
     margin: 20px 0 0 10px; }
-  #AnswerSection .buttons .left, #AnswerSection .buttons .left {
+  #AnswerSection .buttons .left {
     margin-left: 0; }
+
+/*# sourceMappingURL=Main.css.map */
