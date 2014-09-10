@@ -1,3 +1,7 @@
+###
+	2011- 2014 João Cardoso (jaliborc.com)
+###
+
 ANIMATE_TIME = 400
 NO_SAVES = '<li class="error">No tables have been recorded so far.'
 T = '<li class="green">T</li>'

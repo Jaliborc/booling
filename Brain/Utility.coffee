@@ -1,3 +1,7 @@
+###
+	2011- 2014 João Cardoso (jaliborc.com)
+###
+
 # Math	
 random = (array) ->
 	return array[floor(Math.random() * array.length)]

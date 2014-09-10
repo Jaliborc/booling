@@ -1,3 +1,7 @@
+###
+	2011- 2014 João Cardoso (jaliborc.com)
+###
+
 # Character Object
 class Char
 	constructor: (@parser, i) ->

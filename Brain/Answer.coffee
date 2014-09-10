@@ -1,3 +1,7 @@
+###
+	2011- 2014 João Cardoso (jaliborc.com)
+###
+
 # Startup
 initAnswer = ->
 	window.Inputs = AnswerTable.getElementsByTagName('input')

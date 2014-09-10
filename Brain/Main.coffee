@@ -1,3 +1,7 @@
+###
+	2011- 2014 João Cardoso (jaliborc.com)
+###
+
 redirectOfficial = ->
 	if DOWNLOAD? and navigator?.onLine
 		window.location = 'http://booling.jaliborc.com'

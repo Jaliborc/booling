@@ -1,3 +1,7 @@
+###
+	2011- 2014 João Cardoso (jaliborc.com)
+###
+
 # List
 listSaved = ->
 	numSaves = localStorage.getItem('numSaves')

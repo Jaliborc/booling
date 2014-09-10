@@ -1,3 +1,7 @@
+###
+	2011- 2014 João Cardoso (jaliborc.com)
+###
+
 #Startup
 showFormula = ->
 	localStorage.setItem('state', 'formula')
