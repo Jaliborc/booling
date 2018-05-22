@@ -2,19 +2,30 @@
 <head>
 	<meta charset="utf-8">
 	<title>Booling</title>
-	<link rel="stylesheet" href="/Design/Main.css"/>
+	<link rel="stylesheet" href="/Main.css"/>
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<script>
+		function email() {
+			window.location = link.href.replace('badmail', 'hi').replace('fakeborc', 'jaliborc')
+		}
+	</script>
+	<style>
+		a {text-decoration: underline}
+		.grecaptcha-badge {display: none}
+	</style>
 </head>
 
 
 <body>
 	<!-- Header -->
 	<header></header>
+	<div class="g-recaptcha" data-sitekey="6LegyFoUAAAAAPTcu9mBNcg5-U8aNXJ6zE6sFLJ-" data-callback="email"  data-size="invisible"></div>
 
 	<!-- Info -->
 	<section id="Spotlight">
 		<div class="box odd">
-			<span class="img" style="background-image: url(../Design/jali_mari.png)"></span>
+			<span class="img" style="background-image: url(../jali_mari.png)"></span>
 			<h1>Who</h1>
 			<p>
 				Booling was created and designed by <a href="http://www.jaliborc.com">João Cardoso</a> while frequenting his first year of the Computer Science course at the University of Coimbra, out of pure frustration from the existing tools.
@@ -25,14 +36,14 @@
 		</div>
 
 		<div class="box even">
-			<span class="img" style="background-image: url(../Design/uc.jpg)"></span>
+			<span class="img" style="background-image: url(../uc.jpg)"></span>
 			<h1>Where</h1>
 			<p>
-				Booling is being used at the <a href="http://boole.dei.uc.pt/"> University of Coimbra as the primary starting tool
+				Booling is being used at the <a href="http://boole.dei.uc.pt/">University of Coimbra</a> as the primary starting tool
 				for the teach of boolean logic.
 			</p>
 			<p>
-				Using it somewhere else? <a href="mailto:hi@jaliborc.com">Tell us</a> about it!
+				Using it somewhere else? <a onclick="link = this; grecaptcha.execute(); event.preventDefault();" href="mailto:badmail@fakeborc.com">Tell us</a> about it!
 			</p>
 		</div>
 
@@ -55,7 +66,7 @@
 		<div class="left">
 			<a href="http://booling.jaliborc.com/overview">Overview</a>
 			<a href="http://booling.jaliborc.com/about">About</a>
-			<a href="https://github.com/Jaliborc/Booling">Source</a>
+			<a href="https://github.com/jaliborc/booling">Source</a>
 		</div>
 		<div class="right">
 			<a href="http://booling.jaliborc.com/">Start Booling</a>
